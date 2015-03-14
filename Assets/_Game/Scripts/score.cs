@@ -3,34 +3,40 @@ using System.Collections;
 
 namespace UnityStandardAssets._2D
 {
-	public class score : MonoBehaviour {
+public class score : MonoBehaviour {
+	
+
+	public int scoreValue;
+	private GameMaster gameMaster;
+	public GameObject explosion;
+	public GameObject playerExplosion;
+
+
+	// Use this for initialization
+	void Start () {
 		
-		
-		public int scoreValue;
-		private GameMaster gameMaster;
-		public GameObject explosion;
-		public GameObject playerExplosion;
-		
-		
-		// Use this for initialization
-		void Start () {
-			
-			GameObject gameMasterObject = GameObject.FindWithTag ("GameController");
-			if (gameMasterObject != null) {
-				gameMaster = gameMasterObject.GetComponent <GameMaster>();
-			}
-			if (gameMaster == null) {
-				Debug.Log ("cannot find GameMaster Script");
-			}
+		GameObject gameMasterObject = GameObject.FindWithTag ("GameController");
+		if (gameMasterObject != null) {
+			gameMaster = gameMasterObject.GetComponent <GameMaster>();
 		}
-		
-		
-		
-		//timeout destroy object
+		if (gameMaster == null) {
+			Debug.Log ("cannot find GameMaster Script");
+		}
+	}
+
+
+
+	//timeout destroy object
 		[SerializeField] private float m_TimeOut = 1.0f;
 		[SerializeField] private bool m_DetachChildren = false;
+		
+		
+		private void Awake()
+		{
+			//Invoke("DestroyNow", m_TimeOut);
+			Debug.Log (Screen.height);
+		}
 
-		//Destroys object when its past a certain point
 		void Update()
 		{
 			if (gameObject.transform.position.y <= 0 - Screen.height/3) {
@@ -45,25 +51,25 @@ namespace UnityStandardAssets._2D
 			{
 				transform.DetachChildren();
 			}	
-			gameMaster.AddScore (scoreValue);	
-			DestroyObject(gameObject);
-			
+		gameMaster.AddScore (scoreValue);	
+		DestroyObject(gameObject);
+
 		}
-		
-		
-		private void OnTriggerEnter2D(Collider2D other)
+
+
+	private void OnTriggerEnter2D(Collider2D other)
+	{
+		if (other.tag == "Player")
 		{
-			if (other.tag == "Player")
-			{
-				Destroy(other.gameObject);
-				
-				gameMaster.GameOver ();
-			}
+			Destroy(other.gameObject);
+			
+			gameMaster.GameOver ();
 		}
-		
-		
-		
 	}
-	
-	
+
+
+
+	}
+
+
 }

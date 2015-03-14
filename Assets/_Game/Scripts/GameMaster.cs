@@ -8,35 +8,35 @@ using UnityEngine.UI;
 
 
 public class GameMaster : MonoBehaviour {
-	
+
 	public Text scoreText;
 	public Text gameOverText;
 	public Text hsText;
 	public GameObject cars;
-	
+
 	public Vector3 spawnValues;
 	public Quaternion rotationValues;
 	public int carsInWaveCount;
 	public float spawnWait;
 	public float startWait;
 	public float waveWait;
-	
+
 	private bool gameOver;
 	private bool restart;
 	private int score;
 	private int highScore;
-	
+
 	//Name of the file that will hold the highscore
 	private string fileName = "test.txt";
-	
+
 	//Filestream we can write the highscore to
 	private StreamWriter sw;
-	
+
 	//Variable ot test if the score is higher than the current highscore
 	public int highScoreTest;
-	
+
 	private int nextNum;
-	
+
 	void Start () {
 		nextNum = 0;
 		gameOver = false;
@@ -44,22 +44,22 @@ public class GameMaster : MonoBehaviour {
 		gameOverText.text = "";
 		hsText.text = "";
 		score = 0;
-		
+
 		//If the file exist we set highScoreTest to the highscore held on the file
 		if (File.Exists (@fileName)) {
 			string txt = System.IO.File.ReadAllText (@fileName);
 			highScoreTest = Convert.ToInt32(txt);
 		}
-		
-		
-		
+
+
+
 		UpdateScore ();
 		StartCoroutine (SpawnWaves ());
-		
+
 	}
-	
+
 	//This runs as you might have guessed when the game is quit 
-	
+
 	//Note this WILL NOT WORK FOR IOS but I can make it compatible if needed
 	void OnApplicationQuit()
 	{
@@ -75,25 +75,25 @@ public class GameMaster : MonoBehaviour {
 				highScore = highScoreTest;
 			}
 			sw = new StreamWriter (fileName);
-			
+
 			sw.WriteLine (highScore.ToString());
 			sw.Close ();
-			
+
 		}
 		//If the file doesnt exist then this would be the first time running the game so it sets the highscore to score
 		else
 		{
 			sw = new StreamWriter (fileName);
-			
+
 			sw.WriteLine (score.ToString());
 			sw.Close ();
-			
+
 		}
-		
-		
-		
+
+
+
 	}
-	
+
 	void Update ()
 	{
 		if (restart)
@@ -104,22 +104,22 @@ public class GameMaster : MonoBehaviour {
 			}
 		}
 	}
-	
+
 	IEnumerator SpawnWaves () 
-	{
+		{
 		yield return new WaitForSeconds (startWait);
-		
+
 		while (true)
 		{
 			for (int i = 0; i < carsInWaveCount; i++) {
 				Vector3 spawnPosition = new Vector3 (UnityEngine.Random.Range (-spawnValues.x, spawnValues.x), spawnValues.y, spawnValues.z);
 				Quaternion spawnRotation = new Quaternion (rotationValues.x, rotationValues.y, rotationValues.z, rotationValues.w);
 				Instantiate (cars, spawnPosition, spawnRotation);
-				
+
 				yield return new WaitForSeconds (spawnWait);
 			}
 			yield return new WaitForSeconds (waveWait);
-			
+
 			if (gameOver) 
 			{
 				restart = true;
@@ -127,27 +127,26 @@ public class GameMaster : MonoBehaviour {
 			}
 		}
 	}
-	
+
 	public void AddScore (int newScoreValue)
 	{
 		score += newScoreValue;
 		UpdateScore ();
-		
+
 	}
-	
+
 	public void GameOver () {
 		gameOverText.text = "Game Over" + Environment.NewLine + Environment.NewLine + "Tap Anywhere to Restart";
 		hsText.text = "High Score: " + highScoreTest;
 		gameOver = true;
 	}
-	
+
 	void UpdateScore ()
 	{
 		scoreText.text = "Score: " + score;
 	}
-	
-	
-	
-	
-}
 
+
+
+
+}
