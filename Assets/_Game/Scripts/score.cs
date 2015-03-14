@@ -39,7 +39,7 @@ public class score : MonoBehaviour {
 
 		void Update()
 		{
-			if (gameObject.transform.position.y <= 0 - Screen.height/3) {
+			if (gameObject.transform.position.y <= 0 - Screen.height/7) {
 				DestroyNow();
 			}
 		}
