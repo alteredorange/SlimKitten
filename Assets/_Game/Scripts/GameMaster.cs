@@ -11,7 +11,7 @@ public class GameMaster : MonoBehaviour {
 
 	public Text scoreText;
 	public Text gameOverText;
-	public Text hsText;
+	//public Text hsText;
 	public GameObject cars;
 
 	public Vector3 spawnValues;
@@ -35,6 +35,8 @@ public class GameMaster : MonoBehaviour {
 	//Variable ot test if the score is higher than the current highscore
 	public int highScoreTest;
 
+	public bool invincible;
+
 	private int nextNum;
 
 	void Start () {
@@ -42,8 +44,9 @@ public class GameMaster : MonoBehaviour {
 		gameOver = false;
 		restart = false;
 		gameOverText.text = "";
-		hsText.text = "";
+		//hsText.text = "";
 		score = 0;
+		invincible = false;
 
 		//If the file exist we set highScoreTest to the highscore held on the file
 		if (File.Exists (@fileName)) {
@@ -136,8 +139,8 @@ public class GameMaster : MonoBehaviour {
 	}
 
 	public void GameOver () {
-		gameOverText.text = "Game Over" + Environment.NewLine + Environment.NewLine + "Tap Anywhere to Restart";
-		hsText.text = "High Score: " + highScoreTest;
+		gameOverText.text = "Game Over" + Environment.NewLine + "High Score: " + highScoreTest + Environment.NewLine + "Tap Anywhere to Restart";
+		//hsText.text = "High Score: " + highScoreTest;
 		gameOver = true;
 	}
 
