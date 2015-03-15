@@ -136,7 +136,7 @@ public class GameMaster : MonoBehaviour {
 		}
 		
 		PlayerPrefs.Save ();
-		gameOverText.text = "Game Over" + Environment.NewLine + "High Score: " + highScoreTest + Environment.NewLine + "Tap Anywhere to Restart";
+		gameOverText.text = "Game Over" + Environment.NewLine + "High Score: " + highScore + Environment.NewLine + "Tap Anywhere to Restart";
 		//hsText.text = "High Score: " + highScoreTest;
 
 		gameOver = true;
