@@ -68,28 +68,7 @@ public class GameMaster : MonoBehaviour {
 	void OnApplicationQuit()
 	{
 		//If the file already exist we test if the score is higher than the current highscore if so we rewrite the file to hold that number
-		if (PlayerPrefs.HasKey("HighScore")) {
-			if(score > highScoreTest)
-			{
-				highScore = score;
-				
-			}
-			else
-			{
-				highScore = highScoreTest;
-			}
 
-			PlayerPrefs.SetInt ("HighScore", highScore);
-
-		}
-		//If the file doesnt exist then this would be the first time running the game so it sets the highscore to score
-		else
-		{
-			PlayerPrefs.SetInt ("HighScore", score);
-
-		}
-
-		PlayerPrefs.Save ();
 
 	}
 
@@ -137,7 +116,28 @@ public class GameMaster : MonoBehaviour {
 	public void GameOver () {
 		gameOverText.text = "Game Over" + Environment.NewLine + "High Score: " + highScoreTest + Environment.NewLine + "Tap Anywhere to Restart";
 		//hsText.text = "High Score: " + highScoreTest;
-
+		if (PlayerPrefs.HasKey("HighScore")) {
+			if(score > highScoreTest)
+			{
+				highScore = score;
+				
+			}
+			else
+			{
+				highScore = highScoreTest;
+			}
+			
+			PlayerPrefs.SetInt ("HighScore", highScore);
+			
+		}
+		//If the file doesnt exist then this would be the first time running the game so it sets the highscore to score
+		else
+		{
+			PlayerPrefs.SetInt ("HighScore", score);
+			
+		}
+		
+		PlayerPrefs.Save ();
 		gameOver = true;
 	}
 
