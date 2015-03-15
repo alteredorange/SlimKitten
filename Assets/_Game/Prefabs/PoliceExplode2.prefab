@@ -99,7 +99,7 @@ GameObject:
   - 114: {fileID: 11444162}
   - 114: {fileID: 11404838}
   - 114: {fileID: 11434246}
-  - 114: {fileID: 11418862}
+  - 114: {fileID: 11495454}
   m_Layer: 10
   m_Name: PoliceExplode2
   m_TagString: Enemy
@@ -447,22 +447,6 @@ MonoBehaviour:
   HandleTriggerExit2D: 0
   HandleTriggerStay2D: 0
   lastTrigger2DInfo: {fileID: 0}
---- !u!114 &11418862
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 143396}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6c2364dbeee30d14f813153f40a11a27, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  scoreValue: 1
-  explosion: {fileID: 0}
-  playerExplosion: {fileID: 0}
-  m_TimeOut: 1.25
-  m_DetachChildren: 0
 --- !u!114 &11434246
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -497,7 +481,7 @@ MonoBehaviour:
   Use2DCollision: 0
   SFXOptions:
     ExplosionSoundClip: {fileID: 0}
-    FragmentSoundClip: {fileID: 0}
+    FragmentSoundClip: {fileID: 8300000, guid: a20939540c08836429c61ebee51cebb5, type: 3}
     FragmentEmitter: {fileID: 0}
     HitSoundTimeout: 1
     EmitersMax: 1000
@@ -508,7 +492,7 @@ MonoBehaviour:
     FreezeRotationX: 0
     FreezeRotationY: 0
     FreezeRotationZ: 0
-    Layer: Default
+    Layer: 44656661756c74
     MaxVelocity: 100
     InheritParentPhysicsProperty: 1
     Mass: 20
@@ -519,6 +503,16 @@ MonoBehaviour:
     AngularVelocityVector: {x: 0, y: 1, z: 0}
     RandomAngularVelocityVector: 1
     FragmentMaterial: {fileID: 0}
+  crack: 0
+  cracked: 0
+  state: 0
+  levelCount: 
+  poolIdx: 0
+  pool: []
+  mainCentroid: {x: 0, y: 0, z: 0}
+  splitMeshIslands: 0
+  explosionID: 0
+  audioSource: {fileID: 0}
 --- !u!114 &11444162
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -762,6 +756,23 @@ MonoBehaviour:
   HandleTriggerExit2D: 0
   HandleTriggerStay2D: 0
   lastTrigger2DInfo: {fileID: 0}
+--- !u!114 &11495454
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 143396}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4ef1baeb3f2ac0642a12286a145b4b2e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  explosion: {fileID: 0}
+  playerExplosion: {fileID: 0}
+  scoreValue: 1
+  playerStats:
+    Health: 100
+  fallBoundary: -25
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1

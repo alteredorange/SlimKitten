@@ -6,7 +6,7 @@ namespace UnityStandardAssets._2D
 public class score : MonoBehaviour {
 	
 
-	public int scoreValue;
+	
 	private GameMaster gameMaster;
 	public GameObject explosion;
 	public GameObject playerExplosion;
@@ -26,35 +26,7 @@ public class score : MonoBehaviour {
 
 
 
-	//timeout destroy object
-		[SerializeField] private float m_TimeOut = 1.0f;
-		[SerializeField] private bool m_DetachChildren = false;
-		
-		
-		private void Awake()
-		{
-			//Invoke("DestroyNow", m_TimeOut);
-			Debug.Log (Screen.height);
-		}
-
-		void Update()
-		{
-			if (gameObject.transform.position.y <= 0 - Screen.height/3) {
-				DestroyNow();
-			}
-		}
-		
-		
-		private void DestroyNow()
-		{
-			if (m_DetachChildren)
-			{
-				transform.DetachChildren();
-			}	
-		gameMaster.AddScore (scoreValue);	
-		DestroyObject(gameObject);
-
-		}
+	
 
 
 	private void OnTriggerEnter2D(Collider2D other)
