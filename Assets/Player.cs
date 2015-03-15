@@ -3,7 +3,7 @@ using System.Collections;
 
 public class Player : MonoBehaviour {
 	
-
+	public AudioClip Meow;
 	public GameObject explosion;
 	public GameObject playerExplosion;
 
