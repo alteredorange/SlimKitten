@@ -114,8 +114,6 @@ public class GameMaster : MonoBehaviour {
 	}
 
 	public void GameOver () {
-		gameOverText.text = "Game Over" + Environment.NewLine + "High Score: " + highScoreTest + Environment.NewLine + "Tap Anywhere to Restart";
-		//hsText.text = "High Score: " + highScoreTest;
 		if (PlayerPrefs.HasKey("HighScore")) {
 			if(score > highScoreTest)
 			{
@@ -138,6 +136,9 @@ public class GameMaster : MonoBehaviour {
 		}
 		
 		PlayerPrefs.Save ();
+		gameOverText.text = "Game Over" + Environment.NewLine + "High Score: " + highScoreTest + Environment.NewLine + "Tap Anywhere to Restart";
+		//hsText.text = "High Score: " + highScoreTest;
+
 		gameOver = true;
 	}
 
