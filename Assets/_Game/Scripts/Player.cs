@@ -3,9 +3,10 @@ using System.Collections;
 
 public class Player : MonoBehaviour {
 	
-	public AudioClip Meow;
+	public AudioClip Boom;
 	public GameObject explosion;
 	public GameObject playerExplosion;
+
 
 	public int scoreValue;
 	private GameMaster gameMaster;
@@ -28,7 +29,9 @@ public class Player : MonoBehaviour {
 		if (gameMaster == null) {
 			Debug.Log ("cannot find GameMaster Script");
 		}
-	}
+
+
+		}
 
 
 	void Update () {
@@ -49,7 +52,9 @@ public class Player : MonoBehaviour {
 	{
 		if (other.tag == "Player")
 		{
-			AudioSource.PlayClipAtPoint(Meow, transform.position);
+
+			Instantiate(playerExplosion, other.transform.position, other.transform.rotation);
+			AudioSource.PlayClipAtPoint(Boom, transform.position);
 			Destroy(other.gameObject);
 			gameMaster.GameOver ();
 		}

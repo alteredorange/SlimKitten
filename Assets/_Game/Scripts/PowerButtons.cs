@@ -8,6 +8,7 @@ public class PowerButtons : TouchManager {
 	public enum button{ButtonOne, ButtonTwo, ButtonThree};
 	public button buttonType;
 		public ParticleSystem Explosion1;
+		public AudioClip Meow;
 
 	// Update is called once per frame
 	void Update () {
@@ -26,7 +27,7 @@ public class PowerButtons : TouchManager {
 		} else if (buttonType == button.ButtonTwo) {
 			//Whatever Button Two Does
 		} else if (buttonType == button.ButtonThree) {
-			//Whatever Button Three Does
+				AudioSource.PlayClipAtPoint(Meow, transform.position);
 		}
 	}
 
@@ -34,11 +35,11 @@ public class PowerButtons : TouchManager {
 	void OnSecondTouch ()
 	{
 		if (buttonType == button.ButtonOne) {
-			//Whatever Button One Does
+				Explosion1.Play ();
 		} else if (buttonType == button.ButtonTwo) {
 			//Whatever Button Two Does
 		} else if (buttonType == button.ButtonThree) {
-			//Whatever Button Three Does
+				AudioSource.PlayClipAtPoint(Meow, transform.position);
 		}
 	}
 

@@ -455,9 +455,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4ef1baeb3f2ac0642a12286a145b4b2e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Meow: {fileID: 8300000, guid: a20939540c08836429c61ebee51cebb5, type: 3}
-  explosion: {fileID: 0}
-  playerExplosion: {fileID: 0}
+  Boom: {fileID: 8300000, guid: 870f9e88aa8c14d4fa8e42754da1422c, type: 3}
+  explosion: {fileID: 109120, guid: f90da8e86297562498af218c5710d686, type: 2}
+  playerExplosion: {fileID: 109120, guid: f90da8e86297562498af218c5710d686, type: 2}
   scoreValue: 1
   playerStats:
     Health: 100
