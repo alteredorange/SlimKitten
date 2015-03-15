@@ -49,8 +49,8 @@ public class Player : MonoBehaviour {
 	{
 		if (other.tag == "Player")
 		{
+			AudioSource.PlayClipAtPoint(Meow, transform.position);
 			Destroy(other.gameObject);
-			
 			gameMaster.GameOver ();
 		}
 	}
