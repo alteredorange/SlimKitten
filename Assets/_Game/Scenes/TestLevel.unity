@@ -714,6 +714,7 @@ MonoBehaviour:
   buttonType: 1
   Explosion1: {fileID: 0}
   Meow: {fileID: 0}
+  deactivateTime: 0
 --- !u!131 &626892156
 GUITexture:
   m_ObjectHideFlags: 0
@@ -1460,6 +1461,7 @@ MonoBehaviour:
   buttonType: 0
   Explosion1: {fileID: 2140360201}
   Meow: {fileID: 0}
+  deactivateTime: 0
 --- !u!131 &1422570940
 GUITexture:
   m_ObjectHideFlags: 0
@@ -1535,6 +1537,7 @@ MonoBehaviour:
   buttonType: 2
   Explosion1: {fileID: 0}
   Meow: {fileID: 8300000, guid: a20939540c08836429c61ebee51cebb5, type: 3}
+  deactivateTime: 0
 --- !u!131 &1439843726
 GUITexture:
   m_ObjectHideFlags: 0
@@ -1876,7 +1879,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 98c4bed141e342c47bc15a8fa4e478ca, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  weaponThing: {fileID: 600075741}
 --- !u!1 &1780833305
 GameObject:
   m_ObjectHideFlags: 0
