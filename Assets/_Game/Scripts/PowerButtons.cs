@@ -5,6 +5,7 @@ namespace UnityStandardAssets._2D
 {
 public class PowerButtons : TouchManager {
 	
+		public GameObject weaponThing;
 	public enum button{ButtonOne, ButtonTwo, ButtonThree};
 	public button buttonType;
 		public ParticleSystem Explosion1;
@@ -25,12 +26,11 @@ public class PowerButtons : TouchManager {
 		if (buttonType == button.ButtonOne) {
 				Explosion1.Play ();
 		} else if (buttonType == button.ButtonTwo) {
-				if (Input.touchCount > 0)
-				{
-					Application.LoadLevel (Application.loadedLevel);
-				}
+				Weapon script;
+				script = weaponThing.GetComponent<Weapon>();
+				script.enabled = true;
 		} else if (buttonType == button.ButtonThree) {
-				AudioSource.PlayClipAtPoint(Meow, transform.position);
+
 		}
 	}
 
@@ -40,10 +40,12 @@ public class PowerButtons : TouchManager {
 		if (buttonType == button.ButtonOne) {
 				Explosion1.Play ();
 		} else if (buttonType == button.ButtonTwo) {
-			//Whatever Button Two Does
+				Weapon script;
+				script = weaponThing.GetComponent<Weapon>();
+				script.enabled = true;
 		} else if (buttonType == button.ButtonThree) {
-				AudioSource.PlayClipAtPoint(Meow, transform.position);
-		}
+
+			}
 	}
 
 	}
