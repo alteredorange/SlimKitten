@@ -23,10 +23,7 @@ public class PowerButtons : TouchManager {
 		
 
 
-	void Start()
-	{
-			deactivateTime = 5;
-	}
+
 
 
 	void OnFirstTouch ()
@@ -51,17 +48,18 @@ public class PowerButtons : TouchManager {
 	}
 	//just a copy of the OnFirstTouch settings so that it will register two touches
 	void OnSecondTouch ()
-	{
-		if (buttonType == button.ButtonOne) {
+		{
+			if (buttonType == button.ButtonOne) {
 				Explosion1.Play ();
-		} else if (buttonType == button.ButtonTwo) {
+			} else if (buttonType == button.ButtonTwo) {
+				
 				script = weaponThing.GetComponent<Weapon>();
 				script.enabled = true;
 				Invoke("disable", deactivateTime);
-		} else if (buttonType == button.ButtonThree) {
-
+			} else if (buttonType == button.ButtonThree) {
+				
 			}
-	}
+		}
 
 	}
 }

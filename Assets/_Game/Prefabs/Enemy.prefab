@@ -25,10 +25,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 420688}
-  - 33: {fileID: 3341952}
-  - 23: {fileID: 2344612}
   - 61: {fileID: 6115410}
-  - 114: {fileID: 11449804}
   m_Layer: 11
   m_Name: Enemy
   m_TagString: Untagged
@@ -129,7 +126,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 103094}
   m_LocalRotation: {x: .707106829, y: 0, z: 0, w: .707106709}
-  m_LocalPosition: {x: -.000199890143, y: 1.76799989, z: -.181400076}
+  m_LocalPosition: {x: -.000199890143, y: 1.76799989, z: 0}
   m_LocalScale: {x: 2, y: 6, z: .200000033}
   m_Children: []
   m_Father: {fileID: 443782}
@@ -260,30 +257,6 @@ MeshRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingOrder: 0
---- !u!23 &2344612
-MeshRenderer:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 103094}
-  m_Enabled: 1
-  m_CastShadows: 1
-  m_ReceiveShadows: 1
-  m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
-  m_SubsetIndices: 
-  m_StaticBatchRoot: {fileID: 0}
-  m_UseLightProbes: 1
-  m_ReflectionProbeUsage: 1
-  m_ProbeAnchor: {fileID: 0}
-  m_ScaleInLightmap: 1
-  m_PreserveUVs: 1
-  m_ImportantGI: 0
-  m_AutoUVMaxDistance: .5
-  m_AutoUVMaxAngle: 89
-  m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingOrder: 0
 --- !u!23 &2346506
 MeshRenderer:
   m_ObjectHideFlags: 1
@@ -377,13 +350,6 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 194226}
   m_Mesh: {fileID: 4300002, guid: d6a245ae0ff01dc45938b23a7dfe1d65, type: 3}
---- !u!33 &3341952
-MeshFilter:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 103094}
-  m_Mesh: {fileID: 0}
 --- !u!33 &3385330
 MeshFilter:
   m_ObjectHideFlags: 1
@@ -439,25 +405,6 @@ BoxCollider2D:
   m_Offset: {x: 0, y: -.00444640964}
   serializedVersion: 2
   m_Size: {x: 1, y: .931824625}
---- !u!114 &11449804
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 103094}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1c5a163466769484fb2c52cdc4b51276, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  debug: 0
-  HandleCollisionEnter2D: 0
-  HandleCollisionExit2D: 0
-  HandleCollisionStay2D: 0
-  HandleTriggerEnter2D: 0
-  HandleTriggerExit2D: 0
-  HandleTriggerStay2D: 0
-  lastTrigger2DInfo: {fileID: 0}
 --- !u!114 &11495454
 MonoBehaviour:
   m_ObjectHideFlags: 1
