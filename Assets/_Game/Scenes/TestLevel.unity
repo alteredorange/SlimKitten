@@ -416,7 +416,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 13
+  m_RootOrder: 12
 --- !u!1001 &226817024
 Prefab:
   m_ObjectHideFlags: 0
@@ -454,7 +454,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 430460, guid: a5a4cd72513325c4798d4dafada0164c, type: 2}
       propertyPath: m_RootOrder
-      value: 4
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 5023866, guid: a5a4cd72513325c4798d4dafada0164c, type: 2}
       propertyPath: m_IsKinematic
@@ -558,7 +558,7 @@ MonoBehaviour:
   Damage: 100
   whatToHit:
     serializedVersion: 2
-    m_Bits: 4294965243
+    m_Bits: 4294967295
   BulletTrailPrefab: {fileID: 445480, guid: 6cde7e0fe9c84364d9ba7e61efe2268f, type: 2}
   MuzzleFlashPrefab: {fileID: 0}
   effectSpawnRate: 10
@@ -641,7 +641,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   buttonType: 1
-  Explosion1: {fileID: 1510884889}
+  Explosion1: {fileID: 0}
   Meow: {fileID: 0}
 --- !u!131 &626892156
 GUITexture:
@@ -896,7 +896,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 400004, guid: d024aaa09f4080d448d16f62d1a97b0b, type: 2}
       propertyPath: m_RootOrder
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 100004, guid: d024aaa09f4080d448d16f62d1a97b0b, type: 2}
       propertyPath: m_Name
@@ -1158,7 +1158,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 408024, guid: 457906b41a0f70b4587affe3d444100c, type: 2}
       propertyPath: m_RootOrder
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 135428, guid: 457906b41a0f70b4587affe3d444100c, type: 2}
       propertyPath: m_IsActive
@@ -1386,7 +1386,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   buttonType: 0
-  Explosion1: {fileID: 1510884889}
+  Explosion1: {fileID: 0}
   Meow: {fileID: 0}
 --- !u!131 &1422570940
 GUITexture:
@@ -1460,7 +1460,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   buttonType: 2
-  Explosion1: {fileID: 1510884889}
+  Explosion1: {fileID: 0}
   Meow: {fileID: 8300000, guid: a20939540c08836429c61ebee51cebb5, type: 3}
 --- !u!131 &1439843726
 GUITexture:
@@ -1518,7 +1518,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 400004, guid: d024aaa09f4080d448d16f62d1a97b0b, type: 2}
       propertyPath: m_RootOrder
-      value: 3
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 100000, guid: d024aaa09f4080d448d16f62d1a97b0b, type: 2}
       propertyPath: m_Layer
@@ -1687,81 +1687,6 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: d024aaa09f4080d448d16f62d1a97b0b, type: 2}
   m_IsPrefabParent: 0
---- !u!198 &1510884889
-ParticleSystem:
-  m_PrefabParentObject: {fileID: 19853438, guid: f90da8e86297562498af218c5710d686,
-    type: 2}
-  m_PrefabInternal: {fileID: 1553803841}
---- !u!1001 &1553803841
-Prefab:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 455464, guid: f90da8e86297562498af218c5710d686, type: 2}
-      propertyPath: m_LocalPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 455464, guid: f90da8e86297562498af218c5710d686, type: 2}
-      propertyPath: m_LocalPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 455464, guid: f90da8e86297562498af218c5710d686, type: 2}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 455464, guid: f90da8e86297562498af218c5710d686, type: 2}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 455464, guid: f90da8e86297562498af218c5710d686, type: 2}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 455464, guid: f90da8e86297562498af218c5710d686, type: 2}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 455464, guid: f90da8e86297562498af218c5710d686, type: 2}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 455464, guid: f90da8e86297562498af218c5710d686, type: 2}
-      propertyPath: m_RootOrder
-      value: 11
-      objectReference: {fileID: 0}
-    - target: {fileID: 19802230, guid: f90da8e86297562498af218c5710d686, type: 2}
-      propertyPath: playOnAwake
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 19839996, guid: f90da8e86297562498af218c5710d686, type: 2}
-      propertyPath: playOnAwake
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 19846442, guid: f90da8e86297562498af218c5710d686, type: 2}
-      propertyPath: playOnAwake
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 19813664, guid: f90da8e86297562498af218c5710d686, type: 2}
-      propertyPath: playOnAwake
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 19849308, guid: f90da8e86297562498af218c5710d686, type: 2}
-      propertyPath: playOnAwake
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 19853438, guid: f90da8e86297562498af218c5710d686, type: 2}
-      propertyPath: playOnAwake
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 19853208, guid: f90da8e86297562498af218c5710d686, type: 2}
-      propertyPath: playOnAwake
-      value: 0
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_ParentPrefab: {fileID: 100100000, guid: f90da8e86297562498af218c5710d686, type: 2}
-  m_IsPrefabParent: 0
 --- !u!1 &1659363566
 GameObject:
   m_ObjectHideFlags: 0
@@ -1815,7 +1740,7 @@ Transform:
   m_LocalScale: {x: 50, y: 50, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 12
+  m_RootOrder: 11
 --- !u!1 &1680914613
 GameObject:
   m_ObjectHideFlags: 0

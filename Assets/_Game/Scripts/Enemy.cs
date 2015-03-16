@@ -41,7 +41,7 @@ public class Enemy : MonoBehaviour {
 	public void DamageEnemy (int damage) {
 		stats.Health -= damage;
 		if (stats.Health <= 0) {
-			GameMaster.KillEnemy (this);
+		
 			gameMaster.AddScore (scoreValue);
 			DestroyObject(gameObject);
 
