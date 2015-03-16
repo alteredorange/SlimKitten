@@ -31,7 +31,7 @@ public class score : MonoBehaviour {
 
 	private void OnTriggerEnter2D(Collider2D other)
 	{
-		if (other.tag == "Player")
+		if (other.tag == "Player" && !gameMaster.invincible)
 		{
 			Destroy(other.gameObject);
 			

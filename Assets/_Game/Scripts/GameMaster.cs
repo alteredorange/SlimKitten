@@ -46,7 +46,7 @@ public class GameMaster : MonoBehaviour {
 		gameOverText.text = "";
 		//hsText.text = "";
 		score = 0;
-		invincible = false;
+		//invincible = false;
 
 		//If the file exist we set highScoreTest to the highscore held on the file
 
@@ -72,6 +72,13 @@ public class GameMaster : MonoBehaviour {
 
 	}
 
+	IEnumerable invincibleOff()
+	{
+		yield return new WaitForSeconds (1);
+		invincible = false;
+		//CancelInvoke ("invincibleOff");
+	}
+
 	void Update ()
 	{
 		if (restart)
@@ -80,6 +87,11 @@ public class GameMaster : MonoBehaviour {
 			{
 				Application.LoadLevel (Application.loadedLevel);
 			}
+		}
+
+		if(invincible)
+		{
+			InvokeRepeating("invincibleOff", 0, 1);
 		}
 	}
 
@@ -146,6 +158,7 @@ public class GameMaster : MonoBehaviour {
 	{
 		scoreText.text = "Score: " + score;
 	}
+
 
 
 

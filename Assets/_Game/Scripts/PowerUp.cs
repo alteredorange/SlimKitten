@@ -28,13 +28,13 @@ public class PowerUp : MonoBehaviour {
 		{
 
 			Invincibility();
+			Destroy(gameObject);
 		}
 	}
-	IEnumerator Invincibility()
+	void Invincibility()
 	{
 		gameMaster.invincible = true;
-		yield return new WaitForSeconds(5);
-		gameMaster.invincible = true;
+
 
 	}
 	// Update is called once per frame
