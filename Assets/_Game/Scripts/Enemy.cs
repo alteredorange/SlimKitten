@@ -1,21 +1,19 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class Player : MonoBehaviour {
+public class Enemy : MonoBehaviour {
 	
 	public AudioClip Boom;
 	public GameObject explosion;
 	public GameObject playerExplosion;
-
-
 	public int scoreValue;
 	private GameMaster gameMaster;
 	[System.Serializable]
-	public class PlayerStats {
-		public int Health = 100;
+	public class EnemyStats {
+	public int Health = 100;
 	}
 	
-	public PlayerStats playerStats = new PlayerStats();
+	public EnemyStats stats = new EnemyStats();
 	
 	public int fallBoundary = -20;
 
@@ -36,18 +34,22 @@ public class Player : MonoBehaviour {
 
 	void Update () {
 		if (transform.position.y <= fallBoundary)
-			DamagePlayer (9999999);
+			DamageEnemy (9999999);
 	}
-	
-	public void DamagePlayer (int damage) {
-		playerStats.Health -= damage;
-		if (playerStats.Health <= 0) {
+
+	//If enemy takes enough damage, it will add a point and get destroyed
+	public void DamageEnemy (int damage) {
+		stats.Health -= damage;
+		if (stats.Health <= 0) {
+			GameMaster.KillEnemy (this);
 			gameMaster.AddScore (scoreValue);
 			DestroyObject(gameObject);
+
 		}
 	}
 
 
+	//If Enemy collides with cat, it will cause an explosion, play a sound, destroy the cat and cause "Game Over"
 	private void OnTriggerEnter2D(Collider2D other)
 	{
 		if (other.tag == "Player")

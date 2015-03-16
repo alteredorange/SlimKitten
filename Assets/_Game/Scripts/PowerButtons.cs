@@ -25,7 +25,10 @@ public class PowerButtons : TouchManager {
 		if (buttonType == button.ButtonOne) {
 				Explosion1.Play ();
 		} else if (buttonType == button.ButtonTwo) {
-			//Whatever Button Two Does
+				if (Input.touchCount > 0)
+				{
+					Application.LoadLevel (Application.loadedLevel);
+				}
 		} else if (buttonType == button.ButtonThree) {
 				AudioSource.PlayClipAtPoint(Meow, transform.position);
 		}

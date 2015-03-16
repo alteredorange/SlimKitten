@@ -10,7 +10,7 @@ GameObject:
   - 4: {fileID: 461964}
   - 33: {fileID: 3315808}
   - 23: {fileID: 2343124}
-  m_Layer: 10
+  m_Layer: 11
   m_Name: Car_Body
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -29,8 +29,8 @@ GameObject:
   - 23: {fileID: 2344612}
   - 61: {fileID: 6115410}
   - 114: {fileID: 11449804}
-  m_Layer: 10
-  m_Name: Cube
+  m_Layer: 11
+  m_Name: Enemy
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -46,7 +46,7 @@ GameObject:
   - 4: {fileID: 456398}
   - 33: {fileID: 3398812}
   - 23: {fileID: 2346506}
-  m_Layer: 10
+  m_Layer: 11
   m_Name: RB_Wheel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -63,7 +63,7 @@ GameObject:
   - 4: {fileID: 451208}
   - 33: {fileID: 3337412}
   - 23: {fileID: 2367116}
-  m_Layer: 10
+  m_Layer: 11
   m_Name: LB_Wheel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -80,7 +80,7 @@ GameObject:
   - 4: {fileID: 445690}
   - 33: {fileID: 3385330}
   - 23: {fileID: 2378916}
-  m_Layer: 10
+  m_Layer: 11
   m_Name: LF_Wheel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -97,8 +97,8 @@ GameObject:
   - 4: {fileID: 443782}
   - 50: {fileID: 5074712}
   - 114: {fileID: 11495454}
-  m_Layer: 10
-  m_Name: PoliceExplode2
+  m_Layer: 11
+  m_Name: Enemy
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -114,7 +114,7 @@ GameObject:
   - 4: {fileID: 433696}
   - 33: {fileID: 3340040}
   - 23: {fileID: 2312618}
-  m_Layer: 10
+  m_Layer: 11
   m_Name: RF_Wheel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -459,8 +459,8 @@ MonoBehaviour:
   explosion: {fileID: 109120, guid: f90da8e86297562498af218c5710d686, type: 2}
   playerExplosion: {fileID: 109120, guid: f90da8e86297562498af218c5710d686, type: 2}
   scoreValue: 1
-  playerStats:
-    Health: 100
+  stats:
+    Health: 33
   fallBoundary: -25
 --- !u!1001 &100100000
 Prefab:

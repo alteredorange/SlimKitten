@@ -20,11 +20,11 @@ TagManager:
   - 
   - 
   - BlockingLayer
+  - Boundaries
   - Background
   - Player
   - Foreground
-  - 
-  - 
+  - Enemy
   - 
   - 
   - 
