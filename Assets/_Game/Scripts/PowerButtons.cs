@@ -22,9 +22,10 @@ public class PowerButtons : TouchManager {
 
 	// Update is called once per frame
 	void Update () {
-	
 		TouchInput ();
 		Destroy (barrierPrefab);
+
+
 
 		}
 		
@@ -35,14 +36,20 @@ public class PowerButtons : TouchManager {
 
 	void OnFirstTouch ()
 	{
-		if (buttonType == button.ButtonOne) {
+		
+			//Invincibility Button And Code
+			if (buttonType == button.ButtonOne) {
 				Explosion1.Play ();
-		} else if (buttonType == button.ButtonTwo) {
+		
+			//Gun Button and code
+			} else if (buttonType == button.ButtonTwo) {
 
 				script = weaponThing.GetComponent<Weapon>();
 				script.enabled = true;
 				Invoke("disable", deactivateTime);
-		} else if (buttonType == button.ButtonThree) {
+		
+			//Barricade Button and Code
+			} else if (buttonType == button.ButtonThree) {
 
 
 				if (PowerButtons.barrier == 0 && Completed == false ) 
@@ -62,6 +69,7 @@ public class PowerButtons : TouchManager {
 	void disable()
 	{
 			script.enabled = false;
+			Completed = false;
 	}
 	//just a copy of the OnFirstTouch settings so that it will register two touches
 	void OnSecondTouch ()

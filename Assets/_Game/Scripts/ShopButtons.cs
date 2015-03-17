@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using UnityEngine.Advertisements;
 
 namespace UnityStandardAssets._2D
 {
@@ -12,7 +13,11 @@ namespace UnityStandardAssets._2D
 			public AudioClip Meow;
 			
 					
-			// Update is called once per frame
+	void Start () {
+			Advertisement.Initialize ("26283");
+		}
+
+		// Update is called once per frame
 			void Update () {
 				
 				TouchInput ();
@@ -27,7 +32,13 @@ namespace UnityStandardAssets._2D
 				Application.LoadLevel ("TestLevel"); 
 			} else if (buttonType == button.ShopTwo) {
 			
-					
+				if(Advertisement.isReady()){ Advertisement.Show( null, new ShowOptions {
+						resultCallback = result => {
+				Debug.Log(result.ToString());
+						}
+					});
+					}
+
 			} else if (buttonType == button.ShopThree) {
 
 

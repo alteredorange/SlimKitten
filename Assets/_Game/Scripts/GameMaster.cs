@@ -4,6 +4,7 @@ using System;
 using System.IO;
 using System.Runtime.Serialization.Formatters.Binary;
 using UnityEngine.UI;
+using UnityEngine.Advertisements;
 
 
 
@@ -40,6 +41,7 @@ public class GameMaster : MonoBehaviour {
 	private int nextNum;
 
 	void Start () {
+		Advertisement.Initialize ("26283");
 		nextNum = 0;
 		gameOver = false;
 		restart = false;
