@@ -63,6 +63,11 @@ public class PowerButtons : TouchManager {
 	{
 			script.enabled = false;
 	}
+
+	void toggle()
+	{
+			Completed = !Completed;
+	}
 	//just a copy of the OnFirstTouch settings so that it will register two touches
 	void OnSecondTouch ()
 		{
@@ -82,6 +87,7 @@ public class PowerButtons : TouchManager {
 					
 					Instantiate(barrierPrefab, player.transform.position = new Vector3 (player.transform.position.x, player.transform.position.y + 10, player.transform.position.z), new Quaternion(rotationValues.x, rotationValues.y, rotationValues.z, rotationValues.w));
 					Completed = true;
+					Invoke("toggle", 1);
 					Destroy(barrierPrefab, 3.0f);
 				}
 			}
