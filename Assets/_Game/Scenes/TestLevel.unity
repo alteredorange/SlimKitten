@@ -718,6 +718,7 @@ MonoBehaviour:
   player: {fileID: 0}
   rotationValues: {x: 0, y: 0, z: 0, w: 0}
   deactivateTime: 1
+  delay: 2
 --- !u!131 &626892156
 GUITexture:
   m_ObjectHideFlags: 0
@@ -1468,6 +1469,7 @@ MonoBehaviour:
   player: {fileID: 0}
   rotationValues: {x: 0, y: 0, z: 0, w: 0}
   deactivateTime: 2
+  delay: 2
 --- !u!131 &1422570940
 GUITexture:
   m_ObjectHideFlags: 0
@@ -1547,6 +1549,7 @@ MonoBehaviour:
   player: {fileID: 1535715638}
   rotationValues: {x: 0, y: -90, z: 0, w: 90}
   deactivateTime: 2
+  delay: 2
 --- !u!131 &1439843726
 GUITexture:
   m_ObjectHideFlags: 0
