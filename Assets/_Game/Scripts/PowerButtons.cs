@@ -10,6 +10,12 @@ public class PowerButtons : TouchManager {
 	public button buttonType;
 		public ParticleSystem Explosion1;
 		public AudioClip Meow;
+		public GameObject barrierPrefab;
+		public GameObject player;
+		public Quaternion rotationValues;
+		bool Completed = false;
+		public static int barrier = 0;
+		private Vector3 way;
 
 		public int deactivateTime;
 		Weapon script;
@@ -18,6 +24,7 @@ public class PowerButtons : TouchManager {
 	void Update () {
 	
 		TouchInput ();
+		Destroy (barrierPrefab);
 
 		}
 		
@@ -37,8 +44,18 @@ public class PowerButtons : TouchManager {
 				Invoke("disable", deactivateTime);
 		} else if (buttonType == button.ButtonThree) {
 
+
+				if (PowerButtons.barrier == 0 && Completed == false ) 
+
+				{
+					way = player.transform.position;
+					Instantiate(barrierPrefab, way = new Vector3 (way.x, way.y + 10, way.z), new Quaternion(rotationValues.x, rotationValues.y, rotationValues.z, rotationValues.w));
+					Completed = true;
+
+				}
 		}
 	}
+
 
 
 
@@ -58,8 +75,20 @@ public class PowerButtons : TouchManager {
 				Invoke("disable", deactivateTime);
 			} else if (buttonType == button.ButtonThree) {
 				
+				
+				if (PowerButtons.barrier == 0 && Completed == false ) 
+					
+				{
+					
+					Instantiate(barrierPrefab, player.transform.position = new Vector3 (player.transform.position.x, player.transform.position.y + 10, player.transform.position.z), new Quaternion(rotationValues.x, rotationValues.y, rotationValues.z, rotationValues.w));
+					Completed = true;
+					Destroy(barrierPrefab, 3.0f);
+				}
 			}
 		}
 
-	}
 }
+}
+
+
+	

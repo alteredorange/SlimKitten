@@ -52,16 +52,21 @@ public class Enemy : MonoBehaviour {
 	//If Enemy collides with cat, it will cause an explosion, play a sound, destroy the cat and cause "Game Over"
 	private void OnTriggerEnter2D(Collider2D other)
 	{
-		if (other.tag == "Player" && !gameMaster.invincible)
-		{
+		if (other.tag == "Player" && !gameMaster.invincible) {
 
-			Instantiate(playerExplosion, other.transform.position, other.transform.rotation);
-			AudioSource.PlayClipAtPoint(Boom, transform.position);
-			Destroy(other.gameObject);
+			Instantiate (playerExplosion, other.transform.position, other.transform.rotation);
+			AudioSource.PlayClipAtPoint (Boom, transform.position);
+			Destroy (other.gameObject);
 			gameMaster.GameOver ();
-		}
-	}
+		} else if (other.tag == "Barricade") {
+			gameMaster.AddScore (scoreValue * 3);
+			Instantiate (playerExplosion, other.transform.position, other.transform.rotation);
+			AudioSource.PlayClipAtPoint (Boom, transform.position);
+			Destroy (gameObject);
+		
 
+		} 
+	}
 
 	
 }
