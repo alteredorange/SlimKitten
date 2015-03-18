@@ -1,44 +1,29 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System.Collections.Generic;
 
 public class PowerUp : MonoBehaviour {
+	public string Name;
+	public float duration;
+	public bool enabled;
 
-	private GameObject gameMasterObject;
-	private GameMaster gameMaster;
-	public GameObject Player;
-	// Use this for initialization
-	void Start () {
+	public void setUp(string name)
+	{
+		Name = name;
 
-		gameMasterObject = GameObject.FindWithTag ("GameController");
-		if (gameMasterObject != null) {
-			gameMaster = gameMasterObject.GetComponent <GameMaster>();
-		}
-		if (gameMaster == null) {
-			Debug.Log ("cannot find GameMaster Script");
-		}
-
+	}
 
 	
-	}
 
-
-	private void OnTriggerEnter2D(Collider2D other)
+	public void Add(List<PowerUp> @powerList)
 	{
-		if (other.tag == "Player")
-		{
-
-			Invincibility();
-			Destroy(gameObject);
-		}
+		powerList.Add (this);
 	}
-	void Invincibility()
+
+	public void Remove(List<PowerUp> @powerList)
 	{
-		gameMaster.invincible = true;
+		powerList.Remove (this);
+	}
 
 
-	}
-	// Update is called once per frame
-	void Update () {
-	
-	}
 }

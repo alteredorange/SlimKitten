@@ -40,12 +40,13 @@ public class KeyboardBindings : PowerButtons {
 
 		}
 }
-
+	
 		void disable()
 		{
 			script.enabled = false;
 			Completed = false;
 		}
+	
 
 }
 }
