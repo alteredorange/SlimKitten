@@ -6,7 +6,7 @@ namespace UnityStandardAssets._2D
 {
 public class KeyboardBindings : PowerButtons {
 
-
+		public int deactivateTime;
 		private Vector3 way;
 
 		bool Completed = false;
@@ -39,8 +39,18 @@ public class KeyboardBindings : PowerButtons {
 
 
 		}
+
+			if (Input.GetKeyDown (KeyCode.Y)) {
+				Enemy.GetComponent<Rigidbody2D>().gravityScale = 3.0f;
+				Invoke("disableGravity", deactivateTime);
+			}
 }
 	
+		void disableGravity () {
+			Enemy.GetComponent<Rigidbody2D> ().gravityScale = 15.0f;
+		}
+
+
 		void disable()
 		{
 			script.enabled = false;

@@ -721,7 +721,9 @@ MonoBehaviour:
   barrierPrefab: {fileID: 0}
   player: {fileID: 0}
   rotationValues: {x: 0, y: 0, z: 0, w: 0}
+  Enemy: {fileID: 0}
   deactivateTime: 1
+  gravityCar: {fileID: 0}
 --- !u!131 &626892156
 GUITexture:
   m_ObjectHideFlags: 0
@@ -894,11 +896,11 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 100002, guid: 999388b68bb99b44099461bfbed94358, type: 2}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 100004, guid: 999388b68bb99b44099461bfbed94358, type: 2}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 100000, guid: 999388b68bb99b44099461bfbed94358, type: 2}
       propertyPath: m_IsActive
@@ -1293,7 +1295,9 @@ MonoBehaviour:
   barrierPrefab: {fileID: 142168, guid: 77e28f52594cb6e4e93843097465a4bc, type: 2}
   player: {fileID: 1535715638}
   rotationValues: {x: 0, y: -90, z: 0, w: 90}
-  deactivateTime: 2
+  Enemy: {fileID: 0}
+  deactivateTime: 5
+  gravityCar: {fileID: 0}
 --- !u!131 &938545883
 GUITexture:
   m_ObjectHideFlags: 0
@@ -1685,7 +1689,9 @@ MonoBehaviour:
   barrierPrefab: {fileID: 0}
   player: {fileID: 0}
   rotationValues: {x: 0, y: 0, z: 0, w: 0}
+  Enemy: {fileID: 0}
   deactivateTime: 2
+  gravityCar: {fileID: 0}
 --- !u!131 &1404260241
 GUITexture:
   m_ObjectHideFlags: 0
@@ -1741,7 +1747,9 @@ MonoBehaviour:
   barrierPrefab: {fileID: 0}
   player: {fileID: 0}
   rotationValues: {x: 0, y: 0, z: 0, w: 0}
+  Enemy: {fileID: 143396, guid: e50a7abaf1c3c3f48bce377045c78ae8, type: 2}
   deactivateTime: 2
+  gravityCar: {fileID: 0}
 --- !u!131 &1422570940
 GUITexture:
   m_ObjectHideFlags: 0
@@ -1821,7 +1829,9 @@ MonoBehaviour:
   barrierPrefab: {fileID: 142168, guid: 77e28f52594cb6e4e93843097465a4bc, type: 2}
   player: {fileID: 1535715638}
   rotationValues: {x: 0, y: -90, z: 0, w: 90}
+  Enemy: {fileID: 0}
   deactivateTime: 2
+  gravityCar: {fileID: 0}
 --- !u!131 &1439843726
 GUITexture:
   m_ObjectHideFlags: 0
@@ -2176,7 +2186,10 @@ MonoBehaviour:
   barrierPrefab: {fileID: 142168, guid: 77e28f52594cb6e4e93843097465a4bc, type: 2}
   player: {fileID: 1535715638}
   rotationValues: {x: 0, y: -90, z: 0, w: 90}
+  Enemy: {fileID: 143396, guid: e50a7abaf1c3c3f48bce377045c78ae8, type: 2}
   deactivateTime: 2
+  gravityCar: {fileID: 0}
+  deactivateTime: 5
 --- !u!114 &1680914617
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2191,7 +2204,7 @@ MonoBehaviour:
   Name: t
   duration: 5
   enabled: 1
-  invincibility: {fileID: 1329905982}
+  invincibility: {fileID: 1535715638}
   curPowerUps: []
 --- !u!114 &1680914618
 MonoBehaviour:
@@ -2309,19 +2322,21 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1798882473}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e4ed507e9558eaa43829fa8ed9f9a417, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   weaponThing: {fileID: 0}
-  buttonType: 0
+  buttonType: 5
   Explosion1: {fileID: 2140360201}
   Meow: {fileID: 0}
   barrierPrefab: {fileID: 0}
   player: {fileID: 0}
   rotationValues: {x: 0, y: 0, z: 0, w: 0}
+  Enemy: {fileID: 143396, guid: e50a7abaf1c3c3f48bce377045c78ae8, type: 2}
   deactivateTime: 2
+  gravityCar: {fileID: 0}
 --- !u!131 &1798882476
 GUITexture:
   m_ObjectHideFlags: 0
