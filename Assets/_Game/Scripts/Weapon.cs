@@ -6,7 +6,9 @@ public class Weapon : MonoBehaviour {
 	public float fireRate = 0;
 	public int Damage = 10;
 	public LayerMask whatToHit;
-	
+
+	public GameObject barCar;
+
 	public Transform BulletTrailPrefab;
 	public Transform MuzzleFlashPrefab;
 	float timeToSpawnEffect = 0;
@@ -49,12 +51,22 @@ public class Weapon : MonoBehaviour {
 		}
 		Debug.DrawLine (firePointPosition, (mousePosition-firePointPosition)*100, Color.cyan);
 		if (hit.collider != null) {
-			Debug.DrawLine (firePointPosition, hit.point, Color.red);
+
 			Enemy enemy = hit.collider.GetComponent <Enemy>();
-			if (enemy != null) {
+
+			if (hit.collider.name == "Enemy") {
+
 				enemy.DamageEnemy (Damage);
-				Debug.Log ("We hit " + hit.collider.name + " and did " + Damage + " damage.");
 			}
+
+			//GameObject gameMasterObject = GameObject.FindWithTag ("GameController");
+
+			//Enemy enemy = hit.collider.GetComponent <Enemy>();
+			//Destroy(GameObject.Find(hit.collider.gameObject.name));
+			//if (enemy != null) {
+			//	enemy.DamageEnemy (Damage);
+			//	Debug.Log ("We hit " + hit.collider.name + " and did " + Damage + " damage.");
+			//}
 		}
 	}
 	

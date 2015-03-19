@@ -13,6 +13,8 @@ TagManager:
   - Barricade
   - Invinc
   - Bomb
+  - Weapon
+  - Boundary
   layers:
   - Default
   - TransparentFX

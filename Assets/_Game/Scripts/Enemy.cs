@@ -75,6 +75,14 @@ public class Enemy : MonoBehaviour {
 			Destroy (gameObject);
 			Destroy (other.transform.parent.gameObject);
 	}
+		//gun shots?
+		else if (other.tag == "Weapon") {
+			gameMaster.AddScore (scoreValue * 3);
+			Instantiate (playerExplosion, other.transform.position, other.transform.rotation);
+			AudioSource.PlayClipAtPoint (Boom, transform.position);
+			Destroy (gameObject);
+			Destroy (other.transform.parent.gameObject);
+		}
 
 	
 }
