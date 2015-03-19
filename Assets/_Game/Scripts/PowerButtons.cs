@@ -6,8 +6,8 @@ namespace UnityStandardAssets._2D
 public class PowerButtons : TouchManager {
 	
 		public GameObject weaponThing;
-	public enum button{Invincible, Gun, Roadblock, Lives, Bomb, Gravity};
-	public button buttonType;
+		public enum button{Invincible, Gun, Roadblock, Lives, Bomb, Gravity};
+		public button buttonType;
 		public ParticleSystem Explosion1;
 		public AudioClip Meow;
 		public GameObject barrierPrefab;
@@ -19,9 +19,10 @@ public class PowerButtons : TouchManager {
 		public GameObject Enemy; 
 		public int deactivateTime;
 		Weapon script;
-
+		public GameObject bombPrefab;
+		private Vector3 bombway;
 		public Component gravityCar;
-	
+		public Quaternion bombQuat;
 
 	
 
@@ -47,60 +48,57 @@ public class PowerButtons : TouchManager {
 		
 			//Invincibility Button Code
 			if (buttonType == button.Invincible) {
-				Enemy.GetComponent<Rigidbody2D>().gravityScale = 3.0f;
+				Enemy.GetComponent<Rigidbody2D> ().gravityScale = 3.0f;
 				
-				Invoke("disable", deactivateTime);
+				Invoke ("disable", deactivateTime);
 				
 			}
 			//Gun Button code
 			else if (buttonType == button.Gun) {
 
-				script = weaponThing.GetComponent<Weapon>();
+				script = weaponThing.GetComponent<Weapon> ();
 				script.enabled = true;
-				Invoke("disable", deactivateTime);
+				Invoke ("disable", deactivateTime);
 		
 			}
 			//Barricade Button Code
 			else if (buttonType == button.Roadblock) {
 
 
-				if (PowerButtons.barrier == 0 && Completed == false ) 
-
-				{
+				if (PowerButtons.barrier == 0 && Completed == false) {
 					way = player.transform.position;
-					Instantiate(barrierPrefab, way = new Vector3 (way.x, way.y + 10, way.z), new Quaternion(rotationValues.x, rotationValues.y, rotationValues.z, rotationValues.w));
+					Instantiate (barrierPrefab, way = new Vector3 (way.x, way.y + 10, way.z), new Quaternion (rotationValues.x, rotationValues.y, rotationValues.z, rotationValues.w));
 					Completed = true;
 
 				}
-		} 
+			} 
 			//Lives Button Code
 			else if (buttonType == button.Lives) {
 			
-			script = weaponThing.GetComponent<Weapon>();
-			script.enabled = true;
-			Invoke("disable", deactivateTime);
+				script = weaponThing.GetComponent<Weapon> ();
+				script.enabled = true;
+				Invoke ("disable", deactivateTime);
 			
 			
-		}
+			}
 		//Bomb Button Code
-		 else if (buttonType == button.Bomb) {
-			
-		
-			
-		
-		}
+
+				else if (buttonType == button.Bomb) {
+					if (PowerButtons.barrier == 0 && Completed == false) {
+						bombway = player.transform.position;
+						Instantiate (bombPrefab, bombway = new Vector3 (bombway.x, bombway.y + 20, bombway.z), bombQuat = new Quaternion (bombQuat.x, bombQuat.y, bombQuat.z, bombQuat.w));
+						Completed = true;
+						Invoke ("disable", deactivateTime);
+					}
+					
+				}
 		//Gravity Button Code
 		 else if (buttonType == button.Gravity) {
 			
-				Enemy.GetComponent<Rigidbody2D>().gravityScale = 3.0f;
-				Invoke("disableGravity", deactivateTime);
-
-
+				Enemy.GetComponent<Rigidbody2D> ().gravityScale = 3.0f;
+				Invoke ("disableGravity", deactivateTime);
+			}
 		}
-
-
-
-	}
 
 
 	void disableGravity () {
@@ -121,62 +119,64 @@ public class PowerButtons : TouchManager {
 	//just a copy of the OnFirstTouch settings so that it will register two touches
 	void OnSecondTouch ()
 		{
-			
-			//Invincibility Button Code
-			if (buttonType == button.Invincible) {
-				Explosion1.Play ();
 				
-			}
-			//Gun Button code
-			else if (buttonType == button.Gun) {
-				
-				script = weaponThing.GetComponent<Weapon>();
-				script.enabled = true;
-				Invoke("disable", deactivateTime);
-				
-			}
-			//Barricade Button Code
-			else if (buttonType == button.Roadblock) {
-				
-				
-				if (PowerButtons.barrier == 0 && Completed == false ) 
+				//Invincibility Button Code
+				if (buttonType == button.Invincible) {
+					Enemy.GetComponent<Rigidbody2D> ().gravityScale = 3.0f;
 					
-				{
-					way = player.transform.position;
-					Instantiate(barrierPrefab, way = new Vector3 (way.x, way.y + 10, way.z), new Quaternion(rotationValues.x, rotationValues.y, rotationValues.z, rotationValues.w));
-					Completed = true;
+					Invoke ("disable", deactivateTime);
 					
 				}
-			} 
-			//Lives Button Code
-			else if (buttonType == button.Lives) {
+				//Gun Button code
+				else if (buttonType == button.Gun) {
+					
+					script = weaponThing.GetComponent<Weapon> ();
+					script.enabled = true;
+					Invoke ("disable", deactivateTime);
+					
+				}
+				//Barricade Button Code
+				else if (buttonType == button.Roadblock) {
+					
+					
+					if (PowerButtons.barrier == 0 && Completed == false) {
+						way = player.transform.position;
+						Instantiate (barrierPrefab, way = new Vector3 (way.x, way.y + 10, way.z), new Quaternion (rotationValues.x, rotationValues.y, rotationValues.z, rotationValues.w));
+						Completed = true;
+					Invoke ("disable", deactivateTime);
+					}
+				} 
+				//Lives Button Code
+				else if (buttonType == button.Lives) {
+					
+					script = weaponThing.GetComponent<Weapon> ();
+					script.enabled = true;
+					Invoke ("disable", deactivateTime);
+					
+					
+				}
+				//Bomb Button Code
+				else if (buttonType == button.Bomb) {
+					if (PowerButtons.barrier == 0 && Completed == false) {
+					bombway = player.transform.position;
+					Instantiate (bombPrefab, bombway = new Vector3 (bombway.x, bombway.y + 20, bombway.z), bombQuat = new Quaternion (bombQuat.x, bombQuat.y, bombQuat.z, bombQuat.w));
+					Completed = true;
+					Invoke ("disable", deactivateTime);
+					}
 				
-				script = weaponThing.GetComponent<Weapon>();
-				script.enabled = true;
-				Invoke("disable", deactivateTime);
-				
-				
+				}
+				//Gravity Button Code
+				else if (buttonType == button.Gravity) {
+					
+					Enemy.GetComponent<Rigidbody2D> ().gravityScale = 3.0f;
+					Invoke ("disableGravity", deactivateTime);
+				}
 			}
-			//Bomb Button Code
-			else if (buttonType == button.Bomb) {
-				
-				
-				
-				
-			}
-			//Gravity Button Code
-			else if (buttonType == button.Gravity) {
-				
-				Enemy.GetComponent<Rigidbody2D>().gravityScale = 3.0f;
-				Invoke("disableGravity", deactivateTime);
-				
-			}
-			
-			
-			
-		}
+
+
 }
 }
+	
 
 
 	

@@ -12,7 +12,8 @@ public class Enemy : MonoBehaviour {
 	public class EnemyStats {
 	public int Health = 100;
 	}
-	
+	public GameObject bomb;
+
 	public EnemyStats stats = new EnemyStats();
 	
 	public int fallBoundary = -20;
@@ -58,15 +59,23 @@ public class Enemy : MonoBehaviour {
 			AudioSource.PlayClipAtPoint (Boom, transform.position);
 			Destroy (other.gameObject);
 			gameMaster.GameOver ();
-		} else if (other.tag == "Barricade") {
+					}
+		//Enemy collidges with Barricade
+		else if (other.tag == "Barricade") {
 			gameMaster.AddScore (scoreValue * 3);
 			Instantiate (playerExplosion, other.transform.position, other.transform.rotation);
 			AudioSource.PlayClipAtPoint (Boom, transform.position);
 			Destroy (gameObject);
-		
-
-		} 
+		}
+		//Eney collides with Bomb
+		else if (other.tag == "Bomb") {
+			gameMaster.AddScore (scoreValue * 3);
+			Instantiate (playerExplosion, other.transform.position, other.transform.rotation);
+			AudioSource.PlayClipAtPoint (Boom, transform.position);
+			Destroy (gameObject);
+			Destroy (other.transform.parent.gameObject);
 	}
 
 	
+}
 }

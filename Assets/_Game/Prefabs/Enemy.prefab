@@ -95,6 +95,7 @@ GameObject:
   - 50: {fileID: 5074712}
   - 114: {fileID: 11495454}
   - 61: {fileID: 6105596}
+  - 114: {fileID: 11461412}
   m_Layer: 11
   m_Name: Enemy
   m_TagString: Enemy
@@ -405,6 +406,20 @@ BoxCollider2D:
   m_Offset: {x: 0, y: -.00444640964}
   serializedVersion: 2
   m_Size: {x: 1, y: .931824625}
+--- !u!114 &11461412
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 143396}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 078a643d7584abc4aaa274051e917259, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerExplosion: {fileID: 0}
+  scoreValue: 0
+  Boom: {fileID: 0}
 --- !u!114 &11495454
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -420,6 +435,7 @@ MonoBehaviour:
   explosion: {fileID: 109120, guid: f90da8e86297562498af218c5710d686, type: 2}
   playerExplosion: {fileID: 109120, guid: f90da8e86297562498af218c5710d686, type: 2}
   scoreValue: 1
+  bomb: {fileID: 196202, guid: a0617b29599db944391db09649f56ada, type: 2}
   stats:
     Health: 33
   fallBoundary: -25

@@ -8,10 +8,10 @@ public class KeyboardBindings : PowerButtons {
 
 		public int deactivateTime;
 		private Vector3 way;
-
+		private Vector3 bombway;
 		bool Completed = false;
 		Weapon script;
-
+		public Quaternion bombQuat;
 	// Use this for initialization
 	void Start () {
 		
@@ -44,7 +44,13 @@ public class KeyboardBindings : PowerButtons {
 				Enemy.GetComponent<Rigidbody2D>().gravityScale = 3.0f;
 				Invoke("disableGravity", deactivateTime);
 			}
-}
+
+		if (Input.GetKeyDown (KeyCode.U)) {
+				bombway = player.transform.position;
+				Instantiate(bombPrefab, bombway = new Vector3 (bombway.x, bombway.y + 20, bombway.z), bombQuat = new Quaternion(bombQuat.x, bombQuat.y, bombQuat.z, bombQuat.w));
+		}
+	}
+
 	
 		void disableGravity () {
 			Enemy.GetComponent<Rigidbody2D> ().gravityScale = 15.0f;

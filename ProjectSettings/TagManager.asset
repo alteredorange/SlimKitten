@@ -12,6 +12,7 @@ TagManager:
   - Exploder
   - Barricade
   - Invinc
+  - Bomb
   layers:
   - Default
   - TransparentFX
