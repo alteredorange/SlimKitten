@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using UnityEngine.Advertisements;
 
 public class CatLives : MonoBehaviour {
 
@@ -26,7 +27,12 @@ public class CatLives : MonoBehaviour {
 		var_TotalInvinc = TotalInvinc;
 		var_TotalGuns = TotalGuns;
 		var_TotalBarriers = TotalBarriers;
-	}
+
+		Advertisement.Initialize ("26283");
+		}
+		
+		
+
 	
 	// Update is called once per frame
 	void Update () {
@@ -38,4 +44,40 @@ public class CatLives : MonoBehaviour {
 		var_TotalGuns = TotalGuns;
 		var_TotalBarriers = TotalBarriers;
 	}
+
+
+	public void buyLives (){
+		TotalLives += 1.0f;
+	}
+
+	public void buyInvinc (){
+		TotalInvinc += 1.0f;
+	}
+	public void buyGuns (){
+		TotalGuns += 1.0f;
+	}
+	public void buyBarries (){
+		TotalBarriers += 1.0f;
+	}
+	public void buyBombs (){
+		TotalBombs += 1.0f;
+	}
+	public void buySlows (){
+		TotalSlows += 1.0f;
+	}
+
+	public void freeCoins (){
+		if (Advertisement.isReady ()) {
+			Advertisement.Show (null, new ShowOptions {
+			resultCallback = result => {
+				Debug.Log(result.ToString());
+			}
+		});
+		}
+	}
+
+
 }
+
+
+
