@@ -12,6 +12,9 @@ public class GameMaster : MonoBehaviour {
 
 	public Text scoreText;
 	public Text gameOverText;
+	public GameObject shop;
+	public GameObject restartButton;
+
 	//public Text hsText;
 	public GameObject cars;
 
@@ -22,8 +25,12 @@ public class GameMaster : MonoBehaviour {
 	public float startWait;
 	public float waveWait;
 
+	private GameObject allEnemy;
+
 	private bool gameOver;
 	private bool restart;
+	private bool shopButtonBool;
+
 	private int score;
 	private int highScore;
 
@@ -37,7 +44,7 @@ public class GameMaster : MonoBehaviour {
 	public int highScoreTest;
 
 	public bool invincible;
-
+	private int i = 0;
 	private int nextNum;
 
 	void Start () {
@@ -45,7 +52,12 @@ public class GameMaster : MonoBehaviour {
 		nextNum = 0;
 		gameOver = false;
 		restart = false;
+		shopButtonBool = false;
 		gameOverText.text = "";
+
+		shop.SetActive (false);
+		restartButton.SetActive (false);
+
 		//hsText.text = "";
 		score = 0;
 		//invincible = false;
@@ -85,16 +97,16 @@ public class GameMaster : MonoBehaviour {
 	{
 		if (restart)
 		{
-			if (Input.touchCount > 0)
+			if (Input.touchCount > 1)
 			{
 				Application.LoadLevel (Application.loadedLevel);
 			}
 		}
 
-		if(invincible)
-		{
-			InvokeRepeating("invincibleOff", 0, 1);
-		}
+		//if(invincible)
+		//{
+			//InvokeRepeating("invincibleOff", 0, 1);
+		//}
 	}
 
 	IEnumerator SpawnWaves () 
@@ -128,6 +140,26 @@ public class GameMaster : MonoBehaviour {
 	}
 
 	public void GameOver () {
+
+		//GameObject[] allEnemy = GameObject.FindGameObjectsWithTag ("Enemy");
+	
+		//foreach(GameObject item in allEnemy)
+		//{
+		//	Destroy(allEnemy);
+		//}
+
+
+
+		GameObject[] allEnemy = GameObject.FindGameObjectsWithTag ("Enemy") as GameObject[];
+		
+		for (int i = 0; i < allEnemy.Length; i++)
+		{
+			Destroy(allEnemy[i]);
+		}
+
+
+
+
 		if (PlayerPrefs.HasKey("HighScore")) {
 			if(score > highScoreTest)
 			{
@@ -150,9 +182,11 @@ public class GameMaster : MonoBehaviour {
 		}
 		
 		PlayerPrefs.Save ();
-		gameOverText.text = "Game Over" + Environment.NewLine + "High Score: " + highScore + Environment.NewLine + "Tap Anywhere to Restart";
+		gameOverText.text = "Game Over" + Environment.NewLine + "High Score: " + highScore;
 		//hsText.text = "High Score: " + highScoreTest;
 
+		shop.SetActive (true);
+		restartButton.SetActive (true);
 		gameOver = true;
 	}
 

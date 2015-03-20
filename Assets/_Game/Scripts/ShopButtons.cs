@@ -24,12 +24,18 @@ namespace UnityStandardAssets._2D
 				
 			}
 			
+		public void StartGame () {
+		Application.LoadLevel ("Shop");
+	}
+		public void ReloadLevel () {
+			Application.LoadLevel (Application.loadedLevel);
+		}
 			
 			
-			void OnFirstTouch ()
+			void OnFirstTouchBegan ()
 			{
 				if (buttonType == button.ShopOne) {
-				Application.LoadLevel ("TestLevel"); 
+				Application.LoadLevel ("Shop"); 
 			} else if (buttonType == button.ShopTwo) {
 			
 				if(Advertisement.isReady()){ Advertisement.Show( null, new ShowOptions {
@@ -52,10 +58,10 @@ namespace UnityStandardAssets._2D
 			
 			
 			//just a copy of the OnFirstTouch settings so that it will register two touches
-			void OnSecondTouch ()
+			void OnSecondTouchBegan ()
 		{
 			if (buttonType == button.ShopOne) {
-				Application.LoadLevel ("TestLevel"); 
+				Application.LoadLevel ("Shop"); 
 			} else if (buttonType == button.ShopTwo) {
 				
 				

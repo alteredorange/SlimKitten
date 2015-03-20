@@ -30,6 +30,7 @@ public class PowerButtons : TouchManager {
 		bool bombButtonBool = false;
 		bool barricadeButtonBool = false;
 		bool gravityButtonBool = false;
+		bool invicButtonBool = false;
 
 		public GameMaster gameMaster;
 
@@ -53,7 +54,7 @@ public class PowerButtons : TouchManager {
 		// Update is called once per frame
 	void Update () {
 		TouchInput ();
-		Destroy (barrierPrefab);
+		//Destroy (barrierPrefab);
 		}
 		
 
@@ -61,20 +62,29 @@ public class PowerButtons : TouchManager {
 
 
 
-	void OnFirstTouch ()
+	void OnFirstTouchBegan ()
 		{
 			
 			//Invincibility Button Code
 			if (buttonType == button.Invincible) {
+				if (invicButtonBool == false) {
 				if (CatLives.TotalInvinc > 0f) {
 					
-					gameMaster.GetComponent<GameMaster> ().invincible = true;
 					invincibilityVFX.GetComponent<ParticleSystem>().Play();
+					gameMaster.GetComponent<GameMaster> ().invincible = true;
+					CatLives.TotalInvinc -= 1f;
+					Invoke ("invincibleDisable", deactivateTime);
+					invicButtonBool = true;
 
-				} else {
+				}
+				else {
 					AudioSource.PlayClipAtPoint (Meow, transform.position);
 				}
+				}
 			}
+
+
+			
 			//Gun Button code
 			else if (buttonType == button.Gun) {
 				
@@ -108,11 +118,11 @@ public class PowerButtons : TouchManager {
 					} else {
 						AudioSource.PlayClipAtPoint (Meow, transform.position);
 					}
-					}
+				}
 			}
 				//Lives Button Code
 				else if (buttonType == button.Lives) {
-					
+
 			}
 				//Bomb Button Code
 				
@@ -121,7 +131,7 @@ public class PowerButtons : TouchManager {
 					if (CatLives.TotalBombs > 0f) {
 
 						bombway = player.transform.position;
-						Instantiate (bombPrefab, bombway = new Vector3 (bombway.x, bombway.y + 20, bombway.z), bombQuat = new Quaternion (bombQuat.x, bombQuat.y, bombQuat.z, bombQuat.w));
+						Instantiate (bombPrefab, bombway = new Vector3 (bombway.x, bombway.y + 25, bombway.z), bombQuat = new Quaternion (bombQuat.x, bombQuat.y, bombQuat.z, bombQuat.w));
 						Invoke ("bombDisable", deactivateTime);
 						CatLives.TotalBombs -= 1f;
 						bombButtonBool = true;
@@ -134,8 +144,8 @@ public class PowerButtons : TouchManager {
 				else if (buttonType == button.Gravity) {
 				if (gravityButtonBool == false) {
 					if (CatLives.TotalSlows > 0f) {
-						Enemy.GetComponent<Rigidbody2D> ().gravityScale = 3.0f;
-						gameMaster.GetComponent<GameMaster> ().spawnWait = 1.0f;
+						Enemy.GetComponent<Rigidbody2D> ().gravityScale = 1.0f;
+						gameMaster.GetComponent<GameMaster> ().spawnWait = 1.5f;
 						Invoke ("gravityDisable", deactivateTime);
 						CatLives.TotalSlows -= 1f;
 						gravityButtonBool = true;
@@ -146,9 +156,13 @@ public class PowerButtons : TouchManager {
 			}
 		}
 
+	void invincibleDisable () {
+			gameMaster.GetComponent<GameMaster> ().invincible = false;
+			invicButtonBool = false;
+		}
+
 	void gravityDisable () {
 			gameMaster.GetComponent<GameMaster> ().spawnWait = .25f;
-			//gameMaster.GetComponent<GameMaster> ().spawnWait = 0.25f;
 			Enemy.GetComponent<Rigidbody2D> ().gravityScale = 15.0f;
 				gravityButtonBool = false;
 		}
@@ -182,15 +196,24 @@ public class PowerButtons : TouchManager {
 			
 			//Invincibility Button Code
 			if (buttonType == button.Invincible) {
-				if (CatLives.TotalInvinc > 0f) {
-				
-				gameMaster.GetComponent<GameMaster> ().invincible = true;
-				
-				Invoke ("disable", deactivateTime);
-				} else {
-					AudioSource.PlayClipAtPoint (Meow, transform.position);
+				if (invicButtonBool == false) {
+					if (CatLives.TotalInvinc > 0f) {
+						
+						invincibilityVFX.GetComponent<ParticleSystem>().Play();
+						gameMaster.GetComponent<GameMaster> ().invincible = true;
+						CatLives.TotalInvinc -= 1f;
+						Invoke ("invincibleDisable", deactivateTime);
+						invicButtonBool = true;
+						
+					}
+					else {
+						AudioSource.PlayClipAtPoint (Meow, transform.position);
+					}
 				}
 			}
+			
+			
+			
 			//Gun Button code
 			else if (buttonType == button.Gun) {
 				
@@ -229,6 +252,7 @@ public class PowerButtons : TouchManager {
 			//Lives Button Code
 			else if (buttonType == button.Lives) {
 				
+				return;
 			}
 			//Bomb Button Code
 			
@@ -237,7 +261,7 @@ public class PowerButtons : TouchManager {
 					if (CatLives.TotalBombs > 0f) {
 						
 						bombway = player.transform.position;
-						Instantiate (bombPrefab, bombway = new Vector3 (bombway.x, bombway.y + 20, bombway.z), bombQuat = new Quaternion (bombQuat.x, bombQuat.y, bombQuat.z, bombQuat.w));
+						Instantiate (bombPrefab, bombway = new Vector3 (bombway.x, bombway.y + 25, bombway.z), bombQuat = new Quaternion (bombQuat.x, bombQuat.y, bombQuat.z, bombQuat.w));
 						Invoke ("bombDisable", deactivateTime);
 						CatLives.TotalBombs -= 1f;
 						bombButtonBool = true;
@@ -250,8 +274,8 @@ public class PowerButtons : TouchManager {
 			else if (buttonType == button.Gravity) {
 				if (gravityButtonBool == false) {
 					if (CatLives.TotalSlows > 0f) {
-						Enemy.GetComponent<Rigidbody2D> ().gravityScale = 3.0f;
-						gameMaster.GetComponent<GameMaster> ().spawnWait = 1.0f;
+						Enemy.GetComponent<Rigidbody2D> ().gravityScale = 1.0f;
+						gameMaster.GetComponent<GameMaster> ().spawnWait = 1.5f;
 						Invoke ("gravityDisable", deactivateTime);
 						CatLives.TotalSlows -= 1f;
 						gravityButtonBool = true;
