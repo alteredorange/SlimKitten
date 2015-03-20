@@ -141,7 +141,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 127878}
   m_LocalRotation: {x: .70710659, y: 0, z: 0, w: -.707106948}
-  m_LocalPosition: {x: -23.0164089, y: 6.11434841, z: 0}
+  m_LocalPosition: {x: -23.0164089, y: 6.11434841, z: -20}
   m_LocalScale: {x: 4, y: 4, z: 4}
   m_Children:
   - {fileID: 476816}
@@ -409,10 +409,12 @@ MonoBehaviour:
   Boom: {fileID: 8300000, guid: 870f9e88aa8c14d4fa8e42754da1422c, type: 3}
   explosion: {fileID: 109120, guid: f90da8e86297562498af218c5710d686, type: 2}
   playerExplosion: {fileID: 109120, guid: f90da8e86297562498af218c5710d686, type: 2}
+  playerSmoke: {fileID: 163864, guid: fc5af96f173e53041a7e940ef55ffce8, type: 2}
   scoreValue: 1
   bomb: {fileID: 196202, guid: a0617b29599db944391db09649f56ada, type: 2}
   stats:
     Health: 33
+  lives: 2
   fallBoundary: -25
 --- !u!114 &11434934
 MonoBehaviour:

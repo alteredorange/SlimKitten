@@ -104,7 +104,7 @@ public class GameMaster : MonoBehaviour {
 		while (true)
 		{
 			for (int i = 0; i < carsInWaveCount; i++) {
-				Vector3 spawnPosition = new Vector3 (UnityEngine.Random.Range (-spawnValues.x, spawnValues.x), spawnValues.y, spawnValues.z);
+				Vector3 spawnPosition = new Vector3 (UnityEngine.Random.Range (-spawnValues.x, spawnValues.x), spawnValues.y, 0);
 				Quaternion spawnRotation = new Quaternion (rotationValues.x, rotationValues.y, rotationValues.z, rotationValues.w);
 				Instantiate (cars, spawnPosition, spawnRotation);
 

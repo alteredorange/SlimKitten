@@ -6,18 +6,27 @@ public class Enemy : MonoBehaviour {
 	public AudioClip Boom;
 	public GameObject explosion;
 	public GameObject playerExplosion;
+	public GameObject playerSmoke;
 	public int scoreValue;
 	private GameMaster gameMaster;
+	private CatLives catLives;
+
 	[System.Serializable]
 	public class EnemyStats {
 	public int Health = 100;
 	}
 	public GameObject bomb;
 
+	private GameObject player;
+
 	public EnemyStats stats = new EnemyStats();
-	
+
+	public float lives = 2f;
+
+
 	public int fallBoundary = -20;
 
+	public static int TotalLives;
 
 	void Start () {
 		
@@ -28,6 +37,13 @@ public class Enemy : MonoBehaviour {
 		if (gameMaster == null) {
 			Debug.Log ("cannot find GameMaster Script");
 		}
+
+
+		GameObject playerObject = GameObject.FindWithTag ("Player");
+		if (playerObject != null) {
+			catLives = playerObject.GetComponent <CatLives>();
+		}
+		
 
 
 		}
@@ -55,11 +71,25 @@ public class Enemy : MonoBehaviour {
 	{
 		if (other.tag == "Player" && !gameMaster.invincible) {
 
+			//gameMaster.GetComponent<GameMaster> ().spawnWait = 1f;
+
+			if (CatLives.TotalLives > 0f) {
+				CatLives.TotalLives -= 1f;
+				Instantiate (playerSmoke, other.transform.position, other.transform.rotation);
+				return;
+
+
+			} else {
+			
+
 			Instantiate (playerExplosion, other.transform.position, other.transform.rotation);
 			AudioSource.PlayClipAtPoint (Boom, transform.position);
 			Destroy (other.gameObject);
 			gameMaster.GameOver ();
-					}
+			
+			}
+			}
+					
 		//Enemy collidges with Barricade
 		else if (other.tag == "Barricade") {
 			gameMaster.AddScore (scoreValue * 3);
@@ -68,7 +98,7 @@ public class Enemy : MonoBehaviour {
 			Destroy (gameObject);
 		}
 		//Eney collides with Bomb
-		else if (other.tag == "Bomb") {
+	else if (other.tag == "Bomb") {
 			gameMaster.AddScore (scoreValue * 3);
 			Instantiate (playerExplosion, other.transform.position, other.transform.rotation);
 			AudioSource.PlayClipAtPoint (Boom, transform.position);
@@ -86,4 +116,5 @@ public class Enemy : MonoBehaviour {
 
 	
 }
+
 }
