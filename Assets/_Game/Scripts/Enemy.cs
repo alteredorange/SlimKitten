@@ -82,14 +82,21 @@ public class Enemy : MonoBehaviour {
 			} else {
 			
 
-			Instantiate (playerExplosion, other.transform.position, other.transform.rotation);
-			AudioSource.PlayClipAtPoint (Boom, transform.position);
-			Destroy (other.gameObject);
-			gameMaster.GameOver ();
+				Instantiate (playerExplosion, other.transform.position, other.transform.rotation);
+				AudioSource.PlayClipAtPoint (Boom, transform.position);
+				Destroy (other.gameObject);
+				gameMaster.GameOver ();
 			
 			}
-			}
-					
+		} else if (other.tag == "Player" && gameMaster.invincible) {
+
+			gameMaster.AddScore (scoreValue * 3);
+			Instantiate (playerExplosion, other.transform.position, other.transform.rotation);
+			AudioSource.PlayClipAtPoint (Boom, transform.position);
+			Destroy (gameObject);
+
+		}
+
 		//Enemy collidges with Barricade
 		else if (other.tag == "Barricade") {
 			gameMaster.AddScore (scoreValue * 3);

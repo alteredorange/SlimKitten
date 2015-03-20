@@ -24,6 +24,8 @@ public class PowerButtons : TouchManager {
 		public Component gravityCar;
 		public Quaternion bombQuat;
 
+		public GameObject invincibilityVFX;
+
 		bool gunButtonBool = false;
 		bool bombButtonBool = false;
 		bool barricadeButtonBool = false;
@@ -36,6 +38,7 @@ public class PowerButtons : TouchManager {
 		void start ()
 		{
 			Enemy = GameObject.FindGameObjectWithTag ("Enemy");
+
 
 			GameObject gameMasterObject = GameObject.FindWithTag ("GameController");
 			if (gameMasterObject != null) {
@@ -63,10 +66,14 @@ public class PowerButtons : TouchManager {
 			
 			//Invincibility Button Code
 			if (buttonType == button.Invincible) {
-				Enemy.GetComponent<Rigidbody2D> ().gravityScale = 3.0f;
-				
-				Invoke ("disable", deactivateTime);
-				
+				if (CatLives.TotalInvinc > 0f) {
+					
+					gameMaster.GetComponent<GameMaster> ().invincible = true;
+					invincibilityVFX.GetComponent<ParticleSystem>().Play();
+
+				} else {
+					AudioSource.PlayClipAtPoint (Meow, transform.position);
+				}
 			}
 			//Gun Button code
 			else if (buttonType == button.Gun) {
@@ -175,63 +182,83 @@ public class PowerButtons : TouchManager {
 			
 			//Invincibility Button Code
 			if (buttonType == button.Invincible) {
-				Enemy.GetComponent<Rigidbody2D> ().gravityScale = 3.0f;
+				if (CatLives.TotalInvinc > 0f) {
+				
+				gameMaster.GetComponent<GameMaster> ().invincible = true;
 				
 				Invoke ("disable", deactivateTime);
-				
+				} else {
+					AudioSource.PlayClipAtPoint (Meow, transform.position);
+				}
 			}
 			//Gun Button code
 			else if (buttonType == button.Gun) {
 				
 				script = weaponThing.GetComponent<shootingShots> ();
-				if (CatLives.TotalGuns > 0f) {
+				if (gunButtonBool == false) {
 					
-					
-					script.enabled = true;
-					Invoke ("disable", deactivateTime);
-					CatLives.TotalGuns -= 1f;
-					return;
-					
-				} else {
-					
-					return;
-					
+					if (CatLives.TotalGuns > 0f) {
+						
+						script.enabled = true;
+						Invoke ("gunDisable", deactivateTime);
+						CatLives.TotalGuns -= 1f;
+						gunButtonBool = true;
+						
+					} else {
+						
+						AudioSource.PlayClipAtPoint (Meow, transform.position);
+					}
 				}
 			}
 			//Barricade Button Code
 			else if (buttonType == button.Roadblock) {
 				
-				
-				if (PowerButtons.barrier == 0 && Completed == false) {
-					way = player.transform.position;
-					Instantiate (barrierPrefab, way = new Vector3 (way.x, way.y + 10, way.z), new Quaternion (rotationValues.x, rotationValues.y, rotationValues.z, rotationValues.w));
-					Completed = true;
-					
+				if (barricadeButtonBool == false) {
+					if (CatLives.TotalBarriers > 0f) {			
+						
+						way = player.transform.position;
+						Instantiate (barrierPrefab, way = new Vector3 (way.x, way.y + 10, way.z), new Quaternion (rotationValues.x, rotationValues.y, rotationValues.z, rotationValues.w));
+						CatLives.TotalBarriers -= 1f;
+						barricadeButtonBool = true;
+						Invoke ("barricadeDisable", deactivateTime);
+					} else {
+						AudioSource.PlayClipAtPoint (Meow, transform.position);
+					}
 				}
-			} 
+			}
 			//Lives Button Code
 			else if (buttonType == button.Lives) {
-				
-						return;
-				
 				
 			}
 			//Bomb Button Code
 			
 			else if (buttonType == button.Bomb) {
-				if (PowerButtons.barrier == 0 && Completed == false) {
-					bombway = player.transform.position;
-					Instantiate (bombPrefab, bombway = new Vector3 (bombway.x, bombway.y + 20, bombway.z), bombQuat = new Quaternion (bombQuat.x, bombQuat.y, bombQuat.z, bombQuat.w));
-					Completed = true;
-					Invoke ("disable", deactivateTime);
+				if (bombButtonBool == false) {
+					if (CatLives.TotalBombs > 0f) {
+						
+						bombway = player.transform.position;
+						Instantiate (bombPrefab, bombway = new Vector3 (bombway.x, bombway.y + 20, bombway.z), bombQuat = new Quaternion (bombQuat.x, bombQuat.y, bombQuat.z, bombQuat.w));
+						Invoke ("bombDisable", deactivateTime);
+						CatLives.TotalBombs -= 1f;
+						bombButtonBool = true;
+					} else {
+						AudioSource.PlayClipAtPoint (Meow, transform.position);
+					}
 				}
-				
 			}
 			//Gravity Button Code
 			else if (buttonType == button.Gravity) {
-				gameMaster.GetComponent<GameMaster> ().spawnWait = 1.0f;
-				Enemy.GetComponent<Rigidbody2D> ().gravityScale = 3.0f;
-				Invoke ("disableGravity", deactivateTime);
+				if (gravityButtonBool == false) {
+					if (CatLives.TotalSlows > 0f) {
+						Enemy.GetComponent<Rigidbody2D> ().gravityScale = 3.0f;
+						gameMaster.GetComponent<GameMaster> ().spawnWait = 1.0f;
+						Invoke ("gravityDisable", deactivateTime);
+						CatLives.TotalSlows -= 1f;
+						gravityButtonBool = true;
+					} else {
+						AudioSource.PlayClipAtPoint (Meow, transform.position);
+					}
+				}
 			}
 		}
 

@@ -1855,6 +1855,7 @@ MonoBehaviour:
   bombPrefab: {fileID: 0}
   gravityCar: {fileID: 0}
   bombQuat: {x: 0, y: 0, z: 0, w: 0}
+  invincibilityVFX: {fileID: 0}
   gameMaster: {fileID: 1680914615}
 --- !u!131 &626892156
 GUITexture:
@@ -2517,6 +2518,7 @@ MonoBehaviour:
   bombPrefab: {fileID: 196202, guid: a0617b29599db944391db09649f56ada, type: 2}
   gravityCar: {fileID: 0}
   bombQuat: {x: -90, y: 0, z: 0, w: 90}
+  invincibilityVFX: {fileID: 0}
   gameMaster: {fileID: 1680914615}
 --- !u!131 &938545883
 GUITexture:
@@ -2537,6 +2539,112 @@ GUITexture:
   m_RightBorder: 0
   m_TopBorder: 0
   m_BottomBorder: 0
+--- !u!1001 &952596109
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 1535715639}
+    m_Modifications:
+    - target: {fileID: 452476, guid: e3c0f43c5893d554e99f9d140754c63b, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 452476, guid: e3c0f43c5893d554e99f9d140754c63b, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 452476, guid: e3c0f43c5893d554e99f9d140754c63b, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 452476, guid: e3c0f43c5893d554e99f9d140754c63b, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 452476, guid: e3c0f43c5893d554e99f9d140754c63b, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 452476, guid: e3c0f43c5893d554e99f9d140754c63b, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 452476, guid: e3c0f43c5893d554e99f9d140754c63b, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: -1.62920685e-07
+      objectReference: {fileID: 0}
+    - target: {fileID: 452476, guid: e3c0f43c5893d554e99f9d140754c63b, type: 2}
+      propertyPath: m_RootOrder
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 19822408, guid: e3c0f43c5893d554e99f9d140754c63b, type: 2}
+      propertyPath: InitialModule.startSize.scalar
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 19822408, guid: e3c0f43c5893d554e99f9d140754c63b, type: 2}
+      propertyPath: ShapeModule.angle
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 19822408, guid: e3c0f43c5893d554e99f9d140754c63b, type: 2}
+      propertyPath: ShapeModule.radius
+      value: .0399999991
+      objectReference: {fileID: 0}
+    - target: {fileID: 452476, guid: e3c0f43c5893d554e99f9d140754c63b, type: 2}
+      propertyPath: m_LocalScale.z
+      value: .0446231924
+      objectReference: {fileID: 0}
+    - target: {fileID: 19822408, guid: e3c0f43c5893d554e99f9d140754c63b, type: 2}
+      propertyPath: InitialModule.startSpeed.scalar
+      value: 8.51000023
+      objectReference: {fileID: 0}
+    - target: {fileID: 19822408, guid: e3c0f43c5893d554e99f9d140754c63b, type: 2}
+      propertyPath: InitialModule.maxNumParticles
+      value: 500
+      objectReference: {fileID: 0}
+    - target: {fileID: 19822408, guid: e3c0f43c5893d554e99f9d140754c63b, type: 2}
+      propertyPath: EmissionModule.rate.scalar
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 19822408, guid: e3c0f43c5893d554e99f9d140754c63b, type: 2}
+      propertyPath: EmissionModule.m_Type
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 19822408, guid: e3c0f43c5893d554e99f9d140754c63b, type: 2}
+      propertyPath: EmissionModule.m_BurstCount
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 19822408, guid: e3c0f43c5893d554e99f9d140754c63b, type: 2}
+      propertyPath: EmissionModule.time1
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 19822408, guid: e3c0f43c5893d554e99f9d140754c63b, type: 2}
+      propertyPath: EmissionModule.time2
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 19822408, guid: e3c0f43c5893d554e99f9d140754c63b, type: 2}
+      propertyPath: EmissionModule.time3
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 19822408, guid: e3c0f43c5893d554e99f9d140754c63b, type: 2}
+      propertyPath: looping
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 19822408, guid: e3c0f43c5893d554e99f9d140754c63b, type: 2}
+      propertyPath: lengthInSec
+      value: 5.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 110244, guid: e3c0f43c5893d554e99f9d140754c63b, type: 2}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 19822408, guid: e3c0f43c5893d554e99f9d140754c63b, type: 2}
+      propertyPath: playOnAwake
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: e3c0f43c5893d554e99f9d140754c63b, type: 2}
+  m_IsPrefabParent: 0
 --- !u!1001 &1048106606
 Prefab:
   m_ObjectHideFlags: 0
@@ -2964,6 +3072,7 @@ MonoBehaviour:
   bombPrefab: {fileID: 0}
   gravityCar: {fileID: 0}
   bombQuat: {x: 0, y: 0, z: 0, w: 0}
+  invincibilityVFX: {fileID: 0}
   gameMaster: {fileID: 1680914615}
 --- !u!131 &1404260241
 GUITexture:
@@ -3015,16 +3124,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   weaponThing: {fileID: 0}
   buttonType: 0
-  Explosion1: {fileID: 0}
+  Explosion1: {fileID: 2058601184}
   Meow: {fileID: 8300000, guid: 5d714fafa5c1c1b40af9dbd8565fd911, type: 3}
   barrierPrefab: {fileID: 0}
-  player: {fileID: 0}
+  player: {fileID: 1535715638}
   rotationValues: {x: 0, y: 0, z: 0, w: 0}
   Enemy: {fileID: 0}
   deactivateTime: 0
   bombPrefab: {fileID: 0}
   gravityCar: {fileID: 0}
   bombQuat: {x: 0, y: 0, z: 0, w: 0}
+  invincibilityVFX: {fileID: 2058601181}
   gameMaster: {fileID: 1680914615}
 --- !u!131 &1422570940
 GUITexture:
@@ -3110,6 +3220,7 @@ MonoBehaviour:
   bombPrefab: {fileID: 0}
   gravityCar: {fileID: 0}
   bombQuat: {x: 0, y: 0, z: 0, w: 0}
+  invincibilityVFX: {fileID: 0}
   gameMaster: {fileID: 1680914615}
 --- !u!131 &1439843726
 GUITexture:
@@ -3467,7 +3578,7 @@ MonoBehaviour:
   startWait: 1
   waveWait: .25
   highScoreTest: 0
-  invincible: 0
+  invincible: 1
 --- !u!114 &1680914616
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3491,6 +3602,7 @@ MonoBehaviour:
   bombPrefab: {fileID: 196202, guid: a0617b29599db944391db09649f56ada, type: 2}
   gravityCar: {fileID: 431588, guid: 2251aa3f6066b6547824e425f50665f6, type: 2}
   bombQuat: {x: -90, y: 90, z: 0, w: 90}
+  invincibilityVFX: {fileID: 0}
   gameMaster: {fileID: 1680914615}
   deactivateTime: 5
   bombQuat: {x: 90, y: 0, z: 0, w: -90}
@@ -3643,6 +3755,7 @@ MonoBehaviour:
   bombPrefab: {fileID: 0}
   gravityCar: {fileID: 431588, guid: 2251aa3f6066b6547824e425f50665f6, type: 2}
   bombQuat: {x: 0, y: 0, z: 0, w: 0}
+  invincibilityVFX: {fileID: 0}
   gameMaster: {fileID: 1680914615}
 --- !u!131 &1798882476
 GUITexture:
@@ -3703,3 +3816,12 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 15
+--- !u!1 &2058601181
+GameObject:
+  m_PrefabParentObject: {fileID: 110244, guid: e3c0f43c5893d554e99f9d140754c63b, type: 2}
+  m_PrefabInternal: {fileID: 952596109}
+--- !u!198 &2058601184
+ParticleSystem:
+  m_PrefabParentObject: {fileID: 19822408, guid: e3c0f43c5893d554e99f9d140754c63b,
+    type: 2}
+  m_PrefabInternal: {fileID: 952596109}

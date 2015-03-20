@@ -3,12 +3,12 @@ using System.Collections;
 
 public class CatLives : MonoBehaviour {
 
-	public static float TotalLives = 1.0f;
-	public static float TotalBombs = 1.0f;
-	public static float TotalSlows = 1.0f;
-	public static float TotalInvinc = 1.0f;
-	public static float TotalGuns = 1.0f;
-	public static float TotalBarriers = 1.0f;
+	public static float TotalLives = 0.0f;
+	public static float TotalBombs = 100.0f;
+	public static float TotalSlows = 100.0f;
+	public static float TotalInvinc = 100.0f;
+	public static float TotalGuns = 100.0f;
+	public static float TotalBarriers = 100.0f;
 
 
 	public float var_TotalLives = 5.0f;
