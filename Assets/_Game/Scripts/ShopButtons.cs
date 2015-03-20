@@ -27,6 +27,18 @@ namespace UnityStandardAssets._2D
 		public void StartGame () {
 		Application.LoadLevel ("Shop");
 	}
+		public void loadEasyLevel () {
+			Application.LoadLevel ("Easy");
+		}
+
+		public void loadNormalLevel () {
+			Application.LoadLevel ("Normal");
+		}
+
+		public void loadInsaneLevel () {
+			Application.LoadLevel ("Insane");
+		}
+
 		public void ReloadLevel () {
 			Application.LoadLevel (Application.loadedLevel);
 		}

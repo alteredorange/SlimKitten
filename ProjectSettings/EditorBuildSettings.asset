@@ -9,7 +9,17 @@ EditorBuildSettings:
     path: Assets/_Game/Scenes/Level 1.unity
   - enabled: 0
     path: Assets/_Game/Scenes/StartScreen.unity
-  - enabled: 1
+  - enabled: 0
     path: Assets/_Game/Scenes/TestLevel.unity
   - enabled: 1
+    path: Assets/_Game/Scenes/Start.unity
+  - enabled: 1
     path: Assets/_Game/Scenes/Shop.unity
+  - enabled: 0
+    path: Assets/_Game/Scenes/Start.unity
+  - enabled: 1
+    path: Assets/_Game/Scenes/Easy.unity
+  - enabled: 1
+    path: Assets/_Game/Scenes/Normal.unity
+  - enabled: 1
+    path: Assets/_Game/Scenes/Insane.unity

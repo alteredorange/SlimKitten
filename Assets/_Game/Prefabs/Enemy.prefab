@@ -406,7 +406,7 @@ Rigidbody2D:
   m_Mass: 50
   m_LinearDrag: 0
   m_AngularDrag: .0500000007
-  m_GravityScale: 15
+  m_GravityScale: 4
   m_FixedAngle: 0
   m_IsKinematic: 0
   m_Interpolate: 0
@@ -451,10 +451,12 @@ MonoBehaviour:
   Boom: {fileID: 0}
   explosion: {fileID: 0}
   playerExplosion: {fileID: 0}
+  playerSmoke: {fileID: 0}
   scoreValue: 1
   bomb: {fileID: 0}
   stats:
     Health: 50
+  lives: 2
   fallBoundary: -20
 --- !u!114 &11419276
 MonoBehaviour:
@@ -526,10 +528,12 @@ MonoBehaviour:
   Boom: {fileID: 8300000, guid: 870f9e88aa8c14d4fa8e42754da1422c, type: 3}
   explosion: {fileID: 109120, guid: f90da8e86297562498af218c5710d686, type: 2}
   playerExplosion: {fileID: 109120, guid: f90da8e86297562498af218c5710d686, type: 2}
+  playerSmoke: {fileID: 0}
   scoreValue: 1
   bomb: {fileID: 196202, guid: a0617b29599db944391db09649f56ada, type: 2}
   stats:
     Health: 33
+  lives: 2
   fallBoundary: -25
 --- !u!1001 &100100000
 Prefab:
