@@ -68,8 +68,7 @@ public class GameMaster : MonoBehaviour {
 		{
 			highScoreTest = PlayerPrefs.GetInt("HighScore");
 		}
-
-
+	
 
 		UpdateScore ();
 		StartCoroutine (SpawnWaves ());
@@ -194,6 +193,8 @@ public class GameMaster : MonoBehaviour {
 	{
 		scoreText.text = "Score: " + score;
 	}
+
+
 
 
 
