@@ -4058,6 +4058,7 @@ MonoBehaviour:
   SlowCountText: {fileID: 967147448}
   LivesCountText: {fileID: 291656551}
   BarrierCountText: {fileID: 1450091592}
+  CoinCountText: {fileID: 1347105403}
   var_TotalLives: 5
   var_TotalBombs: 5
   var_TotalSlows: 5

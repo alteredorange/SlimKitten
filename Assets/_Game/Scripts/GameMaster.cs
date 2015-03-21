@@ -47,6 +47,7 @@ public class GameMaster : MonoBehaviour {
 	public GUIText SlowCountText;
 	public GUIText LivesCountText;
 	public GUIText BarrierCountText;
+	public GUIText CoinCountText;
 
 //Powerups
 
@@ -207,7 +208,7 @@ public class GameMaster : MonoBehaviour {
 		SlowCountText.text = TotalSlows.ToString();
 		LivesCountText.text = TotalLives.ToString();
 		BarrierCountText.text = TotalBarriers.ToString();
-
+		CoinCountText.text = coins.ToString ();
 
 		//if(invincible)
 		//{
