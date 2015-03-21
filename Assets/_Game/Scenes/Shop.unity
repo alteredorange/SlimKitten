@@ -181,12 +181,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ab67620949e1e0b49913a6059c2195dc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  var_TotalLives: 5
-  var_TotalBombs: 5
-  var_TotalSlows: 5
-  var_TotalInvinc: 5
-  var_TotalGuns: 3
-  var_TotalBarriers: 5
 --- !u!224 &66279934
 RectTransform:
   m_ObjectHideFlags: 0

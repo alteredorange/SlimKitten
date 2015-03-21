@@ -2704,12 +2704,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ab67620949e1e0b49913a6059c2195dc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  var_TotalLives: 5
-  var_TotalBombs: 5
-  var_TotalSlows: 5
-  var_TotalInvinc: 5
-  var_TotalGuns: 3
-  var_TotalBarriers: 5
 --- !u!1 &1659363566
 GameObject:
   m_ObjectHideFlags: 0
@@ -2805,6 +2799,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   scoreText: {fileID: 706101881}
   gameOverText: {fileID: 1780833307}
+  InvincCountText: {fileID: 0}
+  GunCountText: {fileID: 0}
+  BombCountText: {fileID: 0}
+  SlowCountText: {fileID: 0}
+  LivesCountText: {fileID: 0}
+  BarrierCountText: {fileID: 0}
+  var_TotalLives: 5
+  var_TotalBombs: 5
+  var_TotalSlows: 5
+  var_TotalInvinc: 5
+  var_TotalGuns: 3
+  var_TotalBarriers: 5
   shop: {fileID: 920590674}
   restartButton: {fileID: 41785541}
   cars: {fileID: 127878, guid: 2251aa3f6066b6547824e425f50665f6, type: 2}
@@ -2814,6 +2820,13 @@ MonoBehaviour:
   spawnWait: .25
   startWait: 1
   waveWait: .25
+  coins: 0
+  lifeCost: 30
+  invincCost: 50
+  gunCost: 15
+  barCost: 20
+  bombCost: 10
+  slowCost: 30
   highScoreTest: 0
   invincible: 0
 --- !u!1 &1689845791

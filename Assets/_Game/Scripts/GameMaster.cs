@@ -11,6 +11,33 @@ using UnityEngine.Advertisements;
 public class GameMaster : MonoBehaviour {
 
 
+	public bool easy;
+	public bool normal;
+	public bool insane;
+
+
+	public void setEasy()
+	{
+		easy = true;
+		normal = false;
+		insane = false;
+
+	}
+	public void setNormal()
+	{
+		easy = false;
+		normal = true;
+		insane = false;
+		
+	}
+	public void setInsane()
+	{
+		easy = false;
+		normal = false;
+		insane = true;
+		
+	}
+
 //GUI Stuff
 	public Text scoreText;
 	public Text gameOverText;
@@ -61,7 +88,9 @@ public class GameMaster : MonoBehaviour {
 	private bool shopButtonBool;
 
 	private int score;
-	private int highScore;
+	private int easyHighScore;
+	private int normalHighScore;
+	private int insaneHighScore;
 
 	//Int for money and cost
 	public int coins;
@@ -112,14 +141,24 @@ public class GameMaster : MonoBehaviour {
 
 		//If the file exist we set highScoreTest to the highscore held on the file
 
-		if(PlayerPrefs.HasKey("HighScore"))
+		if(PlayerPrefs.HasKey("easyHighScore"))
 		{
-			highScoreTest = PlayerPrefs.GetInt("HighScore");
+			highScoreTest = PlayerPrefs.GetInt("easyHighScore");
+		}
+		if(PlayerPrefs.HasKey("normalHighScore"))
+		{
+			highScoreTest = PlayerPrefs.GetInt("normalHighScore");
+		}
+		if(PlayerPrefs.HasKey("insaneHighScore"))
+		{
+			highScoreTest = PlayerPrefs.GetInt("insaneHighScore");
 		}
 		if(PlayerPrefs.HasKey("Coins"))
 		{
 			coins = PlayerPrefs.GetInt("Coins");
 		}
+
+
 	
 
 		UpdateScore ();
@@ -227,35 +266,104 @@ public class GameMaster : MonoBehaviour {
 
 		coins += score;
 
-		if (PlayerPrefs.HasKey("HighScore")) {
-			if(score > highScoreTest)
-			{
-				highScore = score;
+		if(easy)
+		{
+
+			if (PlayerPrefs.HasKey("easyHighScore")) {
+				if(score > highScoreTest)
+				{
+					easyHighScore = score;
+					
+				}
+				else
+				{
+					easyHighScore = highScoreTest;
+				}
+				
+				PlayerPrefs.SetInt ("easyHighScore", easyHighScore);
 				
 			}
+			//If the file doesnt exist then this would be the first time running the game so it sets the highscore to score
 			else
 			{
-				highScore = highScoreTest;
+				PlayerPrefs.SetInt ("easyHighScore", score);
+				
 			}
+			PlayerPrefs.SetInt ("Coins", coins);
 			
-			PlayerPrefs.SetInt ("HighScore", highScore);
+			PlayerPrefs.Save ();
+			gameOverText.text = "Game Over" + Environment.NewLine + "High Score: " + easyHighScore;
+			//hsText.text = "High Score: " + highScoreTest;
 			
+			shop.SetActive (true);
+			restartButton.SetActive (true);
+			gameOver = true;
 		}
-		//If the file doesnt exist then this would be the first time running the game so it sets the highscore to score
-		else
+		else if(normal)
 		{
-			PlayerPrefs.SetInt ("HighScore", score);
+			if (PlayerPrefs.HasKey("normalHighScore")) {
+				if(score > highScoreTest)
+				{
+					normalHighScore = score;
+					
+				}
+				else
+				{
+					normalHighScore = highScoreTest;
+				}
+				
+				PlayerPrefs.SetInt ("normalHighScore", normalHighScore);
+				
+			}
+			//If the file doesnt exist then this would be the first time running the game so it sets the highscore to score
+			else
+			{
+				PlayerPrefs.SetInt ("normalHighScore", score);
+				
+			}
+			PlayerPrefs.SetInt ("Coins", coins);
 			
+			PlayerPrefs.Save ();
+			gameOverText.text = "Game Over" + Environment.NewLine + "High Score: " + normalHighScore;
+			//hsText.text = "High Score: " + highScoreTest;
+			
+			shop.SetActive (true);
+			restartButton.SetActive (true);
+			gameOver = true;
 		}
-		PlayerPrefs.SetInt ("Coins", coins);
-		
-		PlayerPrefs.Save ();
-		gameOverText.text = "Game Over" + Environment.NewLine + "High Score: " + highScore;
-		//hsText.text = "High Score: " + highScoreTest;
+		else if(insane)
+		{
+			if (PlayerPrefs.HasKey("insaneHighScore")) {
+				if(score > highScoreTest)
+				{
+					insaneHighScore = score;
+					
+				}
+				else
+				{
+					insaneHighScore = highScoreTest;
+				}
+				
+				PlayerPrefs.SetInt ("insaneHighScore", insaneHighScore);
+				
+			}
+			//If the file doesnt exist then this would be the first time running the game so it sets the highscore to score
+			else
+			{
+				PlayerPrefs.SetInt ("insaneHighScore", score);
+				
+			}
+			PlayerPrefs.SetInt ("Coins", coins);
+			
+			PlayerPrefs.Save ();
+			gameOverText.text = "Game Over" + Environment.NewLine + "High Score: " + insaneHighScore;
+			//hsText.text = "High Score: " + highScoreTest;
+			
+			shop.SetActive (true);
+			restartButton.SetActive (true);
+			gameOver = true;
+		}
 
-		shop.SetActive (true);
-		restartButton.SetActive (true);
-		gameOver = true;
 	}
 
 	void UpdateScore ()

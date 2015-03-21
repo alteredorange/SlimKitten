@@ -144,6 +144,18 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
+      - m_Target: {fileID: 506239444}
+        m_MethodName: setEasy
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine, Version=0.0.0.0,
+            Culture=neutral, PublicKeyToken=null
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 1
       - m_Target: {fileID: 1977493368}
         m_MethodName: loadEasyLevel
         m_Mode: 1
@@ -154,7 +166,7 @@ MonoBehaviour:
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
-          m_BoolArgument: 0
+          m_BoolArgument: 1
         m_CallState: 1
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
@@ -332,6 +344,18 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
+      - m_Target: {fileID: 506239444}
+        m_MethodName: setInsane
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine, Version=0.0.0.0,
+            Culture=neutral, PublicKeyToken=null
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 1
       - m_Target: {fileID: 1977493368}
         m_MethodName: loadInsaneLevel
         m_Mode: 1
@@ -343,7 +367,7 @@ MonoBehaviour:
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
-        m_CallState: 1
+        m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &190217961
@@ -466,8 +490,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9088a17d413e2614b9d981b36fc7dc7b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  easy: 0
+  normal: 0
+  insane: 0
   scoreText: {fileID: 0}
   gameOverText: {fileID: 0}
+  InvincCountText: {fileID: 0}
+  GunCountText: {fileID: 0}
+  BombCountText: {fileID: 0}
+  SlowCountText: {fileID: 0}
+  LivesCountText: {fileID: 0}
+  BarrierCountText: {fileID: 0}
+  var_TotalLives: 5
+  var_TotalBombs: 5
+  var_TotalSlows: 5
+  var_TotalInvinc: 5
+  var_TotalGuns: 3
+  var_TotalBarriers: 5
   shop: {fileID: 0}
   restartButton: {fileID: 0}
   cars: {fileID: 127878, guid: 2251aa3f6066b6547824e425f50665f6, type: 2}
@@ -477,6 +516,13 @@ MonoBehaviour:
   spawnWait: .25
   startWait: 1
   waveWait: .25
+  coins: 0
+  lifeCost: 30
+  invincCost: 50
+  gunCost: 15
+  barCost: 20
+  bombCost: 10
+  slowCost: 30
   highScoreTest: 0
   invincible: 0
 --- !u!4 &506239445
@@ -1473,12 +1519,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ab67620949e1e0b49913a6059c2195dc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  var_TotalLives: 5
-  var_TotalBombs: 5
-  var_TotalSlows: 5
-  var_TotalInvinc: 5
-  var_TotalGuns: 3
-  var_TotalBarriers: 5
 --- !u!1 &1296549476
 GameObject:
   m_ObjectHideFlags: 0
@@ -2537,6 +2577,18 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
+      - m_Target: {fileID: 506239444}
+        m_MethodName: setNormal
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine, Version=0.0.0.0,
+            Culture=neutral, PublicKeyToken=null
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 1
       - m_Target: {fileID: 1977493368}
         m_MethodName: loadNormalLevel
         m_Mode: 1
