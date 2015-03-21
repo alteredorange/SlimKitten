@@ -16,6 +16,10 @@ public class shopText : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
+		if(PlayerPrefs.HasKey("Coins"))
+		{
+			gm.coins = PlayerPrefs.GetInt("Coins");
+		}
 		invincText.text = gm.invincCost.ToString();
 		gunText.text = gm.gunCost.ToString();
 		barText.text = gm.barCost.ToString();
