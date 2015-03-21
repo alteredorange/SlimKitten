@@ -60,11 +60,14 @@ public class GameMaster : MonoBehaviour {
 	private bool restart;
 	private bool shopButtonBool;
 
+	private int coins;
+
 	private int score;
 	private int highScore;
 
 	//Name of the file that will hold the highscore
 	private string fileName = "test.txt";
+
 
 	//Filestream we can write the highscore to
 	private StreamWriter sw;
@@ -106,7 +109,7 @@ public class GameMaster : MonoBehaviour {
 		{
 			highScoreTest = PlayerPrefs.GetInt("HighScore");
 		}
-	
+
 
 		UpdateScore ();
 		StartCoroutine (SpawnWaves ());
