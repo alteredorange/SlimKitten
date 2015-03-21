@@ -20,6 +20,7 @@ public class GameMaster : MonoBehaviour {
 	public GUIText SlowCountText;
 	public GUIText LivesCountText;
 	public GUIText BarrierCountText;
+	public GUIText CoinCountText;
 
 //Powerups
 
@@ -60,7 +61,7 @@ public class GameMaster : MonoBehaviour {
 	private bool restart;
 	private bool shopButtonBool;
 
-	private int coins;
+
 
 	private int score;
 	private int highScore;
@@ -115,23 +116,19 @@ public class GameMaster : MonoBehaviour {
 
 		//If the file exist we set highScoreTest to the highscore held on the file
 
-		if(PlayerPrefs.HasKey("HighScore"))
-		{
-			highScoreTest = PlayerPrefs.GetInt("HighScore");
-		}
-<<<<<<< HEAD
+		if (PlayerPrefs.HasKey ("HighScore")) {
+			highScoreTest = PlayerPrefs.GetInt ("HighScore");
 
-=======
-		if(PlayerPrefs.HasKey("Coins"))
-		{
-			coins = PlayerPrefs.GetInt("Coins");
-		}
+			if (PlayerPrefs.HasKey ("Coins")) {
+				coins = PlayerPrefs.GetInt ("Coins");
+			}
 	
->>>>>>> origin/master
 
-		UpdateScore ();
-		StartCoroutine (SpawnWaves ());
 
+			UpdateScore ();
+			StartCoroutine (SpawnWaves ());
+
+		}
 	}
 
 	//This runs as you might have guessed when the game is quit 
@@ -169,12 +166,14 @@ public class GameMaster : MonoBehaviour {
 		var_TotalBarriers = TotalBarriers;
 
 
-		//Updating Powerup Counts on GUI		InvincCountText.text = TotalInvinc.ToString();
+		//Updating Powerup Counts on GUI		
+		InvincCountText.text = TotalInvinc.ToString();
 		GunCountText.text = TotalGuns.ToString();
 		BombCountText.text = TotalBombs.ToString();
 		SlowCountText.text = TotalSlows.ToString();
 		LivesCountText.text = TotalLives.ToString();
 		BarrierCountText.text = TotalBarriers.ToString();
+		CoinCountText.text = TotalBarriers.ToString();
 
 
 		//if(invincible)
