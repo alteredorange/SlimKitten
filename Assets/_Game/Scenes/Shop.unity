@@ -153,6 +153,52 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 22879548}
+--- !u!1 &25382137
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 25382139}
+  - 114: {fileID: 25382138}
+  m_Layer: 0
+  m_Name: GameObject
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &25382138
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 25382137}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7513bba6aacaa7e469accaea4b8a9f77, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  invincText: {fileID: 1944233386}
+  gunText: {fileID: 1165420402}
+  barText: {fileID: 283439676}
+  healthText: {fileID: 22879550}
+  bombText: {fileID: 1775295184}
+  slowText: {fileID: 766406097}
+  gm: {fileID: 2007342216}
+--- !u!4 &25382139
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 25382137}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 7.10953331, y: -5.58618784, z: -40.359375}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 8
 --- !u!1 &66279932
 GameObject:
   m_ObjectHideFlags: 0
@@ -4001,6 +4047,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9088a17d413e2614b9d981b36fc7dc7b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  easy: 0
+  normal: 0
+  insane: 0
   scoreText: {fileID: 0}
   gameOverText: {fileID: 0}
   InvincCountText: {fileID: 1435774188}
@@ -4009,7 +4058,6 @@ MonoBehaviour:
   SlowCountText: {fileID: 967147448}
   LivesCountText: {fileID: 291656551}
   BarrierCountText: {fileID: 1450091592}
-  CoinCountText: {fileID: 1347105403}
   var_TotalLives: 5
   var_TotalBombs: 5
   var_TotalSlows: 5
