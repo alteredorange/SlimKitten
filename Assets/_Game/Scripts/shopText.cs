@@ -16,7 +16,12 @@ public class shopText : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-
+		invincText.text = gm.invincCost.ToString();
+		gunText.text = gm.gunCost.ToString();
+		barText.text = gm.barCost.ToString();
+		healthText.text = gm.lifeCost.ToString();
+		bombText.text = gm.bombCost.ToString();
+		slowText.text = gm.slowCost.ToString();
 	}
 	
 	// Update is called once per frame
