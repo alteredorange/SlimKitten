@@ -202,7 +202,8 @@ public class GameMaster : MonoBehaviour {
 		var_TotalBarriers = TotalBarriers;
 
 
-		//Updating Powerup Counts on GUI		InvincCountText.text = TotalInvinc.ToString();
+		//Updating Powerup Counts on GUI		
+		InvincCountText.text = TotalInvinc.ToString();
 		GunCountText.text = TotalGuns.ToString();
 		BombCountText.text = TotalBombs.ToString();
 		SlowCountText.text = TotalSlows.ToString();
@@ -378,6 +379,7 @@ public class GameMaster : MonoBehaviour {
 		if(coins >= lifeCost)
 		{
 			coins -= lifeCost;
+			PlayerPrefs.SetInt ("Coins", coins);
 			PlayerPrefs.Save();
 			TotalLives += 1.0f;
 		}
@@ -387,6 +389,7 @@ public class GameMaster : MonoBehaviour {
 		if(coins >= invincCost)
 		{
 			coins -= invincCost;
+			PlayerPrefs.SetInt ("Coins", coins);
 			PlayerPrefs.Save();
 			TotalInvinc += 1.0f;
 		}
@@ -395,6 +398,7 @@ public class GameMaster : MonoBehaviour {
 		if(coins >= gunCost)
 		{
 			coins -= gunCost;
+			PlayerPrefs.SetInt ("Coins", coins);
 			PlayerPrefs.Save();
 			TotalGuns += 1.0f;
 		}
@@ -403,6 +407,7 @@ public class GameMaster : MonoBehaviour {
 		if(coins >=  barCost)
 		{
 			coins -= barCost;
+			PlayerPrefs.SetInt ("Coins", coins);
 			PlayerPrefs.Save();
 			TotalBarriers += 1.0f;
 		}
@@ -411,6 +416,7 @@ public class GameMaster : MonoBehaviour {
 		if(coins >= bombCost)
 		{
 			coins -= bombCost;
+			PlayerPrefs.SetInt ("Coins", coins);
 			PlayerPrefs.Save();
 			TotalBombs += 1.0f;
 		}
@@ -419,6 +425,7 @@ public class GameMaster : MonoBehaviour {
 		if(coins >= slowCost)
 		{
 			coins -= slowCost;
+			PlayerPrefs.SetInt ("Coins", coins);
 			PlayerPrefs.Save();
 			TotalSlows += 1.0f;
 		}
@@ -430,6 +437,7 @@ public class GameMaster : MonoBehaviour {
 				resultCallback = result => {
 					Debug.Log(result.ToString());
 				}
+		
 			});
 		}
 	}
