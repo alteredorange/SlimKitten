@@ -65,6 +65,16 @@ public class GameMaster : MonoBehaviour {
 	private int score;
 	private int highScore;
 
+	//Int for money and cost
+	public int coins;
+	public int lifeCost = 30;
+	public int invincCost = 50;
+	public int gunCost = 15;
+	public int barCost = 20;
+	public int bombCost = 10;
+	public int slowCost = 30;
+
+
 	//Name of the file that will hold the highscore
 	private string fileName = "test.txt";
 
@@ -109,7 +119,15 @@ public class GameMaster : MonoBehaviour {
 		{
 			highScoreTest = PlayerPrefs.GetInt("HighScore");
 		}
+<<<<<<< HEAD
 
+=======
+		if(PlayerPrefs.HasKey("Coins"))
+		{
+			coins = PlayerPrefs.GetInt("Coins");
+		}
+	
+>>>>>>> origin/master
 
 		UpdateScore ();
 		StartCoroutine (SpawnWaves ());
@@ -151,8 +169,7 @@ public class GameMaster : MonoBehaviour {
 		var_TotalBarriers = TotalBarriers;
 
 
-		//Updating Powerup Counts on GUI
-		InvincCountText.text = TotalInvinc.ToString();
+		//Updating Powerup Counts on GUI		InvincCountText.text = TotalInvinc.ToString();
 		GunCountText.text = TotalGuns.ToString();
 		BombCountText.text = TotalBombs.ToString();
 		SlowCountText.text = TotalSlows.ToString();
@@ -215,7 +232,7 @@ public class GameMaster : MonoBehaviour {
 		}
 
 
-
+		coins += score;
 
 		if (PlayerPrefs.HasKey("HighScore")) {
 			if(score > highScoreTest)
@@ -237,6 +254,7 @@ public class GameMaster : MonoBehaviour {
 			PlayerPrefs.SetInt ("HighScore", score);
 			
 		}
+		PlayerPrefs.SetInt ("Coins", coins);
 		
 		PlayerPrefs.Save ();
 		gameOverText.text = "Game Over" + Environment.NewLine + "High Score: " + highScore;
@@ -255,23 +273,47 @@ public class GameMaster : MonoBehaviour {
 
 	//Buying powerups
 	public void buyLives (){
-		TotalLives += 1.0f;
+		if(coins >= lifeCost)
+		{
+			coins -= lifeCost;
+			TotalLives += 1.0f;
+		}
 	}
 	
 	public void buyInvinc (){
-		TotalInvinc += 1.0f;
+		if(coins >= invincCost)
+		{
+			coins -= invincCost;
+			TotalInvinc += 1.0f;
+		}
 	}
 	public void buyGuns (){
-		TotalGuns += 1.0f;
+		if(coins >= gunCost)
+		{
+			coins -= gunCost;
+			TotalGuns += 1.0f;
+		}
 	}
 	public void buyBarries (){
-		TotalBarriers += 1.0f;
+		if(coins >=  barCost)
+		{
+			coins -= barCost;
+			TotalBarriers += 1.0f;
+		}
 	}
 	public void buyBombs (){
-		TotalBombs += 1.0f;
+		if(coins >= bombCost)
+		{
+			coins -= bombCost;
+			TotalBombs += 1.0f;
+		}
 	}
 	public void buySlows (){
-		TotalSlows += 1.0f;
+		if(coins >= slowCost)
+		{
+			coins -= slowCost;
+			TotalSlows += 1.0f;
+		}
 	}
 	
 	public void freeCoins (){
