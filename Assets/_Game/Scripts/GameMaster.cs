@@ -10,8 +10,37 @@ using UnityEngine.Advertisements;
 
 public class GameMaster : MonoBehaviour {
 
+
+//GUI Stuff
 	public Text scoreText;
 	public Text gameOverText;
+	public GUIText InvincCountText;
+	public GUIText GunCountText;
+	public GUIText BombCountText;
+	public GUIText SlowCountText;
+	public GUIText LivesCountText;
+	public GUIText BarrierCountText;
+
+//Powerups
+
+	public static float TotalLives = 1.0f;
+	public static float TotalBombs = 10.0f;
+	public static float TotalSlows = 10.0f;
+	public static float TotalInvinc = 10.0f;
+	public static float TotalGuns = 10.0f;
+	public static float TotalBarriers = 10.0f;
+	
+	
+	public float var_TotalLives = 5.0f;
+	public float var_TotalBombs = 5.0f;
+	public float var_TotalSlows = 5.0f;
+	public float var_TotalInvinc = 5.0f;
+	public float var_TotalGuns = 3.0f;
+	public float var_TotalBarriers = 5.0f;
+
+//something
+
+
 	public GameObject shop;
 	public GameObject restartButton;
 
@@ -48,6 +77,15 @@ public class GameMaster : MonoBehaviour {
 	private int nextNum;
 
 	void Start () {
+		//To see if powerups are updating correctly in editor, can remove at launch
+		var_TotalLives = TotalLives;
+		var_TotalBombs = TotalBombs;
+		var_TotalSlows = TotalSlows;
+		var_TotalInvinc = TotalInvinc;
+		var_TotalGuns = TotalGuns;
+		var_TotalBarriers = TotalBarriers;
+
+		//To enable unity ads
 		Advertisement.Initialize ("26283");
 		nextNum = 0;
 		gameOver = false;
@@ -101,6 +139,23 @@ public class GameMaster : MonoBehaviour {
 				Application.LoadLevel (Application.loadedLevel);
 			}
 		}
+		//to check powerup count in editor, can be removed at launch
+		var_TotalLives = TotalLives;
+		var_TotalBombs = TotalBombs;
+		var_TotalSlows = TotalSlows;
+		var_TotalInvinc = TotalInvinc;
+		var_TotalGuns = TotalGuns;
+		var_TotalBarriers = TotalBarriers;
+
+
+		//Updating Powerup Counts on GUI
+		InvincCountText.text = TotalInvinc.ToString();
+		GunCountText.text = TotalGuns.ToString();
+		BombCountText.text = TotalBombs.ToString();
+		SlowCountText.text = TotalSlows.ToString();
+		LivesCountText.text = TotalLives.ToString();
+		BarrierCountText.text = TotalBarriers.ToString();
+
 
 		//if(invincible)
 		//{
@@ -195,8 +250,36 @@ public class GameMaster : MonoBehaviour {
 	}
 
 
-
-
+	//Buying powerups
+	public void buyLives (){
+		TotalLives += 1.0f;
+	}
+	
+	public void buyInvinc (){
+		TotalInvinc += 1.0f;
+	}
+	public void buyGuns (){
+		TotalGuns += 1.0f;
+	}
+	public void buyBarries (){
+		TotalBarriers += 1.0f;
+	}
+	public void buyBombs (){
+		TotalBombs += 1.0f;
+	}
+	public void buySlows (){
+		TotalSlows += 1.0f;
+	}
+	
+	public void freeCoins (){
+		if (Advertisement.isReady ()) {
+			Advertisement.Show (null, new ShowOptions {
+				resultCallback = result => {
+					Debug.Log(result.ToString());
+				}
+			});
+		}
+	}
 
 
 

@@ -9,7 +9,7 @@ public class Enemy : MonoBehaviour {
 	public GameObject playerSmoke;
 	public int scoreValue;
 	private GameMaster gameMaster;
-	private CatLives catLives;
+	//private CatLives catLives;
 
 	[System.Serializable]
 	public class EnemyStats {
@@ -38,11 +38,11 @@ public class Enemy : MonoBehaviour {
 			Debug.Log ("cannot find GameMaster Script");
 		}
 
-
-		GameObject playerObject = GameObject.FindWithTag ("Player");
-		if (playerObject != null) {
-			catLives = playerObject.GetComponent <CatLives>();
-		}
+// Moved this functionality to GameMaster, can remove after testing
+//		GameObject playerObject = GameObject.FindWithTag ("Player");
+//		if (playerObject != null) {
+//			catLives = playerObject.GetComponent <CatLives>();
+//		}
 		
 
 
@@ -73,8 +73,8 @@ public class Enemy : MonoBehaviour {
 
 			//gameMaster.GetComponent<GameMaster> ().spawnWait = 1f;
 
-			if (CatLives.TotalLives > 0f) {
-				CatLives.TotalLives -= 1f;
+			if (GameMaster.TotalLives > 0f) {
+				GameMaster.TotalLives -= 1f;
 				Instantiate (playerSmoke, other.transform.position, other.transform.rotation);
 				return;
 
