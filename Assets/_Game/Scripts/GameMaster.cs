@@ -378,6 +378,7 @@ public class GameMaster : MonoBehaviour {
 		if(coins >= lifeCost)
 		{
 			coins -= lifeCost;
+			PlayerPrefs.Save();
 			TotalLives += 1.0f;
 		}
 	}
@@ -386,6 +387,7 @@ public class GameMaster : MonoBehaviour {
 		if(coins >= invincCost)
 		{
 			coins -= invincCost;
+			PlayerPrefs.Save();
 			TotalInvinc += 1.0f;
 		}
 	}
@@ -393,6 +395,7 @@ public class GameMaster : MonoBehaviour {
 		if(coins >= gunCost)
 		{
 			coins -= gunCost;
+			PlayerPrefs.Save();
 			TotalGuns += 1.0f;
 		}
 	}
@@ -400,6 +403,7 @@ public class GameMaster : MonoBehaviour {
 		if(coins >=  barCost)
 		{
 			coins -= barCost;
+			PlayerPrefs.Save();
 			TotalBarriers += 1.0f;
 		}
 	}
@@ -407,6 +411,7 @@ public class GameMaster : MonoBehaviour {
 		if(coins >= bombCost)
 		{
 			coins -= bombCost;
+			PlayerPrefs.Save();
 			TotalBombs += 1.0f;
 		}
 	}
@@ -414,6 +419,7 @@ public class GameMaster : MonoBehaviour {
 		if(coins >= slowCost)
 		{
 			coins -= slowCost;
+			PlayerPrefs.Save();
 			TotalSlows += 1.0f;
 		}
 	}
