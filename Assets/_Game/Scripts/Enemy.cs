@@ -90,7 +90,7 @@ public class Enemy : MonoBehaviour {
 			}
 		} else if (other.tag == "Player" && gameMaster.invincible) {
 
-			gameMaster.AddScore (scoreValue * 3);
+			gameMaster.AddScore (scoreValue * 4);
 			Instantiate (playerExplosion, other.transform.position, other.transform.rotation);
 			AudioSource.PlayClipAtPoint (Boom, transform.position);
 			Destroy (gameObject);
@@ -106,7 +106,7 @@ public class Enemy : MonoBehaviour {
 		}
 		//Eney collides with Bomb
 	else if (other.tag == "Bomb") {
-			gameMaster.AddScore (scoreValue * 3);
+			gameMaster.AddScore (scoreValue * 6);
 			Instantiate (playerExplosion, other.transform.position, other.transform.rotation);
 			AudioSource.PlayClipAtPoint (Boom, transform.position);
 			Destroy (gameObject);
@@ -114,7 +114,7 @@ public class Enemy : MonoBehaviour {
 	}
 		//gun shots?
 		else if (other.tag == "Weapon") {
-			gameMaster.AddScore (scoreValue * 3);
+			gameMaster.AddScore (scoreValue * 2);
 			Instantiate (playerExplosion, other.transform.position, other.transform.rotation);
 			AudioSource.PlayClipAtPoint (Boom, transform.position);
 			Destroy (gameObject);
