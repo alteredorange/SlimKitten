@@ -52,20 +52,20 @@ public class GameMaster : MonoBehaviour {
 
 //Powerups
 
-	public static float TotalLives = 0.0f;
-	public static float TotalBombs = 0.0f;
-	public static float TotalSlows = 0.0f;
-	public static float TotalInvinc = 0.0f;
-	public static float TotalGuns = 0.0f;
-	public static float TotalBarriers = 0.0f;
+	public static int TotalLives = 0;
+	public static int TotalBombs = 0;
+	public static int TotalSlows = 0;
+	public static int TotalInvinc = 0;
+	public static int TotalGuns = 0;
+	public static int TotalBarriers = 0;
 	
 	
-	public float var_TotalLives = 5.0f;
-	public float var_TotalBombs = 5.0f;
-	public float var_TotalSlows = 5.0f;
-	public float var_TotalInvinc = 5.0f;
-	public float var_TotalGuns = 3.0f;
-	public float var_TotalBarriers = 5.0f;
+	public int var_TotalLives = 5;
+	public int var_TotalBombs = 5;
+	public int var_TotalSlows = 5;
+	public int var_TotalInvinc = 5;
+	public int var_TotalGuns = 3;
+	public int var_TotalBarriers = 5;
 
 //something
 
@@ -161,6 +161,24 @@ public class GameMaster : MonoBehaviour {
 		{
 			coins = PlayerPrefs.GetInt("Coins");
 		}
+		if (PlayerPrefs.HasKey ("Lives"))
+			TotalLives = PlayerPrefs.GetInt ("Lives");
+
+		if (PlayerPrefs.HasKey ("Bombs"))
+			TotalBombs= PlayerPrefs.GetInt ("Bombs");
+
+		if (PlayerPrefs.HasKey ("Slow"))
+			TotalSlows = PlayerPrefs.GetInt ("Slow");
+
+		if (PlayerPrefs.HasKey ("Guns"))
+			TotalLives = PlayerPrefs.GetInt ("Guns");
+
+		if (PlayerPrefs.HasKey ("Invinc"))
+			TotalInvinc = PlayerPrefs.GetInt ("Invinc");
+
+		if (PlayerPrefs.HasKey ("Barriers"))
+			TotalBarriers = PlayerPrefs.GetInt ("Barriers");
+
 
 
 	
@@ -172,13 +190,7 @@ public class GameMaster : MonoBehaviour {
 
 	//This runs as you might have guessed when the game is quit 
 
-	//Note this WILL NOT WORK FOR IOS but I can make it compatible if needed
-	void OnApplicationQuit()
-	{
-		//If the file already exist we test if the score is higher than the current highscore if so we rewrite the file to hold that number
 
-
-	}
 
 	IEnumerable invincibleOff()
 	{
@@ -287,6 +299,7 @@ public class GameMaster : MonoBehaviour {
 				}
 				
 				PlayerPrefs.SetInt ("easyHighScore", easyHighScore);
+
 				
 			}
 			//If the file doesnt exist then this would be the first time running the game so it sets the highscore to score
@@ -296,6 +309,12 @@ public class GameMaster : MonoBehaviour {
 				
 			}
 			PlayerPrefs.SetInt ("Coins", coins);
+			PlayerPrefs.SetInt ("Lives", TotalLives);
+			PlayerPrefs.SetInt ("Bombs", TotalBombs);
+			PlayerPrefs.SetInt ("Slow", TotalSlows);
+			PlayerPrefs.SetInt ("Guns", TotalGuns);
+			PlayerPrefs.SetInt ("Invinc", TotalInvinc);
+			PlayerPrefs.SetInt ("Barriers", TotalBarriers);
 			
 			PlayerPrefs.Save ();
 			gameOverText.text = "Game Over" + Environment.NewLine + "Easy High Score: " + easyHighScore;
@@ -329,6 +348,12 @@ public class GameMaster : MonoBehaviour {
 				
 			}
 			PlayerPrefs.SetInt ("Coins", coins);
+			PlayerPrefs.SetInt ("Lives", TotalLives);
+			PlayerPrefs.SetInt ("Bombs", TotalBombs);
+			PlayerPrefs.SetInt ("Slow", TotalSlows);
+			PlayerPrefs.SetInt ("Guns", TotalGuns);
+			PlayerPrefs.SetInt ("Invinc", TotalInvinc);
+			PlayerPrefs.SetInt ("Barriers", TotalBarriers);
 			
 			PlayerPrefs.Save ();
 			gameOverText.text = "Game Over" + Environment.NewLine + "Normal High Score: " + normalHighScore;
@@ -362,6 +387,12 @@ public class GameMaster : MonoBehaviour {
 				
 			}
 			PlayerPrefs.SetInt ("Coins", coins);
+			PlayerPrefs.SetInt ("Lives", TotalLives);
+			PlayerPrefs.SetInt ("Bombs", TotalBombs);
+			PlayerPrefs.SetInt ("Slow", TotalSlows);
+			PlayerPrefs.SetInt ("Guns", TotalGuns);
+			PlayerPrefs.SetInt ("Invinc", TotalInvinc);
+			PlayerPrefs.SetInt ("Barriers", TotalBarriers);
 			
 			PlayerPrefs.Save ();
 			gameOverText.text = "Game Over" + Environment.NewLine + "Insane High Score: " + insaneHighScore;
@@ -386,9 +417,11 @@ public class GameMaster : MonoBehaviour {
 		if(coins >= lifeCost)
 		{
 			coins -= lifeCost;
+			TotalLives += 1;
 			PlayerPrefs.SetInt ("Coins", coins);
+			PlayerPrefs.SetInt ("Lives", TotalLives);
 			PlayerPrefs.Save();
-			TotalLives += 1.0f;
+
 		}
 	}
 	
@@ -396,45 +429,55 @@ public class GameMaster : MonoBehaviour {
 		if(coins >= invincCost)
 		{
 			coins -= invincCost;
+			TotalInvinc += 1;
 			PlayerPrefs.SetInt ("Coins", coins);
+			PlayerPrefs.SetInt ("Invinc", TotalInvinc);
 			PlayerPrefs.Save();
-			TotalInvinc += 1.0f;
+
 		}
 	}
 	public void buyGuns (){
 		if(coins >= gunCost)
 		{
 			coins -= gunCost;
+			TotalGuns += 1;
 			PlayerPrefs.SetInt ("Coins", coins);
+			PlayerPrefs.SetInt ("Guns", TotalGuns);
 			PlayerPrefs.Save();
-			TotalGuns += 1.0f;
+
 		}
 	}
 	public void buyBarries (){
 		if(coins >=  barCost)
 		{
 			coins -= barCost;
+			TotalBarriers += 1;
 			PlayerPrefs.SetInt ("Coins", coins);
+			PlayerPrefs.SetInt ("Barriers", TotalBarriers);
 			PlayerPrefs.Save();
-			TotalBarriers += 1.0f;
+
 		}
 	}
 	public void buyBombs (){
 		if(coins >= bombCost)
 		{
 			coins -= bombCost;
+			TotalBombs += 1;
 			PlayerPrefs.SetInt ("Coins", coins);
+			PlayerPrefs.SetInt ("Bombs", TotalBombs);
 			PlayerPrefs.Save();
-			TotalBombs += 1.0f;
+
 		}
 	}
 	public void buySlows (){
 		if(coins >= slowCost)
 		{
 			coins -= slowCost;
+			TotalSlows += 1;
 			PlayerPrefs.SetInt ("Coins", coins);
+			PlayerPrefs.SetInt ("Slow", TotalSlows);
 			PlayerPrefs.Save();
-			TotalSlows += 1.0f;
+
 		}
 	}
 	

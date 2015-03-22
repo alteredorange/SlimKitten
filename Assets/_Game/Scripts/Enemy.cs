@@ -73,8 +73,8 @@ public class Enemy : MonoBehaviour {
 
 			//gameMaster.GetComponent<GameMaster> ().spawnWait = 1f;
 
-			if (GameMaster.TotalLives > 0f) {
-				GameMaster.TotalLives -= 1f;
+			if (GameMaster.TotalLives > 0) {
+				GameMaster.TotalLives -= 1;
 				Instantiate (playerSmoke, other.transform.position, other.transform.rotation);
 				return;
 

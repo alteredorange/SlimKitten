@@ -256,11 +256,11 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 100002, guid: 999388b68bb99b44099461bfbed94358, type: 2}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 100004, guid: 999388b68bb99b44099461bfbed94358, type: 2}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 100000, guid: 999388b68bb99b44099461bfbed94358, type: 2}
       propertyPath: m_IsActive
@@ -501,6 +501,8 @@ MonoBehaviour:
   SlowCountText: {fileID: 0}
   LivesCountText: {fileID: 0}
   BarrierCountText: {fileID: 0}
+  CoinCountText: {fileID: 0}
+  PlusCoinsText: {fileID: 0}
   var_TotalLives: 5
   var_TotalBombs: 5
   var_TotalSlows: 5
@@ -509,6 +511,7 @@ MonoBehaviour:
   var_TotalBarriers: 5
   shop: {fileID: 0}
   restartButton: {fileID: 0}
+  plusCoinButton: {fileID: 0}
   cars: {fileID: 127878, guid: 2251aa3f6066b6547824e425f50665f6, type: 2}
   spawnValues: {x: -50, y: 40, z: 50}
   rotationValues: {x: 90, y: 0, z: 0, w: -90}
