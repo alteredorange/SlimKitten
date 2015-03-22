@@ -519,6 +519,7 @@ MonoBehaviour:
   spawnWait: .25
   startWait: 1
   waveWait: .25
+  gameOver: 0
   coins: 0
   lifeCost: 30
   invincCost: 50

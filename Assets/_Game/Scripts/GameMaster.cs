@@ -86,7 +86,7 @@ public class GameMaster : MonoBehaviour {
 
 	private GameObject allEnemy;
 
-	private bool gameOver;
+	public bool gameOver;
 	private bool restart;
 	private bool shopButtonBool;
 
@@ -118,14 +118,53 @@ public class GameMaster : MonoBehaviour {
 	private int i = 0;
 	private int nextNum;
 
-	void Start () {
-		//To see if powerups are updating correctly in editor, can remove at launch
+	void Awake()
+	{
+		if(PlayerPrefs.HasKey("easyHighScore"))
+		{
+			highScoreTest = PlayerPrefs.GetInt("easyHighScore");
+		}
+		if(PlayerPrefs.HasKey("normalHighScore"))
+		{
+			highScoreTest = PlayerPrefs.GetInt("normalHighScore");
+		}
+		if(PlayerPrefs.HasKey("insaneHighScore"))
+		{
+			highScoreTest = PlayerPrefs.GetInt("insaneHighScore");
+		}
+		if(PlayerPrefs.HasKey("Coins"))
+		{
+			coins = PlayerPrefs.GetInt("Coins");
+		}
+		if (PlayerPrefs.HasKey ("Lives"))
+			TotalLives = PlayerPrefs.GetInt ("Lives");
+		
+		if (PlayerPrefs.HasKey ("Bombs"))
+			TotalBombs= PlayerPrefs.GetInt ("Bombs");
+		
+		if (PlayerPrefs.HasKey ("Slow"))
+			TotalSlows = PlayerPrefs.GetInt ("Slow");
+		
+		if (PlayerPrefs.HasKey ("Guns"))
+			TotalLives = PlayerPrefs.GetInt ("Guns");
+		
+		if (PlayerPrefs.HasKey ("Invinc"))
+			TotalInvinc = PlayerPrefs.GetInt ("Invinc");
+		
+		if (PlayerPrefs.HasKey ("Barriers"))
+			TotalBarriers = PlayerPrefs.GetInt ("Barriers");
+		
 		var_TotalLives = TotalLives;
 		var_TotalBombs = TotalBombs;
 		var_TotalSlows = TotalSlows;
 		var_TotalInvinc = TotalInvinc;
 		var_TotalGuns = TotalGuns;
 		var_TotalBarriers = TotalBarriers;
+	}
+
+	void Start () {
+		//To see if powerups are updating correctly in editor, can remove at launch
+
 
 		//To enable unity ads
 		Advertisement.Initialize ("26283");
@@ -145,39 +184,6 @@ public class GameMaster : MonoBehaviour {
 
 		//If the file exist we set highScoreTest to the highscore held on the file
 
-		if(PlayerPrefs.HasKey("easyHighScore"))
-		{
-			highScoreTest = PlayerPrefs.GetInt("easyHighScore");
-		}
-		if(PlayerPrefs.HasKey("normalHighScore"))
-		{
-			highScoreTest = PlayerPrefs.GetInt("normalHighScore");
-		}
-		if(PlayerPrefs.HasKey("insaneHighScore"))
-		{
-			highScoreTest = PlayerPrefs.GetInt("insaneHighScore");
-		}
-		if(PlayerPrefs.HasKey("Coins"))
-		{
-			coins = PlayerPrefs.GetInt("Coins");
-		}
-		if (PlayerPrefs.HasKey ("Lives"))
-			TotalLives = PlayerPrefs.GetInt ("Lives");
-
-		if (PlayerPrefs.HasKey ("Bombs"))
-			TotalBombs= PlayerPrefs.GetInt ("Bombs");
-
-		if (PlayerPrefs.HasKey ("Slow"))
-			TotalSlows = PlayerPrefs.GetInt ("Slow");
-
-		if (PlayerPrefs.HasKey ("Guns"))
-			TotalLives = PlayerPrefs.GetInt ("Guns");
-
-		if (PlayerPrefs.HasKey ("Invinc"))
-			TotalInvinc = PlayerPrefs.GetInt ("Invinc");
-
-		if (PlayerPrefs.HasKey ("Barriers"))
-			TotalBarriers = PlayerPrefs.GetInt ("Barriers");
 
 
 
@@ -239,14 +245,17 @@ public class GameMaster : MonoBehaviour {
 
 		while (true)
 		{
-			for (int i = 0; i < carsInWaveCount; i++) {
-				Vector3 spawnPosition = new Vector3 (UnityEngine.Random.Range (-spawnValues.x, spawnValues.x), spawnValues.y, 0);
-				Quaternion spawnRotation = new Quaternion (rotationValues.x, rotationValues.y, rotationValues.z, rotationValues.w);
-				Instantiate (cars, spawnPosition, spawnRotation);
+			if(!gameOver)
+			{
+				for (int i = 0; i < carsInWaveCount; i++) {
+					Vector3 spawnPosition = new Vector3 (UnityEngine.Random.Range (-spawnValues.x, spawnValues.x), spawnValues.y, 0);
+					Quaternion spawnRotation = new Quaternion (rotationValues.x, rotationValues.y, rotationValues.z, rotationValues.w);
+					Instantiate (cars, spawnPosition, spawnRotation);
 
-				yield return new WaitForSeconds (spawnWait);
+					yield return new WaitForSeconds (spawnWait);
+				}
+				yield return new WaitForSeconds (waveWait);
 			}
-			yield return new WaitForSeconds (waveWait);
 
 			if (gameOver) 
 			{
