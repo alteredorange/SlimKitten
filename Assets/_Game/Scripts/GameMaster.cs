@@ -48,15 +48,16 @@ public class GameMaster : MonoBehaviour {
 	public GUIText LivesCountText;
 	public GUIText BarrierCountText;
 	public GUIText CoinCountText;
+	public Text PlusCoinsText;
 
 //Powerups
 
-	public static float TotalLives = 1.0f;
-	public static float TotalBombs = 10.0f;
-	public static float TotalSlows = 10.0f;
-	public static float TotalInvinc = 10.0f;
-	public static float TotalGuns = 10.0f;
-	public static float TotalBarriers = 10.0f;
+	public static float TotalLives = 0.0f;
+	public static float TotalBombs = 0.0f;
+	public static float TotalSlows = 0.0f;
+	public static float TotalInvinc = 0.0f;
+	public static float TotalGuns = 0.0f;
+	public static float TotalBarriers = 0.0f;
 	
 	
 	public float var_TotalLives = 5.0f;
@@ -71,6 +72,7 @@ public class GameMaster : MonoBehaviour {
 
 	public GameObject shop;
 	public GameObject restartButton;
+	public GameObject plusCoinButton;
 
 	//public Text hsText;
 	public GameObject cars;
@@ -95,12 +97,12 @@ public class GameMaster : MonoBehaviour {
 
 	//Int for money and cost
 	public int coins;
-	public int lifeCost = 30;
-	public int invincCost = 50;
-	public int gunCost = 15;
-	public int barCost = 20;
-	public int bombCost = 10;
-	public int slowCost = 30;
+	public int lifeCost = 100;
+	public int invincCost = 100;
+	public int gunCost = 100;
+	public int barCost = 100;
+	public int bombCost = 100;
+	public int slowCost = 100;
 
 
 	//Name of the file that will hold the highscore
@@ -135,6 +137,7 @@ public class GameMaster : MonoBehaviour {
 
 		shop.SetActive (false);
 		restartButton.SetActive (false);
+		plusCoinButton.SetActive (false);
 
 		//hsText.text = "";
 		score = 0;
@@ -210,6 +213,7 @@ public class GameMaster : MonoBehaviour {
 		LivesCountText.text = TotalLives.ToString();
 		BarrierCountText.text = TotalBarriers.ToString();
 		CoinCountText.text = coins.ToString ();
+		PlusCoinsText.text = "+" + score.ToString() + " Coins";
 
 		//if(invincible)
 		//{
@@ -294,11 +298,12 @@ public class GameMaster : MonoBehaviour {
 			PlayerPrefs.SetInt ("Coins", coins);
 			
 			PlayerPrefs.Save ();
-			gameOverText.text = "Game Over" + Environment.NewLine + "High Score: " + easyHighScore;
+			gameOverText.text = "Game Over" + Environment.NewLine + "Easy High Score: " + easyHighScore;
 			//hsText.text = "High Score: " + highScoreTest;
 			
 			shop.SetActive (true);
 			restartButton.SetActive (true);
+			plusCoinButton.SetActive (true);
 			gameOver = true;
 		}
 		else if(normal)
@@ -326,11 +331,12 @@ public class GameMaster : MonoBehaviour {
 			PlayerPrefs.SetInt ("Coins", coins);
 			
 			PlayerPrefs.Save ();
-			gameOverText.text = "Game Over" + Environment.NewLine + "High Score: " + normalHighScore;
+			gameOverText.text = "Game Over" + Environment.NewLine + "Normal High Score: " + normalHighScore;
 			//hsText.text = "High Score: " + highScoreTest;
 			
 			shop.SetActive (true);
 			restartButton.SetActive (true);
+			plusCoinButton.SetActive (true);
 			gameOver = true;
 		}
 		else if(insane)
@@ -358,11 +364,12 @@ public class GameMaster : MonoBehaviour {
 			PlayerPrefs.SetInt ("Coins", coins);
 			
 			PlayerPrefs.Save ();
-			gameOverText.text = "Game Over" + Environment.NewLine + "High Score: " + insaneHighScore;
+			gameOverText.text = "Game Over" + Environment.NewLine + "Insane High Score: " + insaneHighScore;
 			//hsText.text = "High Score: " + highScoreTest;
 			
 			shop.SetActive (true);
 			restartButton.SetActive (true);
+			plusCoinButton.SetActive (true);
 			gameOver = true;
 		}
 
@@ -435,9 +442,21 @@ public class GameMaster : MonoBehaviour {
 		if (Advertisement.isReady ()) {
 			Advertisement.Show (null, new ShowOptions {
 				resultCallback = result => {
-					Debug.Log(result.ToString());
+					if (result.ToString() == "Finished") {
+						coins += 100;
+						PlayerPrefs.SetInt ("Coins", coins);
+						PlayerPrefs.Save();
+						Debug.Log(result.ToString());
+					} else if (result.ToString () == "Skipped") {
+						coins += 10;
+						PlayerPrefs.SetInt ("Coins", coins);
+						PlayerPrefs.Save();
+						Debug.Log(result.ToString());
+					} else { 
+						Debug.Log(result.ToString());
+						return;
+						}
 				}
-		
 			});
 		}
 	}

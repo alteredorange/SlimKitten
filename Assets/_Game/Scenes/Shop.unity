@@ -470,7 +470,7 @@ RectTransform:
   m_RootOrder: 7
   m_AnchorMin: {x: 1, y: .5}
   m_AnchorMax: {x: 1, y: .5}
-  m_AnchoredPosition: {x: -400, y: 445}
+  m_AnchoredPosition: {x: -165, y: 400}
   m_SizeDelta: {x: 250, y: 100}
   m_Pivot: {x: .5, y: .5}
 --- !u!114 &144541418
@@ -781,7 +781,7 @@ RectTransform:
   m_RootOrder: 3
   m_AnchorMin: {x: 0, y: .5}
   m_AnchorMax: {x: 0, y: .5}
-  m_AnchoredPosition: {x: 370, y: 5}
+  m_AnchoredPosition: {x: 170, y: -60}
   m_SizeDelta: {x: 250, y: 100}
   m_Pivot: {x: .5, y: .5}
 --- !u!114 &329446781
@@ -895,7 +895,7 @@ RectTransform:
   m_RootOrder: 17
   m_AnchorMin: {x: .5, y: .5}
   m_AnchorMax: {x: .5, y: .5}
-  m_AnchoredPosition: {x: -.00300927064, y: 2.9000001}
+  m_AnchoredPosition: {x: 2.70000005, y: 2.70000005}
   m_SizeDelta: {x: 104.709999, y: 54.7630005}
   m_Pivot: {x: .5, y: .5}
 --- !u!223 &379931767
@@ -1238,7 +1238,7 @@ RectTransform:
   m_RootOrder: 16
   m_AnchorMin: {x: .5, y: .5}
   m_AnchorMax: {x: .5, y: .5}
-  m_AnchoredPosition: {x: -.00300927064, y: 3.82999992}
+  m_AnchoredPosition: {x: 2.70000005, y: 4}
   m_SizeDelta: {x: 104.709999, y: 54.7630005}
   m_Pivot: {x: .5, y: .5}
 --- !u!223 &474253163
@@ -1289,7 +1289,7 @@ RectTransform:
   m_RootOrder: 18
   m_AnchorMin: {x: .5, y: .5}
   m_AnchorMax: {x: .5, y: .5}
-  m_AnchoredPosition: {x: -.00300927064, y: 3.11999989}
+  m_AnchoredPosition: {x: -2.9000001, y: 3.11999989}
   m_SizeDelta: {x: 104.709999, y: 54.7630005}
   m_Pivot: {x: .5, y: .5}
 --- !u!223 &560368225
@@ -1340,7 +1340,7 @@ RectTransform:
   m_RootOrder: 14
   m_AnchorMin: {x: .5, y: .5}
   m_AnchorMax: {x: .5, y: .5}
-  m_AnchoredPosition: {x: -.00300927064, y: 3.3900001}
+  m_AnchoredPosition: {x: 2.70000005, y: 3}
   m_SizeDelta: {x: 104.709999, y: 54.7630005}
   m_Pivot: {x: .5, y: .5}
 --- !u!223 &610293762
@@ -1788,6 +1788,7 @@ RectTransform:
   - {fileID: 379931766}
   - {fileID: 560368224}
   - {fileID: 1333232660}
+  - {fileID: 1858210153}
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_AnchorMin: {x: 0, y: 0}
@@ -2067,7 +2068,7 @@ RectTransform:
   m_RootOrder: 4
   m_AnchorMin: {x: 0, y: .5}
   m_AnchorMax: {x: 0, y: .5}
-  m_AnchoredPosition: {x: 370, y: 445}
+  m_AnchoredPosition: {x: 170, y: 400}
   m_SizeDelta: {x: 250, y: 100}
   m_Pivot: {x: .5, y: .5}
 --- !u!114 &1063125298
@@ -2654,7 +2655,7 @@ RectTransform:
   m_RootOrder: 19
   m_AnchorMin: {x: .5, y: .5}
   m_AnchorMax: {x: .5, y: .5}
-  m_AnchoredPosition: {x: -.00300927064, y: 2.56999993}
+  m_AnchoredPosition: {x: -2.9000001, y: 2.26999998}
   m_SizeDelta: {x: 104.709999, y: 54.7630005}
   m_Pivot: {x: .5, y: .5}
 --- !u!223 &1333232661
@@ -2770,7 +2771,7 @@ RectTransform:
   m_RootOrder: 2
   m_AnchorMin: {x: 0, y: .5}
   m_AnchorMax: {x: 0, y: .5}
-  m_AnchoredPosition: {x: 370, y: 230}
+  m_AnchoredPosition: {x: 170, y: 170}
   m_SizeDelta: {x: 250, y: 100}
   m_Pivot: {x: .5, y: .5}
 --- !u!114 &1348587520
@@ -3012,7 +3013,7 @@ RectTransform:
   m_RootOrder: 5
   m_AnchorMin: {x: 1, y: .5}
   m_AnchorMax: {x: 1, y: .5}
-  m_AnchoredPosition: {x: -400, y: 5}
+  m_AnchoredPosition: {x: -165, y: -60}
   m_SizeDelta: {x: 250, y: 100}
   m_Pivot: {x: .5, y: .5}
 --- !u!114 &1451442723
@@ -3128,7 +3129,7 @@ RectTransform:
   m_RootOrder: 6
   m_AnchorMin: {x: 1, y: .5}
   m_AnchorMax: {x: 1, y: .5}
-  m_AnchoredPosition: {x: -400, y: 230}
+  m_AnchoredPosition: {x: -165, y: 170}
   m_SizeDelta: {x: 250, y: 100}
   m_Pivot: {x: .5, y: .5}
 --- !u!114 &1547319375
@@ -3528,7 +3529,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 66279933}
+      - m_Target: {fileID: 2007342216}
         m_MethodName: freeCoins
         m_Mode: 1
         m_Arguments:
@@ -3630,6 +3631,72 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1857331571}
+--- !u!1 &1858210151
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 224: {fileID: 1858210153}
+  - 222: {fileID: 1858210154}
+  - 114: {fileID: 1858210152}
+  m_Layer: 5
+  m_Name: Placeholder, don't enable or delete
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!114 &1858210152
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1858210151}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 708705254, guid: f5f67c52d1564df4a8936ccd202a3bd8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: .196078435, g: .196078435, b: .196078435, a: 1}
+  m_FontData:
+    m_Font: {fileID: 12800000, guid: b284a6525342f44599e9ce79e37c2d61, type: 3}
+    m_FontSize: 70
+    m_FontStyle: 0
+    m_BestFit: 0
+    m_MinSize: 10
+    m_MaxSize: 40
+    m_Alignment: 4
+    m_RichText: 0
+    m_HorizontalOverflow: 0
+    m_VerticalOverflow: 0
+    m_LineSpacing: .800000012
+  m_Text: 500
+--- !u!224 &1858210153
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1858210151}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 803531637}
+  m_RootOrder: 20
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: 863.366577, y: -60.0000076}
+  m_SizeDelta: {x: -1806.73315, y: -980}
+  m_Pivot: {x: .5, y: .5}
+--- !u!222 &1858210154
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1858210151}
 --- !u!1 &1883383478
 GameObject:
   m_ObjectHideFlags: 0
@@ -4000,7 +4067,7 @@ RectTransform:
   m_RootOrder: 15
   m_AnchorMin: {x: .5, y: .5}
   m_AnchorMax: {x: .5, y: .5}
-  m_AnchoredPosition: {x: -.00300927064, y: 3.6400001}
+  m_AnchoredPosition: {x: -2.9000001, y: 3.6400001}
   m_SizeDelta: {x: 104.709999, y: 54.7630005}
   m_Pivot: {x: .5, y: .5}
 --- !u!223 &1955091894
@@ -4059,6 +4126,7 @@ MonoBehaviour:
   LivesCountText: {fileID: 291656551}
   BarrierCountText: {fileID: 1450091592}
   CoinCountText: {fileID: 1347105403}
+  PlusCoinsText: {fileID: 1858210152}
   var_TotalLives: 5
   var_TotalBombs: 5
   var_TotalSlows: 5
@@ -4067,6 +4135,7 @@ MonoBehaviour:
   var_TotalBarriers: 5
   shop: {fileID: 0}
   restartButton: {fileID: 0}
+  plusCoinButton: {fileID: 0}
   cars: {fileID: 0}
   spawnValues: {x: 0, y: 0, z: 0}
   rotationValues: {x: 0, y: 0, z: 0, w: 0}
@@ -4075,12 +4144,12 @@ MonoBehaviour:
   startWait: 0
   waveWait: 0
   coins: 0
-  lifeCost: 30
-  invincCost: 50
-  gunCost: 15
-  barCost: 20
-  bombCost: 10
-  slowCost: 30
+  lifeCost: 100
+  invincCost: 100
+  gunCost: 100
+  barCost: 100
+  bombCost: 100
+  slowCost: 100
   highScoreTest: 0
   invincible: 0
 --- !u!4 &2007342217
