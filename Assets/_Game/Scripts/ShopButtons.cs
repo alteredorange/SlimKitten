@@ -30,6 +30,12 @@ namespace UnityStandardAssets._2D
 		public void loadEasyLevel () {
 			Application.LoadLevel ("Easy");
 		}
+		public void loadStartScreen () {
+			Application.LoadLevel ("Start");
+		}
+		public void loadCreditsScreen () {
+			Application.LoadLevel ("Credits");
+		}
 
 		public void loadNormalLevel () {
 			Application.LoadLevel ("Normal");
