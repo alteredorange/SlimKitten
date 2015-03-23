@@ -77,7 +77,7 @@ public class GameMaster : MonoBehaviour {
 	public GameObject shop;
 	public GameObject restartButton;
 	public GameObject plusCoinButton;
-	public GameObject insaneLevelButton;
+	public Button insaneLevelButton;
 
 	//public Text hsText;
 	public GameObject cars;
@@ -108,6 +108,7 @@ public class GameMaster : MonoBehaviour {
 	public int barCost = 100;
 	public int bombCost = 100;
 	public int slowCost = 100;
+	public int insaneCost = 10000;
 
 	public GameObject lifePow;
 	public GameObject invincPow;
@@ -147,13 +148,22 @@ public class GameMaster : MonoBehaviour {
 	public int posOffset =10;
 	public int negOffset = 10;
 
+	public bool hasInsane = false;
+	public GameObject buyInsaneObj;
+
 
 	void Awake()
 	{
+		if(PlayerPrefs.HasKey("hasInsane"))
+		{
+			hasInsane = (PlayerPrefs.GetInt("hasInsane") != 0);
+		}
+
 		if(PlayerPrefs.HasKey("easyHighScore"))
 		{
 			highScoreTest = PlayerPrefs.GetInt("easyHighScore");
 		}
+
 		if(PlayerPrefs.HasKey("normalHighScore"))
 		{
 			highScoreTest = PlayerPrefs.GetInt("normalHighScore");
@@ -190,6 +200,8 @@ public class GameMaster : MonoBehaviour {
 		var_TotalInvinc = TotalInvinc;
 		var_TotalGuns = TotalGuns;
 		var_TotalBarriers = TotalBarriers;
+
+
 	}
 
 	//Fuynction that will later be called every second
@@ -320,7 +332,6 @@ public class GameMaster : MonoBehaviour {
 		shop.SetActive (false);
 		restartButton.SetActive (false);
 		plusCoinButton.SetActive (false);
-		insaneLevelButton.SetActive (false);
 		//hsText.text = "";
 		score = 0;
 		//invincible = false;
@@ -350,6 +361,23 @@ public class GameMaster : MonoBehaviour {
 
 	void Update ()
 	{
+
+		if(!hasInsane)
+		{
+			insaneLevelButton.interactable = false;
+			if(!buyInsaneObj.activeSelf)
+			{
+				buyInsaneObj.SetActive(true);
+			}
+		}
+		else if(hasInsane)
+		{
+			insaneLevelButton.interactable = true;
+			if(buyInsaneObj.activeSelf)
+			{
+				buyInsaneObj.SetActive(false);
+			}
+		}
 		if (restart)
 		{
 			if (Input.touchCount > 1)
@@ -624,6 +652,20 @@ public class GameMaster : MonoBehaviour {
 			PlayerPrefs.SetInt ("Invinc", TotalInvinc);
 			PlayerPrefs.Save();
 
+		}
+	}
+
+	public void buyInsane (){
+		if(coins >= insaneCost && !hasInsane)
+		{
+			coins -= insaneCost;
+			hasInsane = true;
+			buyInsaneObj.SetActive(false);
+			insaneLevelButton.interactable = true;
+			PlayerPrefs.SetInt ("Coins", coins);
+			PlayerPrefs.SetInt ("hasInsane", (1));
+			PlayerPrefs.Save();
+			
 		}
 	}
 	public void buyGuns (){

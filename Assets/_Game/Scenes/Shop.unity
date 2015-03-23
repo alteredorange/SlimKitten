@@ -973,7 +973,7 @@ RectTransform:
   m_LocalScale: {x: .0507064164, y: .0507064164, z: .0507064164}
   m_Children: []
   m_Father: {fileID: 906824499}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_AnchorMin: {x: .5, y: .5}
   m_AnchorMax: {x: .5, y: .5}
   m_AnchoredPosition: {x: -14.0799999, y: -5.0999999}
@@ -2037,14 +2037,14 @@ RectTransform:
   m_GameObject: {fileID: 889979948}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: -77.185936}
-  m_LocalScale: {x: .0507064164, y: .0507064164, z: .0507064164}
+  m_LocalScale: {x: .0507064201, y: .0507064201, z: .0507064201}
   m_Children:
   - {fileID: 226575663}
   m_Father: {fileID: 906824499}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_AnchorMin: {x: .5, y: .5}
   m_AnchorMax: {x: .5, y: .5}
-  m_AnchoredPosition: {x: 10.3699999, y: -5.01000023}
+  m_AnchoredPosition: {x: 10.3699951, y: -5.01000261}
   m_SizeDelta: {x: 373.799988, y: 100}
   m_Pivot: {x: .5, y: .5}
 --- !u!114 &889979950
@@ -2087,7 +2087,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 2007342216}
-        m_MethodName: buyBombs
+        m_MethodName: buyInsane
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -2244,8 +2244,7 @@ GameObject:
   m_PrefabInternal: {fileID: 0}
   serializedVersion: 4
   m_Component:
-  - 224: {fileID: 906824499}
-  - 223: {fileID: 906824500}
+  - 4: {fileID: 906824499}
   m_Layer: 0
   m_Name: UnlockInsaneHUD
   m_TagString: Untagged
@@ -2253,42 +2252,20 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!224 &906824499
-RectTransform:
+--- !u!4 &906824499
+Transform:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 906824498}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 1522.2124}
+  m_LocalPosition: {x: 14.3155632, y: -107.847656, z: 1522.2124}
   m_LocalScale: {x: 19.7213707, y: 19.7213707, z: 19.7213707}
   m_Children:
-  - {fileID: 370445453}
   - {fileID: 889979949}
+  - {fileID: 370445453}
   m_Father: {fileID: 803531637}
   m_RootOrder: 22
-  m_AnchorMin: {x: .5, y: .5}
-  m_AnchorMax: {x: .5, y: .5}
-  m_AnchoredPosition: {x: 14.3155642, y: -107.847656}
-  m_SizeDelta: {x: 100, y: 100}
-  m_Pivot: {x: .5, y: .5}
---- !u!223 &906824500
-Canvas:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 906824498}
-  m_Enabled: 1
-  serializedVersion: 2
-  m_RenderMode: 2
-  m_Camera: {fileID: 0}
-  m_PlaneDistance: 100
-  m_PixelPerfect: 1
-  m_ReceivesEvents: 1
-  m_OverrideSorting: 0
-  m_OverridePixelPerfect: 1
-  m_SortingLayerID: -143587809
-  m_SortingOrder: 0
 --- !u!1 &967147446
 GameObject:
   m_ObjectHideFlags: 0
@@ -2867,11 +2844,11 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 100002, guid: 999388b68bb99b44099461bfbed94358, type: 2}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 100004, guid: 999388b68bb99b44099461bfbed94358, type: 2}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 100000, guid: 999388b68bb99b44099461bfbed94358, type: 2}
       propertyPath: m_IsActive
@@ -4637,7 +4614,7 @@ MonoBehaviour:
   shop: {fileID: 889979948}
   restartButton: {fileID: 889979948}
   plusCoinButton: {fileID: 889979948}
-  insaneLevelButton: {fileID: 111094933}
+  insaneLevelButton: {fileID: 111094935}
   cars: {fileID: 0}
   spawnValues: {x: 0, y: 0, z: 0}
   rotationValues: {x: 0, y: 0, z: 0, w: 0}
@@ -4653,6 +4630,7 @@ MonoBehaviour:
   barCost: 100
   bombCost: 100
   slowCost: 100
+  insaneCost: 10000
   lifePow: {fileID: 0}
   invincPow: {fileID: 0}
   gunPow: {fileID: 0}
@@ -4672,6 +4650,8 @@ MonoBehaviour:
   carSpawnTime: 1
   posOffset: 10
   negOffset: 10
+  hasInsane: 0
+  buyInsaneObj: {fileID: 906824498}
 --- !u!4 &2007342217
 Transform:
   m_ObjectHideFlags: 0

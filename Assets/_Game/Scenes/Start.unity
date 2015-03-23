@@ -580,6 +580,7 @@ MonoBehaviour:
   shop: {fileID: 0}
   restartButton: {fileID: 0}
   plusCoinButton: {fileID: 0}
+  insaneLevelButton: {fileID: 190217960}
   cars: {fileID: 127878, guid: 2251aa3f6066b6547824e425f50665f6, type: 2}
   spawnValues: {x: -50, y: 40, z: 50}
   rotationValues: {x: 90, y: 0, z: 0, w: -90}
