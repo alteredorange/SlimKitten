@@ -111,6 +111,8 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 415460}
+  - 136: {fileID: 13645754}
+  - 114: {fileID: 11463136}
   m_Layer: 0
   m_Name: Model_Car_Lolvo_LOD0
   m_TagString: Untagged
@@ -408,7 +410,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 106916}
   m_LocalRotation: {x: -.707106829, y: 0, z: 0, w: .707106709}
-  m_LocalPosition: {x: -24.8299999, y: 0, z: 0}
+  m_LocalPosition: {x: -29.8006706, y: 45.6818886, z: 0}
   m_LocalScale: {x: 4, y: 4, z: 4}
   m_Children:
   - {fileID: 415460}
@@ -791,6 +793,33 @@ MonoBehaviour:
   playerExplosion: {fileID: 109120, guid: f90da8e86297562498af218c5710d686, type: 2}
   scoreValue: 1
   Boom: {fileID: 8300000, guid: 870f9e88aa8c14d4fa8e42754da1422c, type: 3}
+--- !u!114 &11463136
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 151778}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ef2ce6d658ca3614da6b52f76a2bfcda, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerExplosion: {fileID: 109120, guid: f90da8e86297562498af218c5710d686, type: 2}
+  scoreValue: 1
+  Boom: {fileID: 8300000, guid: 870f9e88aa8c14d4fa8e42754da1422c, type: 3}
+--- !u!136 &13645754
+CapsuleCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 151778}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  m_Radius: 1.0495224
+  m_Height: 3.86999989
+  m_Direction: 2
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!205 &20538650
 LODGroup:
   m_ObjectHideFlags: 1

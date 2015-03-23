@@ -540,7 +540,7 @@ GameObject:
   - 4: {fileID: 139664908}
   m_Layer: 11
   m_Name: FirePoint
-  m_TagString: Player
+  m_TagString: Weapon
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -653,7 +653,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 11
+  m_RootOrder: 12
 --- !u!1001 &226817024
 Prefab:
   m_ObjectHideFlags: 0
@@ -1220,7 +1220,7 @@ MonoBehaviour:
   Explosion1: {fileID: 19853438, guid: f90da8e86297562498af218c5710d686, type: 2}
   Meow: {fileID: 8300000, guid: 5d714fafa5c1c1b40af9dbd8565fd911, type: 3}
   barrierPrefab: {fileID: 0}
-  player: {fileID: 0}
+  player: {fileID: 1535715638}
   rotationValues: {x: 0, y: 0, z: 0, w: 0}
   Enemy: {fileID: 0}
   deactivateTime: 2.5
@@ -1617,7 +1617,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 5
 --- !u!4 &752722407
 Transform:
   m_PrefabParentObject: {fileID: 483334, guid: a5a4cd72513325c4798d4dafada0164c, type: 2}

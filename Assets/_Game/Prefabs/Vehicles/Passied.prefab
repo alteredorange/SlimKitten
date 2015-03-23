@@ -211,6 +211,8 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 447452}
+  - 136: {fileID: 13606842}
+  - 114: {fileID: 11411802}
   m_Layer: 0
   m_Name: Model_Car_Passied_LOD0
   m_TagString: Untagged
@@ -331,7 +333,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 188462}
   m_LocalRotation: {x: -.707106829, y: 0, z: 0, w: .707106709}
-  m_LocalPosition: {x: -21.7800007, y: 0, z: 0}
+  m_LocalPosition: {x: -37.3108292, y: 48.7958565, z: -.5}
   m_LocalScale: {x: 4, y: 4, z: 4}
   m_Children:
   - {fileID: 447452}
@@ -759,6 +761,20 @@ BoxCollider2D:
   m_Offset: {x: .00121575594, y: -.0105259493}
   serializedVersion: 2
   m_Size: {x: .227437913, y: .201567143}
+--- !u!114 &11411802
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 189946}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ef2ce6d658ca3614da6b52f76a2bfcda, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerExplosion: {fileID: 109120, guid: f90da8e86297562498af218c5710d686, type: 2}
+  scoreValue: 1
+  Boom: {fileID: 8300000, guid: 870f9e88aa8c14d4fa8e42754da1422c, type: 3}
 --- !u!114 &11474280
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -794,6 +810,19 @@ MonoBehaviour:
   playerExplosion: {fileID: 109120, guid: f90da8e86297562498af218c5710d686, type: 2}
   scoreValue: 1
   Boom: {fileID: 8300000, guid: 870f9e88aa8c14d4fa8e42754da1422c, type: 3}
+--- !u!136 &13606842
+CapsuleCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 189946}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  m_Radius: 1.04773426
+  m_Height: 5.26999998
+  m_Direction: 2
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!205 &20500436
 LODGroup:
   m_ObjectHideFlags: 1

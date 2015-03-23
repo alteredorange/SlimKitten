@@ -44,6 +44,8 @@ GameObject:
   - 4: {fileID: 452040}
   - 33: {fileID: 3312226}
   - 23: {fileID: 2345514}
+  - 136: {fileID: 13611784}
+  - 114: {fileID: 11458690}
   m_Layer: 0
   m_Name: Car_Body
   m_TagString: Untagged
@@ -198,7 +200,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 151306}
   m_LocalRotation: {x: -.707106829, y: 0, z: 0, w: .707106709}
-  m_LocalPosition: {x: -36.1513329, y: -5.99157953, z: 0}
+  m_LocalPosition: {x: -38.4098778, y: 47.1472855, z: 0}
   m_LocalScale: {x: 4, y: 4, z: 4}
   m_Children:
   - {fileID: 452040}
@@ -413,6 +415,20 @@ MonoBehaviour:
     Health: 33
   lives: 2
   fallBoundary: -25
+--- !u!114 &11458690
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 139722}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ef2ce6d658ca3614da6b52f76a2bfcda, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerExplosion: {fileID: 109120, guid: f90da8e86297562498af218c5710d686, type: 2}
+  scoreValue: 1
+  Boom: {fileID: 8300000, guid: 870f9e88aa8c14d4fa8e42754da1422c, type: 3}
 --- !u!114 &11459138
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -427,6 +443,19 @@ MonoBehaviour:
   playerExplosion: {fileID: 0}
   scoreValue: 1
   Boom: {fileID: 0}
+--- !u!136 &13611784
+CapsuleCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 139722}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  m_Radius: 1.23671246
+  m_Height: 5.69000006
+  m_Direction: 2
+  m_Center: {x: .00172895193, y: 1.08003867, z: -.0805342123}
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1
