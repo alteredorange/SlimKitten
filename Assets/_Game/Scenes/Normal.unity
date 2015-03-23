@@ -720,7 +720,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 11
+  m_RootOrder: 12
 --- !u!1001 &226817024
 Prefab:
   m_ObjectHideFlags: 0
@@ -758,7 +758,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 430460, guid: a5a4cd72513325c4798d4dafada0164c, type: 2}
       propertyPath: m_RootOrder
-      value: 9
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 5023866, guid: a5a4cd72513325c4798d4dafada0164c, type: 2}
       propertyPath: m_IsKinematic
@@ -1233,7 +1233,6 @@ GameObject:
   - 4: {fileID: 600075742}
   - 212: {fileID: 600075744}
   - 114: {fileID: 600075746}
-  - 82: {fileID: 600075743}
   m_Layer: 11
   m_Name: Pistol
   m_TagString: Weapon
@@ -1254,75 +1253,6 @@ Transform:
   - {fileID: 139664908}
   m_Father: {fileID: 752722407}
   m_RootOrder: 0
---- !u!82 &600075743
-AudioSource:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 600075741}
-  m_Enabled: 1
-  serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 870f9e88aa8c14d4fa8e42754da1422c, type: 3}
-  m_PlayOnAwake: 1
-  m_Volume: .400000006
-  m_Pitch: 1
-  Loop: 0
-  Mute: 0
-  Priority: 238
-  DopplerLevel: 1
-  MinDistance: 1
-  MaxDistance: 500
-  Pan2D: 0
-  rolloffMode: 0
-  BypassEffects: 0
-  BypassListenerEffects: 0
-  BypassReverbZones: 0
-  rolloffCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - time: 0
-      value: 1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-    - time: 1
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-  panLevelCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - time: 0
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-  spreadCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - time: 0
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-  reverbZoneMixCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - time: 0
-      value: 1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-    m_PreInfinity: 2
-    m_PostInfinity: 2
 --- !u!212 &600075744
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1599,7 +1529,7 @@ Transform:
   m_LocalScale: {x: 99.7399979, y: 65.5, z: 10}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 13
+  m_RootOrder: 14
 --- !u!114 &689950123
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1919,7 +1849,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 5
 --- !u!4 &752722407
 Transform:
   m_PrefabParentObject: {fileID: 483334, guid: a5a4cd72513325c4798d4dafada0164c, type: 2}
@@ -1961,7 +1891,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 400004, guid: d024aaa09f4080d448d16f62d1a97b0b, type: 2}
       propertyPath: m_RootOrder
-      value: 7
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 100004, guid: d024aaa09f4080d448d16f62d1a97b0b, type: 2}
       propertyPath: m_Name
@@ -2449,7 +2379,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 452476, guid: e3c0f43c5893d554e99f9d140754c63b, type: 2}
       propertyPath: m_RootOrder
-      value: 4
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 19822408, guid: e3c0f43c5893d554e99f9d140754c63b, type: 2}
       propertyPath: InitialModule.startSize.scalar
@@ -3557,7 +3487,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 400004, guid: d024aaa09f4080d448d16f62d1a97b0b, type: 2}
       propertyPath: m_RootOrder
-      value: 8
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 100000, guid: d024aaa09f4080d448d16f62d1a97b0b, type: 2}
       propertyPath: m_Layer
@@ -3841,6 +3771,7 @@ MonoBehaviour:
   easy: 0
   normal: 1
   insane: 0
+  spawnChance: 5
   scoreText: {fileID: 706101881}
   gameOverText: {fileID: 1780833307}
   InvincCountText: {fileID: 2140029036}
@@ -3860,7 +3791,7 @@ MonoBehaviour:
   shop: {fileID: 920590674}
   restartButton: {fileID: 41785541}
   plusCoinButton: {fileID: 729592895}
-  cars: {fileID: 127878, guid: 2251aa3f6066b6547824e425f50665f6, type: 2}
+  cars: {fileID: 179674, guid: 9da57fdd2a97bf9449dda1dd97829b8c, type: 2}
   spawnValues: {x: -50, y: 40, z: 50}
   rotationValues: {x: 90, y: 0, z: 0, w: -90}
   carsInWaveCount: 1
