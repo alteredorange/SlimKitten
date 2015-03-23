@@ -107,6 +107,13 @@ public class GameMaster : MonoBehaviour {
 	public int bombCost = 100;
 	public int slowCost = 100;
 
+	public GameObject lifePow;
+	public GameObject invincPow;
+	public GameObject gunPow;
+	public GameObject barPow;
+	public GameObject bombPow;
+	public GameObject slowPow;
+
 
 	//Name of the file that will hold the highscore
 	private string fileName = "test.txt";
@@ -177,28 +184,40 @@ public class GameMaster : MonoBehaviour {
 			{
 			case 1:
 				Debug.Log("Spawned invincibility");
+				spawnPower(invincPow);
 				break;
 			case 2:
 				Debug.Log("Spawned gun");
+				spawnPower(gunPow);
 				break;
 			case 3:
 				Debug.Log("Spawned bomb");
+				spawnPower(bombPow);
 				break;
 			case 4:
 				Debug.Log("Spawned life");
+				spawnPower(lifePow);
 				break;
 			case 5:
 				Debug.Log("Spawned slow");
+				spawnPower(slowPow);
 				break;
 			case 6:
 				Debug.Log("Spawned barrier");
+				spawnPower(barPow);
 				break;
 			}
 		}
 
 	}
 
-
+	void spawnPower(GameObject powerup)
+	{
+		Vector3 spawnPosition = new Vector3 (UnityEngine.Random.Range (-spawnValues.x, spawnValues.x), spawnValues.y, -1);
+		Quaternion spawnRotation = new Quaternion (0, rotationValues.y, rotationValues.z, rotationValues.w);
+		Instantiate (powerup, spawnPosition, spawnRotation);
+	}
+	
 	void Start () {
 		//To see if powerups are updating correctly in editor, can remove at launch
 
@@ -325,6 +344,42 @@ public class GameMaster : MonoBehaviour {
 		for (int i = 0; i < allEnemy.Length; i++)
 		{
 			Destroy(allEnemy[i]);
+		}
+
+		GameObject[] pow1 = GameObject.FindGameObjectsWithTag ("BombPow") as GameObject[];
+		for (int i = 0; i < pow1.Length; i++)
+		{
+			Destroy(pow1[i]);
+		}
+
+		GameObject[] pow2 = GameObject.FindGameObjectsWithTag ("GunPow") as GameObject[];
+		for (int i = 0; i < pow2.Length; i++)
+		{
+			Destroy(pow2[i]);
+		}
+
+		GameObject[] pow3 = GameObject.FindGameObjectsWithTag ("LifePow") as GameObject[];
+		for (int i = 0; i < pow3.Length; i++)
+		{
+			Destroy(pow3[i]);
+		}
+
+		GameObject[] pow4 = GameObject.FindGameObjectsWithTag ("InvincPow") as GameObject[];
+		for (int i = 0; i < pow4.Length; i++)
+		{
+			Destroy(pow4[i]);
+		}
+
+		GameObject[] pow5 = GameObject.FindGameObjectsWithTag ("BlockPow") as GameObject[];
+		for (int i = 0; i < pow5.Length; i++)
+		{
+			Destroy(pow5[i]);
+		}
+
+		GameObject[] pow6 = GameObject.FindGameObjectsWithTag ("SlowPow") as GameObject[];
+		for (int i = 0; i < pow6.Length; i++)
+		{
+			Destroy(pow6[i]);
 		}
 
 
