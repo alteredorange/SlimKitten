@@ -15,6 +15,9 @@ public class GameMaster : MonoBehaviour {
 	public bool normal;
 	public bool insane;
 
+	//Set this to the percent chance for an item to spawn
+	public int spawnChance = 5;
+
 
 	public void setEasy()
 	{
@@ -162,6 +165,40 @@ public class GameMaster : MonoBehaviour {
 		var_TotalBarriers = TotalBarriers;
 	}
 
+	//Fuynction that will later be called every second
+	void randomNum()
+	{
+		//gets a random number from 1-100 including 100
+		int canSpawn = UnityEngine.Random.Range (1, 101);
+		if (canSpawn <= spawnChance)
+		{
+			int randomPow = UnityEngine.Random.Range (1, 7);
+			switch(randomPow)
+			{
+			case 1:
+				Debug.Log("Spawned invincibility");
+				break;
+			case 2:
+				Debug.Log("Spawned gun");
+				break;
+			case 3:
+				Debug.Log("Spawned bomb");
+				break;
+			case 4:
+				Debug.Log("Spawned life");
+				break;
+			case 5:
+				Debug.Log("Spawned slow");
+				break;
+			case 6:
+				Debug.Log("Spawned barrier");
+				break;
+			}
+		}
+
+	}
+
+
 	void Start () {
 		//To see if powerups are updating correctly in editor, can remove at launch
 
@@ -242,7 +279,7 @@ public class GameMaster : MonoBehaviour {
 	IEnumerator SpawnWaves () 
 		{
 		yield return new WaitForSeconds (startWait);
-
+		InvokeRepeating ("randomNum", 0, 1);
 		while (true)
 		{
 			if(!gameOver)
@@ -281,7 +318,7 @@ public class GameMaster : MonoBehaviour {
 		//	Destroy(allEnemy);
 		//}
 
-
+		CancelInvoke ("randomNum");
 
 		GameObject[] allEnemy = GameObject.FindGameObjectsWithTag ("Enemy") as GameObject[];
 		
