@@ -187,7 +187,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 455464, guid: f90da8e86297562498af218c5710d686, type: 2}
       propertyPath: m_RootOrder
-      value: 14
+      value: 13
       objectReference: {fileID: 0}
     - target: {fileID: 19839996, guid: f90da8e86297562498af218c5710d686, type: 2}
       propertyPath: playOnAwake
@@ -428,7 +428,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 400004, guid: d024aaa09f4080d448d16f62d1a97b0b, type: 2}
       propertyPath: m_RootOrder
-      value: 4
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 100004, guid: d024aaa09f4080d448d16f62d1a97b0b, type: 2}
       propertyPath: m_Name
@@ -1760,7 +1760,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 999388b68bb99b44099461bfbed94358, type: 2}
       propertyPath: m_RootOrder
-      value: 12
+      value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 100002, guid: 999388b68bb99b44099461bfbed94358, type: 2}
       propertyPath: m_IsActive
@@ -2600,7 +2600,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 408024, guid: 457906b41a0f70b4587affe3d444100c, type: 2}
       propertyPath: m_RootOrder
-      value: 5
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 135428, guid: 457906b41a0f70b4587affe3d444100c, type: 2}
       propertyPath: m_IsActive
@@ -3809,7 +3809,7 @@ MonoBehaviour:
   lifePow: {fileID: 145956, guid: 5021769a9823c32478ae314022cf7b81, type: 2}
   invincPow: {fileID: 107026, guid: 3cdf8e6cd647c1d41a97cb87b10883f2, type: 2}
   gunPow: {fileID: 189268, guid: bbd2d926d8e1860449617e9bbc7a142d, type: 2}
-  barPow: {fileID: 165202, guid: b88d8b07b61e3104b9f154d07c5c1a25, type: 2}
+  barPow: {fileID: 197564, guid: 7db2373e88d5ae34da4d33555fb60336, type: 2}
   bombPow: {fileID: 144218, guid: 7357bf7688b3589419dca43acb6f3e32, type: 2}
   slowPow: {fileID: 123118, guid: 6184f9dfe21f9b34aa2a9518a52966ac, type: 2}
   highScoreTest: 0
