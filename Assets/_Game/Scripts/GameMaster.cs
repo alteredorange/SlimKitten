@@ -285,10 +285,19 @@ public class GameMaster : MonoBehaviour {
 
 	void spawnCar(GameObject car)
 	{
+	retry:
 		Vector3 CarspawnPosition = new Vector3 (UnityEngine.Random.Range (-spawnValues.x, spawnValues.x), 40, 0);
-		Quaternion CarspawnRotation = new Quaternion (90, 0, 0, -90);
-		Instantiate (car, lastPosition + offsetVector, CarspawnRotation);
-		lastPosition = CarspawnPosition;
+		if (CarspawnPosition.x <= lastPosition.x - 50 || CarspawnPosition.x >= lastPosition.x + 50) {
+			Quaternion CarspawnRotation = new Quaternion (90, 0, 0, -90);
+			Instantiate (car, CarspawnPosition, CarspawnRotation);
+			lastPosition = CarspawnPosition;
+			Debug.Log (lastPosition.x.ToString ());
+		}
+		else
+		{
+			goto retry;
+		}
+		 
 	}
 
 
