@@ -146,7 +146,7 @@ public class GameMaster : MonoBehaviour {
 			TotalSlows = PlayerPrefs.GetInt ("Slow");
 		
 		if (PlayerPrefs.HasKey ("Guns"))
-			TotalLives = PlayerPrefs.GetInt ("Guns");
+			TotalGuns = PlayerPrefs.GetInt ("Guns");
 		
 		if (PlayerPrefs.HasKey ("Invinc"))
 			TotalInvinc = PlayerPrefs.GetInt ("Invinc");
