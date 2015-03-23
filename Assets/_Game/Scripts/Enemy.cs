@@ -106,7 +106,7 @@ public class Enemy : MonoBehaviour {
 		}
 		//Eney collides with Bomb
 	else if (other.tag == "Bomb") {
-			gameMaster.AddScore (scoreValue * 6);
+			gameMaster.AddScore (scoreValue * 10);
 			Instantiate (playerExplosion, other.transform.position, other.transform.rotation);
 			AudioSource.PlayClipAtPoint (Boom, transform.position);
 			Destroy (gameObject);

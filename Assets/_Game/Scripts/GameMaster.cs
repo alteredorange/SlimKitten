@@ -56,12 +56,12 @@ public class GameMaster : MonoBehaviour {
 
 //Powerups
 
-	public static int TotalLives = 0;
-	public static int TotalBombs = 0;
-	public static int TotalSlows = 0;
-	public static int TotalInvinc = 0;
-	public static int TotalGuns = 0;
-	public static int TotalBarriers = 0;
+	public static int TotalLives = 1;
+	public static int TotalBombs = 1;
+	public static int TotalSlows = 1;
+	public static int TotalInvinc = 1;
+	public static int TotalGuns = 1;
+	public static int TotalBarriers = 1;
 	
 	
 	public int var_TotalLives = 5;
