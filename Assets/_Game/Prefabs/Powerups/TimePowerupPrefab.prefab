@@ -73,7 +73,7 @@ MonoBehaviour:
   stats:
     Health: 100
   lives: 2
-  fallBoundary: -20
+  fallBoundary: -25
 --- !u!212 &21287424
 SpriteRenderer:
   m_ObjectHideFlags: 1

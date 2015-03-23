@@ -14,7 +14,7 @@ GameObject:
   - 114: {fileID: 11479278}
   m_Layer: 0
   m_Name: RoadBlockPowerup
-  m_TagString: LifePow
+  m_TagString: BarPow
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -73,7 +73,7 @@ MonoBehaviour:
   stats:
     Health: 100
   lives: 2
-  fallBoundary: -20
+  fallBoundary: -25
 --- !u!212 &21245650
 SpriteRenderer:
   m_ObjectHideFlags: 1

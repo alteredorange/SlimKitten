@@ -761,7 +761,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 430460, guid: a5a4cd72513325c4798d4dafada0164c, type: 2}
       propertyPath: m_RootOrder
-      value: 9
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 5023866, guid: a5a4cd72513325c4798d4dafada0164c, type: 2}
       propertyPath: m_IsKinematic
@@ -1961,7 +1961,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 400004, guid: d024aaa09f4080d448d16f62d1a97b0b, type: 2}
       propertyPath: m_RootOrder
-      value: 7
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 100004, guid: d024aaa09f4080d448d16f62d1a97b0b, type: 2}
       propertyPath: m_Name
@@ -2449,7 +2449,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 452476, guid: e3c0f43c5893d554e99f9d140754c63b, type: 2}
       propertyPath: m_RootOrder
-      value: 4
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 19822408, guid: e3c0f43c5893d554e99f9d140754c63b, type: 2}
       propertyPath: InitialModule.startSize.scalar
@@ -3557,7 +3557,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 400004, guid: d024aaa09f4080d448d16f62d1a97b0b, type: 2}
       propertyPath: m_RootOrder
-      value: 8
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 100000, guid: d024aaa09f4080d448d16f62d1a97b0b, type: 2}
       propertyPath: m_Layer
@@ -3841,7 +3841,7 @@ MonoBehaviour:
   easy: 1
   normal: 0
   insane: 0
-  spawnChance: 5
+  spawnChance: 100
   scoreText: {fileID: 706101881}
   gameOverText: {fileID: 1780833307}
   InvincCountText: {fileID: 2140029036}

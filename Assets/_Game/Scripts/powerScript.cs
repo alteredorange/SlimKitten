@@ -19,7 +19,7 @@ public class powerScript : MonoBehaviour {
 	public float lives = 2f;
 	
 	
-	public int fallBoundary = -20;
+	public int fallBoundary = -25;
 	
 	public static int TotalLives;
 	

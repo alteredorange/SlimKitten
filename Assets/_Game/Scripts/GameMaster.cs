@@ -17,6 +17,7 @@ public class GameMaster : MonoBehaviour {
 
 	//Set this to the percent chance for an item to spawn
 	public int spawnChance = 5;
+	public int carSpawnChance = 95;
 
 
 	public void setEasy()
@@ -113,6 +114,15 @@ public class GameMaster : MonoBehaviour {
 	public GameObject barPow;
 	public GameObject bombPow;
 	public GameObject slowPow;
+
+	public GameObject caprise;
+	public GameObject dirtyvan;
+	public GameObject hotrod;
+	public GameObject lolvo;
+	public GameObject passied;
+	public GameObject suv;
+	public GameObject taxi;
+	public GameObject van;
 
 
 	//Name of the file that will hold the highscore
@@ -211,12 +221,69 @@ public class GameMaster : MonoBehaviour {
 
 	}
 
+
+
 	void spawnPower(GameObject powerup)
 	{
 		Vector3 spawnPosition = new Vector3 (UnityEngine.Random.Range (-spawnValues.x, spawnValues.x), spawnValues.y, -1);
 		Quaternion spawnRotation = new Quaternion (0, rotationValues.y, rotationValues.z, rotationValues.w);
 		Instantiate (powerup, spawnPosition, spawnRotation);
 	}
+
+
+	void randomCars()
+	{
+		//gets a random number from 1-100 including 100
+		int cancarSpawn = UnityEngine.Random.Range (1, 101);
+		if (cancarSpawn <= carSpawnChance) {
+			int randomCar = UnityEngine.Random.Range (1, 9);
+			switch (randomCar) {
+			case 7:
+				Debug.Log ("Spawned caprise");
+				spawnCar(caprise);
+				break;
+			case 8:
+				Debug.Log ("Spawned dirtyvan");
+				spawnCar(dirtyvan);
+				break;
+			case 9:
+				Debug.Log ("Spawned hotrod");
+				spawnCar(hotrod);
+				break;
+			case 10:
+				Debug.Log ("Spawned lolvo");
+				spawnCar(lolvo);
+				break;
+			case 11:
+				Debug.Log ("Spawned passied");
+				spawnCar(passied);
+				break;
+			case 12:
+				Debug.Log ("Spawned suv");
+				spawnCar(suv);
+				break;
+			case 13:
+				Debug.Log ("Spawned taxi");
+				spawnCar(taxi);
+				break;
+			case 14:
+				Debug.Log ("Spawned van");
+				spawnCar(van);
+				break;
+			}
+		}
+	}
+
+
+	void spawnCar(GameObject car)
+	{
+		Vector3 CarspawnPosition = new Vector3 (UnityEngine.Random.Range (-spawnValues.x, spawnValues.x), spawnValues.y, -1);
+		Quaternion CarspawnRotation = new Quaternion (90, 0, 0, -90);
+		Instantiate (car, CarspawnPosition, CarspawnRotation);
+	}
+
+
+
 	
 	void Start () {
 		//To see if powerups are updating correctly in editor, can remove at launch

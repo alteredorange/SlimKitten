@@ -21,6 +21,7 @@ TagManager:
   - LifePow
   - BlockPow
   - SlowPow
+  - BarPow
   layers:
   - Default
   - TransparentFX
