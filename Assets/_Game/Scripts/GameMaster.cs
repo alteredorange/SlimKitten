@@ -77,6 +77,7 @@ public class GameMaster : MonoBehaviour {
 	public GameObject shop;
 	public GameObject restartButton;
 	public GameObject plusCoinButton;
+	public GameObject insaneLevelButton;
 
 	//public Text hsText;
 	public GameObject cars;
@@ -319,7 +320,7 @@ public class GameMaster : MonoBehaviour {
 		shop.SetActive (false);
 		restartButton.SetActive (false);
 		plusCoinButton.SetActive (false);
-
+		insaneLevelButton.SetActive (false);
 		//hsText.text = "";
 		score = 0;
 		//invincible = false;

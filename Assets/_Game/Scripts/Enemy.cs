@@ -114,7 +114,7 @@ public class Enemy : MonoBehaviour {
 	}
 		//gun shots?
 		else if (other.tag == "Weapon") {
-			gameMaster.AddScore (scoreValue * 2);
+			gameMaster.AddScore (scoreValue * 1);
 			Instantiate (playerExplosion, other.transform.position, other.transform.rotation);
 			AudioSource.PlayClipAtPoint (Boom, transform.position);
 			Destroy (gameObject);
