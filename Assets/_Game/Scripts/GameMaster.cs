@@ -139,6 +139,13 @@ public class GameMaster : MonoBehaviour {
 	private int nextNum;
 	public float carSpawnTime = 1;
 
+
+
+	Vector3 lastPosition = new Vector3(0,0,0);
+	Vector3 offsetVector = new Vector3(50,0,0);
+	
+
+
 	void Awake()
 	{
 		if(PlayerPrefs.HasKey("easyHighScore"))
@@ -278,9 +285,10 @@ public class GameMaster : MonoBehaviour {
 
 	void spawnCar(GameObject car)
 	{
-		Vector3 CarspawnPosition = new Vector3 (UnityEngine.Random.Range (-spawnValues.x, spawnValues.x), spawnValues.y, -1);
+		Vector3 CarspawnPosition = new Vector3 (UnityEngine.Random.Range (-spawnValues.x, spawnValues.x), 40, 0);
 		Quaternion CarspawnRotation = new Quaternion (90, 0, 0, -90);
-		Instantiate (car, CarspawnPosition, CarspawnRotation);
+		Instantiate (car, lastPosition + offsetVector, CarspawnRotation);
+		lastPosition = CarspawnPosition;
 	}
 
 
