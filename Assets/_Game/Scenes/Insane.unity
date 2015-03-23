@@ -377,7 +377,7 @@ MonoBehaviour:
     m_SelectOnDown: {fileID: 0}
     m_SelectOnLeft: {fileID: 0}
     m_SelectOnRight: {fileID: 0}
-  m_Transition: 1
+  m_Transition: 0
   m_Colors:
     m_NormalColor: {r: .196078435, g: .666666687, b: .90196079, a: 1}
     m_HighlightedColor: {r: .960784316, g: .960784316, b: .960784316, a: 1}
@@ -394,7 +394,7 @@ MonoBehaviour:
     m_HighlightedTrigger: Highlighted
     m_PressedTrigger: Pressed
     m_DisabledTrigger: Disabled
-  m_Interactable: 1
+  m_Interactable: 0
   m_TargetGraphic: {fileID: 73997272}
   m_OnClick:
     m_PersistentCalls:
@@ -769,7 +769,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 12
+  m_RootOrder: 11
 --- !u!1001 &226817024
 Prefab:
   m_ObjectHideFlags: 0
@@ -861,6 +861,10 @@ Prefab:
     - target: {fileID: 141288, guid: a5a4cd72513325c4798d4dafada0164c, type: 2}
       propertyPath: m_Name
       value: Cat
+      objectReference: {fileID: 0}
+    - target: {fileID: 183774, guid: a5a4cd72513325c4798d4dafada0164c, type: 2}
+      propertyPath: m_TagString
+      value: Weapon
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: a5a4cd72513325c4798d4dafada0164c, type: 2}
@@ -3436,7 +3440,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 1
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: +3 Coins
+  m_Text: 
 --- !u!222 &1420680534
 CanvasRenderer:
   m_ObjectHideFlags: 0

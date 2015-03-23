@@ -145,7 +145,7 @@ public class PowerButtons : TouchManager {
 				if (gravityButtonBool == false) {
 					if (GameMaster.TotalSlows > 0) {
 						Enemy.GetComponent<Rigidbody2D> ().gravityScale = 1.0f;
-						gameMaster.GetComponent<GameMaster> ().spawnWait = 1.5f;
+						//gameMaster.GetComponent<GameMaster> ().spawnWait = 1.5f;
 						Invoke ("gravityDisable", deactivateTime);
 						GameMaster.TotalSlows -= 1;
 						gravityButtonBool = true;
@@ -162,7 +162,7 @@ public class PowerButtons : TouchManager {
 		}
 
 	void gravityDisable () {
-			gameMaster.GetComponent<GameMaster> ().spawnWait = .25f;
+			//gameMaster.GetComponent<GameMaster> ().spawnWait = .25f;
 			Enemy.GetComponent<Rigidbody2D> ().gravityScale = 15.0f;
 				gravityButtonBool = false;
 		}
