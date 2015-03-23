@@ -142,8 +142,9 @@ public class GameMaster : MonoBehaviour {
 
 
 	Vector3 lastPosition = new Vector3(0,0,0);
-	Vector3 offsetVector = new Vector3(50,0,0);
-	
+	Vector3 offsetVector = new Vector3(5,0,0);
+	public int posOffset =10;
+	public int negOffset = 10;
 
 
 	void Awake()
@@ -287,7 +288,7 @@ public class GameMaster : MonoBehaviour {
 	{
 	retry:
 		Vector3 CarspawnPosition = new Vector3 (UnityEngine.Random.Range (-spawnValues.x, spawnValues.x), 40, 0);
-		if (CarspawnPosition.x <= lastPosition.x - 50 || CarspawnPosition.x >= lastPosition.x + 50) {
+		if (CarspawnPosition.x <= lastPosition.x - negOffset || CarspawnPosition.x >= lastPosition.x + posOffset) {
 			Quaternion CarspawnRotation = new Quaternion (90, 0, 0, -90);
 			Instantiate (car, CarspawnPosition, CarspawnRotation);
 			lastPosition = CarspawnPosition;

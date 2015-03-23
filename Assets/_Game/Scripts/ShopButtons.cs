@@ -48,6 +48,9 @@ namespace UnityStandardAssets._2D
 		public void ReloadLevel () {
 			Application.LoadLevel (Application.loadedLevel);
 		}
+		public void ExitGame () {
+			Application.Quit();
+		}
 			
 			
 			void OnFirstTouchBegan ()

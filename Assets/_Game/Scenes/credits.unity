@@ -449,10 +449,10 @@ Transform:
   m_GameObject: {fileID: 324964896}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 347.000031, z: -1.99994242}
-  m_LocalScale: {x: 10.3000002, y: 12.5200014, z: 0}
+  m_LocalScale: {x: 10, y: 10, z: 0}
   m_Children: []
   m_Father: {fileID: 1940237253}
-  m_RootOrder: 3
+  m_RootOrder: 4
 --- !u!102 &324964898
 TextMesh:
   serializedVersion: 3
@@ -473,7 +473,7 @@ TextMesh:
   m_Font: {fileID: 12800000, guid: b284a6525342f44599e9ce79e37c2d61, type: 3}
   m_Color:
     serializedVersion: 2
-    rgba: 4278190080
+    rgba: 4294967295
 --- !u!23 &324964899
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -526,7 +526,7 @@ RectTransform:
   m_LocalScale: {x: .5, y: .5, z: 1}
   m_Children: []
   m_Father: {fileID: 1373726025}
-  m_RootOrder: 5
+  m_RootOrder: 4
   m_AnchorMin: {x: 1, y: .5}
   m_AnchorMax: {x: 1, y: .5}
   m_AnchoredPosition: {x: -420.700012, y: 229.000031}
@@ -692,6 +692,7 @@ MonoBehaviour:
   normal: 0
   insane: 0
   spawnChance: 5
+  carSpawnChance: 95
   scoreText: {fileID: 0}
   gameOverText: {fileID: 0}
   InvincCountText: {fileID: 0}
@@ -732,8 +733,19 @@ MonoBehaviour:
   barPow: {fileID: 0}
   bombPow: {fileID: 0}
   slowPow: {fileID: 0}
+  caprise: {fileID: 0}
+  dirtyvan: {fileID: 0}
+  hotrod: {fileID: 0}
+  lolvo: {fileID: 0}
+  passied: {fileID: 0}
+  suv: {fileID: 0}
+  taxi: {fileID: 0}
+  van: {fileID: 0}
   highScoreTest: 0
   invincible: 0
+  carSpawnTime: 1
+  posOffset: 10
+  negOffset: 10
 --- !u!4 &506239445
 Transform:
   m_ObjectHideFlags: 0
@@ -1553,10 +1565,10 @@ RectTransform:
   m_LocalScale: {x: .5, y: .5, z: 1}
   m_Children: []
   m_Father: {fileID: 1373726025}
-  m_RootOrder: 4
+  m_RootOrder: 3
   m_AnchorMin: {x: 1, y: .5}
   m_AnchorMax: {x: 1, y: .5}
-  m_AnchoredPosition: {x: -423.899994, y: 154.699997}
+  m_AnchoredPosition: {x: -418, y: 155}
   m_SizeDelta: {x: 1, y: 1}
   m_Pivot: {x: .5, y: .5}
 --- !u!114 &1097136134
@@ -1584,7 +1596,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 1
     m_VerticalOverflow: 1
     m_LineSpacing: .800000012
-  m_Text: OrangeWaterGames@gmail.com
+  m_Text: BigOrangeGames@gmail.com
 --- !u!222 &1097136135
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1941,7 +1953,6 @@ RectTransform:
   - {fileID: 526694270}
   - {fileID: 18716020}
   - {fileID: 91470624}
-  - {fileID: 1389499532}
   - {fileID: 1097136133}
   - {fileID: 368736386}
   m_Father: {fileID: 1940237253}
@@ -1978,72 +1989,6 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1373726024}
---- !u!1 &1389499531
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  serializedVersion: 4
-  m_Component:
-  - 224: {fileID: 1389499532}
-  - 222: {fileID: 1389499534}
-  - 114: {fileID: 1389499533}
-  m_Layer: 5
-  m_Name: Text 3
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!224 &1389499532
-RectTransform:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1389499531}
-  m_LocalRotation: {x: 0, y: .00698126107, z: 0, w: .999975622}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: .50999999, y: .50999999, z: 1}
-  m_Children: []
-  m_Father: {fileID: 1373726025}
-  m_RootOrder: 3
-  m_AnchorMin: {x: 1, y: .5}
-  m_AnchorMax: {x: 1, y: .5}
-  m_AnchoredPosition: {x: -420.700012, y: 229}
-  m_SizeDelta: {x: 1, y: 1}
-  m_Pivot: {x: .5, y: .5}
---- !u!114 &1389499533
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1389499531}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 708705254, guid: f5f67c52d1564df4a8936ccd202a3bd8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
-  m_Color: {r: 1, g: .574036598, b: .117647052, a: 1}
-  m_FontData:
-    m_Font: {fileID: 12800000, guid: 218956a5c2a6e42d6a60afccf80b002b, type: 3}
-    m_FontSize: 150
-    m_FontStyle: 0
-    m_BestFit: 0
-    m_MinSize: 10
-    m_MaxSize: 40
-    m_Alignment: 4
-    m_RichText: 1
-    m_HorizontalOverflow: 1
-    m_VerticalOverflow: 1
-    m_LineSpacing: .800000012
-  m_Text: Big Orange Games
---- !u!222 &1389499534
-CanvasRenderer:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1389499531}
 --- !u!1 &1721837304
 GameObject:
   m_ObjectHideFlags: 0
@@ -2245,8 +2190,8 @@ RectTransform:
   - {fileID: 3610426}
   - {fileID: 1373726025}
   - {fileID: 1721837305}
-  - {fileID: 324964897}
   - {fileID: 2022306195}
+  - {fileID: 324964897}
   m_Father: {fileID: 0}
   m_RootOrder: 10
   m_AnchorMin: {x: 0, y: 0}
@@ -2593,10 +2538,10 @@ Transform:
   m_GameObject: {fileID: 2022306194}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 347.000031, z: -1.99994242}
-  m_LocalScale: {x: 10, y: 10, z: 0}
+  m_LocalScale: {x: 10.3000002, y: 12.5200005, z: 0}
   m_Children: []
   m_Father: {fileID: 1940237253}
-  m_RootOrder: 4
+  m_RootOrder: 3
 --- !u!102 &2022306196
 TextMesh:
   serializedVersion: 3
@@ -2617,7 +2562,7 @@ TextMesh:
   m_Font: {fileID: 12800000, guid: b284a6525342f44599e9ce79e37c2d61, type: 3}
   m_Color:
     serializedVersion: 2
-    rgba: 4294967295
+    rgba: 4278190080
 --- !u!23 &2022306197
 MeshRenderer:
   m_ObjectHideFlags: 0
