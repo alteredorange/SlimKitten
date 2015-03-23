@@ -137,6 +137,7 @@ public class GameMaster : MonoBehaviour {
 	public bool invincible;
 	private int i = 0;
 	private int nextNum;
+	public float carSpawnTime = 1;
 
 	void Awake()
 	{
@@ -238,35 +239,35 @@ public class GameMaster : MonoBehaviour {
 		if (cancarSpawn <= carSpawnChance) {
 			int randomCar = UnityEngine.Random.Range (1, 9);
 			switch (randomCar) {
-			case 7:
+			case 1:
 				Debug.Log ("Spawned caprise");
 				spawnCar(caprise);
 				break;
-			case 8:
+			case 2:
 				Debug.Log ("Spawned dirtyvan");
 				spawnCar(dirtyvan);
 				break;
-			case 9:
+			case 3:
 				Debug.Log ("Spawned hotrod");
 				spawnCar(hotrod);
 				break;
-			case 10:
+			case 4:
 				Debug.Log ("Spawned lolvo");
 				spawnCar(lolvo);
 				break;
-			case 11:
+			case 5:
 				Debug.Log ("Spawned passied");
 				spawnCar(passied);
 				break;
-			case 12:
+			case 6:
 				Debug.Log ("Spawned suv");
 				spawnCar(suv);
 				break;
-			case 13:
+			case 7:
 				Debug.Log ("Spawned taxi");
 				spawnCar(taxi);
 				break;
-			case 14:
+			case 8:
 				Debug.Log ("Spawned van");
 				spawnCar(van);
 				break;
@@ -366,17 +367,18 @@ public class GameMaster : MonoBehaviour {
 		{
 		yield return new WaitForSeconds (startWait);
 		InvokeRepeating ("randomNum", 0, 1);
+		InvokeRepeating ("randomCars", 0, carSpawnTime);
 		while (true)
 		{
 			if(!gameOver)
 			{
-				for (int i = 0; i < carsInWaveCount; i++) {
-					Vector3 spawnPosition = new Vector3 (UnityEngine.Random.Range (-spawnValues.x, spawnValues.x), spawnValues.y, 0);
-					Quaternion spawnRotation = new Quaternion (rotationValues.x, rotationValues.y, rotationValues.z, rotationValues.w);
-					Instantiate (cars, spawnPosition, spawnRotation);
+				//for (int i = 0; i < carsInWaveCount; i++) {
+					//Vector3 spawnPosition = new Vector3 (UnityEngine.Random.Range (-spawnValues.x, spawnValues.x), spawnValues.y, 0);
+					//Quaternion spawnRotation = new Quaternion (rotationValues.x, rotationValues.y, rotationValues.z, rotationValues.w);
+					//Instantiate (cars, spawnPosition, spawnRotation);
 
-					yield return new WaitForSeconds (spawnWait);
-				}
+					//yield return new WaitForSeconds (spawnWait);
+				//}
 				yield return new WaitForSeconds (waveWait);
 			}
 
@@ -405,6 +407,7 @@ public class GameMaster : MonoBehaviour {
 		//}
 
 		CancelInvoke ("randomNum");
+		CancelInvoke ("randomCars");
 
 		GameObject[] allEnemy = GameObject.FindGameObjectsWithTag ("Enemy") as GameObject[];
 		

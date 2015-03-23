@@ -3841,7 +3841,8 @@ MonoBehaviour:
   easy: 1
   normal: 0
   insane: 0
-  spawnChance: 100
+  spawnChance: 5
+  carSpawnChance: 100
   scoreText: {fileID: 706101881}
   gameOverText: {fileID: 1780833307}
   InvincCountText: {fileID: 2140029036}
@@ -3879,11 +3880,20 @@ MonoBehaviour:
   lifePow: {fileID: 145956, guid: 5021769a9823c32478ae314022cf7b81, type: 2}
   invincPow: {fileID: 107026, guid: 3cdf8e6cd647c1d41a97cb87b10883f2, type: 2}
   gunPow: {fileID: 189268, guid: bbd2d926d8e1860449617e9bbc7a142d, type: 2}
-  barPow: {fileID: 165202, guid: b88d8b07b61e3104b9f154d07c5c1a25, type: 2}
+  barPow: {fileID: 197564, guid: 7db2373e88d5ae34da4d33555fb60336, type: 2}
   bombPow: {fileID: 144218, guid: 7357bf7688b3589419dca43acb6f3e32, type: 2}
   slowPow: {fileID: 123118, guid: 6184f9dfe21f9b34aa2a9518a52966ac, type: 2}
+  caprise: {fileID: 190788, guid: cef988dc88d119c48a5d9c3ccd715b07, type: 2}
+  dirtyvan: {fileID: 179674, guid: 9da57fdd2a97bf9449dda1dd97829b8c, type: 2}
+  hotrod: {fileID: 107730, guid: e690ddc6940c60a469028cfecf25f880, type: 2}
+  lolvo: {fileID: 106916, guid: ae5a3747ecf539e44a7dfdda23105392, type: 2}
+  passied: {fileID: 188462, guid: 75ef5baf8fc8d3c42a92486a07490f17, type: 2}
+  suv: {fileID: 151306, guid: c7a19fdf335043b4687c3458ca2f0d3f, type: 2}
+  taxi: {fileID: 195994, guid: 7c9f8cd6fc7c48042aa2900a7084db99, type: 2}
+  van: {fileID: 111952, guid: c3c7be1efa6f6cc42880bba020755ab7, type: 2}
   highScoreTest: 0
   invincible: 0
+  carSpawnTime: 1
 --- !u!1 &1689845791
 GameObject:
   m_ObjectHideFlags: 0
