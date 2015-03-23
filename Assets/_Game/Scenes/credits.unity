@@ -411,11 +411,11 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 100002, guid: 999388b68bb99b44099461bfbed94358, type: 2}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 100004, guid: 999388b68bb99b44099461bfbed94358, type: 2}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 100000, guid: 999388b68bb99b44099461bfbed94358, type: 2}
       propertyPath: m_IsActive
@@ -591,7 +591,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 803129704f3dacc4cbc5b59539ddd4f5, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: .850000024
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -712,6 +712,7 @@ MonoBehaviour:
   shop: {fileID: 0}
   restartButton: {fileID: 0}
   plusCoinButton: {fileID: 0}
+  insaneLevelButton: {fileID: 0}
   cars: {fileID: 127878, guid: 2251aa3f6066b6547824e425f50665f6, type: 2}
   spawnValues: {x: -50, y: 40, z: 50}
   rotationValues: {x: 90, y: 0, z: 0, w: -90}
@@ -727,6 +728,7 @@ MonoBehaviour:
   barCost: 20
   bombCost: 10
   slowCost: 30
+  insaneCost: 10000
   lifePow: {fileID: 0}
   invincPow: {fileID: 0}
   gunPow: {fileID: 0}
@@ -746,6 +748,8 @@ MonoBehaviour:
   carSpawnTime: 1
   posOffset: 10
   negOffset: 10
+  hasInsane: 0
+  buyInsaneObj: {fileID: 0}
 --- !u!4 &506239445
 Transform:
   m_ObjectHideFlags: 0
