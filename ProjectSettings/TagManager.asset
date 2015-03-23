@@ -15,6 +15,12 @@ TagManager:
   - Bomb
   - Weapon
   - Boundary
+  - BombPow
+  - GunPow
+  - InvincPow
+  - LifePow
+  - BlockPow
+  - SlowPow
   layers:
   - Default
   - TransparentFX

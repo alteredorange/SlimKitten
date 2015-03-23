@@ -256,11 +256,11 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 100002, guid: 999388b68bb99b44099461bfbed94358, type: 2}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 100004, guid: 999388b68bb99b44099461bfbed94358, type: 2}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 100000, guid: 999388b68bb99b44099461bfbed94358, type: 2}
       propertyPath: m_IsActive
@@ -493,6 +493,7 @@ MonoBehaviour:
   easy: 0
   normal: 0
   insane: 0
+  spawnChance: 5
   scoreText: {fileID: 0}
   gameOverText: {fileID: 0}
   InvincCountText: {fileID: 0}
@@ -527,6 +528,12 @@ MonoBehaviour:
   barCost: 20
   bombCost: 10
   slowCost: 30
+  lifePow: {fileID: 0}
+  invincPow: {fileID: 0}
+  gunPow: {fileID: 0}
+  barPow: {fileID: 0}
+  bombPow: {fileID: 0}
+  slowPow: {fileID: 0}
   highScoreTest: 0
   invincible: 0
 --- !u!4 &506239445
