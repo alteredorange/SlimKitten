@@ -163,7 +163,6 @@ GameObject:
   - 4: {fileID: 25382139}
   - 114: {fileID: 25382138}
   - 114: {fileID: 25382140}
-  - 114: {fileID: 25382141}
   m_Layer: 0
   m_Name: GameObject
   m_TagString: Untagged
@@ -215,18 +214,6 @@ MonoBehaviour:
   buttonType: 0
   Explosion1: {fileID: 0}
   Meow: {fileID: 0}
---- !u!114 &25382141
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 25382137}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 716707ab9188cf94e8d05e8f0fead895, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  insaneLevelButton: {fileID: 1883383478}
 --- !u!1 &66279932
 GameObject:
   m_ObjectHideFlags: 0
@@ -3976,7 +3963,7 @@ RectTransform:
   m_RootOrder: 12
   m_AnchorMin: {x: 1, y: .5}
   m_AnchorMax: {x: 1, y: .5}
-  m_AnchoredPosition: {x: -332.399994, y: -388}
+  m_AnchoredPosition: {x: -312.100006, y: -388}
   m_SizeDelta: {x: 465.100006, y: 164.699997}
   m_Pivot: {x: .5, y: .5}
 --- !u!114 &1855052768
