@@ -100,6 +100,9 @@ public class GameMaster : MonoBehaviour {
 	private int normalHighScore;
 	private int insaneHighScore;
 
+
+
+
 	//Int for money and cost
 	public int coins;
 	public int lifeCost = 100;
@@ -135,6 +138,9 @@ public class GameMaster : MonoBehaviour {
 
 	//Variable ot test if the score is higher than the current highscore
 	public int highScoreTest;
+	public int highScoreEasy;
+	public int highScoreNormal;
+	public int highScoreInsane;
 
 	public bool invincible;
 	private int i = 0;
@@ -155,6 +161,9 @@ public class GameMaster : MonoBehaviour {
 
 	void Awake()
 	{
+
+
+
 		if(PlayerPrefs.HasKey("hasInsane"))
 		{
 			hasInsane = (PlayerPrefs.GetInt("hasInsane") != 0);
@@ -162,16 +171,16 @@ public class GameMaster : MonoBehaviour {
 
 		if(PlayerPrefs.HasKey("easyHighScore"))
 		{
-			highScoreTest = PlayerPrefs.GetInt("easyHighScore");
+			highScoreEasy = PlayerPrefs.GetInt("easyHighScore");
 		}
 
 		if(PlayerPrefs.HasKey("normalHighScore"))
 		{
-			highScoreTest = PlayerPrefs.GetInt("normalHighScore");
+			highScoreNormal = PlayerPrefs.GetInt("normalHighScore");
 		}
 		if(PlayerPrefs.HasKey("insaneHighScore"))
 		{
-			highScoreTest = PlayerPrefs.GetInt("insaneHighScore");
+			highScoreInsane = PlayerPrefs.GetInt("insaneHighScore");
 		}
 		if(PlayerPrefs.HasKey("Coins"))
 		{
@@ -325,7 +334,19 @@ public class GameMaster : MonoBehaviour {
 	
 	void Start () {
 		//To see if powerups are updating correctly in editor, can remove at launch
-
+		if(PlayerPrefs.HasKey("easyHighScore"))
+		{
+			highScoreEasy = PlayerPrefs.GetInt("easyHighScore");
+		}
+		
+		if(PlayerPrefs.HasKey("normalHighScore"))
+		{
+			highScoreNormal = PlayerPrefs.GetInt("normalHighScore");
+		}
+		if(PlayerPrefs.HasKey("insaneHighScore"))
+		{
+			highScoreInsane = PlayerPrefs.GetInt("insaneHighScore");
+		}
 
 		//To enable unity ads
 		Advertisement.Initialize ("26283");
@@ -340,10 +361,11 @@ public class GameMaster : MonoBehaviour {
 		plusCoinButton.SetActive (false);
 		//hsText.text = "";
 		score = 0;
+
+
 		//invincible = false;
 
 		//If the file exist we set highScoreTest to the highscore held on the file
-
 
 
 
@@ -515,14 +537,14 @@ public class GameMaster : MonoBehaviour {
 		{
 
 			if (PlayerPrefs.HasKey("easyHighScore")) {
-				if(score > highScoreTest)
+				if(score > highScoreEasy)
 				{
 					easyHighScore = score;
 					
 				}
 				else
 				{
-					easyHighScore = highScoreTest;
+					easyHighScore = highScoreEasy;
 				}
 				
 				PlayerPrefs.SetInt ("easyHighScore", easyHighScore);
@@ -555,14 +577,14 @@ public class GameMaster : MonoBehaviour {
 		else if(normal)
 		{
 			if (PlayerPrefs.HasKey("normalHighScore")) {
-				if(score > highScoreTest)
+				if(score > highScoreNormal)
 				{
 					normalHighScore = score;
 					
 				}
 				else
 				{
-					normalHighScore = highScoreTest;
+					normalHighScore = highScoreNormal;
 				}
 				
 				PlayerPrefs.SetInt ("normalHighScore", normalHighScore);
@@ -594,14 +616,14 @@ public class GameMaster : MonoBehaviour {
 		else if(insane)
 		{
 			if (PlayerPrefs.HasKey("insaneHighScore")) {
-				if(score > highScoreTest)
+				if(score > highScoreInsane)
 				{
 					insaneHighScore = score;
 					
 				}
 				else
 				{
-					insaneHighScore = highScoreTest;
+					insaneHighScore = highScoreInsane;
 				}
 				
 				PlayerPrefs.SetInt ("insaneHighScore", insaneHighScore);

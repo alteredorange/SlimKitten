@@ -1713,11 +1713,11 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 100002, guid: 999388b68bb99b44099461bfbed94358, type: 2}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 100004, guid: 999388b68bb99b44099461bfbed94358, type: 2}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 100000, guid: 999388b68bb99b44099461bfbed94358, type: 2}
       propertyPath: m_IsActive
@@ -4052,6 +4052,9 @@ MonoBehaviour:
   taxi: {fileID: 195994, guid: 7c9f8cd6fc7c48042aa2900a7084db99, type: 2}
   van: {fileID: 111952, guid: c3c7be1efa6f6cc42880bba020755ab7, type: 2}
   highScoreTest: 0
+  highScoreEasy: 0
+  highScoreNormal: 0
+  highScoreInsane: 0
   invincible: 0
   carSpawnTime: .180000007
   posOffset: 10
