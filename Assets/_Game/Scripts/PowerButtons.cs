@@ -36,7 +36,7 @@ public class PowerButtons : TouchManager {
 
 		public GameObject invincibilityVFX;
 
-		public float GravSpawnReset;
+	
 		 
 
 
@@ -49,7 +49,7 @@ public class PowerButtons : TouchManager {
 		bool invicButtonBool = false;
 
 		public GameMaster gameMaster;
-
+		public float GravSpawnReset;
 		GameMaster script1;
 
 		void Awake ()
@@ -186,7 +186,7 @@ public class PowerButtons : TouchManager {
 						pas.GetComponent<Rigidbody2D> ().gravityScale = 1.0f;
 						suv.GetComponent<Rigidbody2D> ().gravityScale = 1.0f;
 						tax.GetComponent<Rigidbody2D> ().gravityScale = 1.0f;
-						gameMaster.GetComponent<GameMaster> ().carSpawnTime = 1.0f;
+						gameMaster.carSpawnTime = 1.0f;
 						gravityButtonBool = true;
 					} else {
 						AudioSource.PlayClipAtPoint (Meow, transform.position);
@@ -203,7 +203,7 @@ public class PowerButtons : TouchManager {
 		}
 
 	void gravityDisable () {
-			gameMaster.GetComponent<GameMaster> ().carSpawnTime = GravSpawnReset;
+			gameMaster.carSpawnTime = GravSpawnReset;
 			van.GetComponent<Rigidbody2D> ().gravityScale = 15.0f;
 			cap.GetComponent<Rigidbody2D> ().gravityScale = 15.0f;
 			dirt.GetComponent<Rigidbody2D> ().gravityScale = 15.0f;
@@ -248,14 +248,13 @@ public class PowerButtons : TouchManager {
 				if (invicButtonBool == false) {
 					if (GameMaster.TotalInvinc > 0) {
 						
-						invincibilityVFX.GetComponent<ParticleSystem>().Play();
+						invincibilityVFX.GetComponent<ParticleSystem> ().Play ();
 						gameMaster.GetComponent<GameMaster> ().invincible = true;
 						GameMaster.TotalInvinc -= 1;
 						Invoke ("invincibleDisable", deactivateTime);
 						invicButtonBool = true;
 						
-					}
-					else {
+					} else {
 						AudioSource.PlayClipAtPoint (Meow, transform.position);
 					}
 				}
@@ -301,7 +300,6 @@ public class PowerButtons : TouchManager {
 			//Lives Button Code
 			else if (buttonType == button.Lives) {
 				
-				return;
 			}
 			//Bomb Button Code
 			
@@ -323,16 +321,25 @@ public class PowerButtons : TouchManager {
 			else if (buttonType == button.Gravity) {
 				if (gravityButtonBool == false) {
 					if (GameMaster.TotalSlows > 0) {
-						Enemy.GetComponent<Rigidbody2D> ().gravityScale = 1.0f;
-						gameMaster.GetComponent<GameMaster> ().spawnWait = 1.5f;
 						Invoke ("gravityDisable", deactivateTime);
 						GameMaster.TotalSlows -= 1;
+						
+						van.GetComponent<Rigidbody2D> ().gravityScale = 1.0f;
+						cap.GetComponent<Rigidbody2D> ().gravityScale = 1.0f;
+						dirt.GetComponent<Rigidbody2D> ().gravityScale = 1.0f;
+						hot.GetComponent<Rigidbody2D> ().gravityScale = 1.0f;
+						lol.GetComponent<Rigidbody2D> ().gravityScale = 1.0f;
+						pas.GetComponent<Rigidbody2D> ().gravityScale = 1.0f;
+						suv.GetComponent<Rigidbody2D> ().gravityScale = 1.0f;
+						tax.GetComponent<Rigidbody2D> ().gravityScale = 1.0f;
+						//gameMaster.GetComponent<GameMaster> ().carSpawnTime = 1.0f;
 						gravityButtonBool = true;
 					} else {
 						AudioSource.PlayClipAtPoint (Meow, transform.position);
 					}
 				}
 			}
+			
 		}
 
 
