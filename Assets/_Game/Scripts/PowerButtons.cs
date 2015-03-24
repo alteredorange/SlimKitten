@@ -49,7 +49,7 @@ public class PowerButtons : TouchManager {
 		bool invicButtonBool = false;
 
 		public GameMaster gameMaster;
-		public float GravSpawnReset;
+		public float GravSpawnReset = 0.4f;
 		GameMaster script1;
 
 		void Awake ()
@@ -62,6 +62,13 @@ public class PowerButtons : TouchManager {
 			pas.GetComponent<Rigidbody2D> ().gravityScale = 15.0f;
 			suv.GetComponent<Rigidbody2D> ().gravityScale = 15.0f;
 			tax.GetComponent<Rigidbody2D> ().gravityScale = 15.0f;
+			GameObject gameMasterObject = GameObject.FindWithTag ("GameController");
+			if (gameMasterObject != null) {
+				gameMaster = gameMasterObject.GetComponent <GameMaster>();
+			}
+			if (gameMaster == null) {
+				Debug.Log ("cannot find GameMaster Script");
+			}
 		}
 			
 		void start ()
@@ -73,13 +80,7 @@ public class PowerButtons : TouchManager {
 
 
 
-			GameObject gameMasterObject = GameObject.FindWithTag ("GameController");
-			if (gameMasterObject != null) {
-				gameMaster = gameMasterObject.GetComponent <GameMaster>();
-			}
-			if (gameMaster == null) {
-				Debug.Log ("cannot find GameMaster Script");
-			}
+
 		}
 
 
@@ -321,6 +322,7 @@ public class PowerButtons : TouchManager {
 			else if (buttonType == button.Gravity) {
 				if (gravityButtonBool == false) {
 					if (GameMaster.TotalSlows > 0) {
+						gameMaster.carSpawnTime = 1.0f;
 						Invoke ("gravityDisable", deactivateTime);
 						GameMaster.TotalSlows -= 1;
 						
@@ -332,7 +334,7 @@ public class PowerButtons : TouchManager {
 						pas.GetComponent<Rigidbody2D> ().gravityScale = 1.0f;
 						suv.GetComponent<Rigidbody2D> ().gravityScale = 1.0f;
 						tax.GetComponent<Rigidbody2D> ().gravityScale = 1.0f;
-						//gameMaster.GetComponent<GameMaster> ().carSpawnTime = 1.0f;
+
 						gravityButtonBool = true;
 					} else {
 						AudioSource.PlayClipAtPoint (Meow, transform.position);
