@@ -150,6 +150,7 @@ public class GameMaster : MonoBehaviour {
 
 	public bool hasInsane = false;
 	public GameObject buyInsaneObj;
+	public static bool invokeSpawn = false;
 
 
 	void Awake()
@@ -252,8 +253,13 @@ public class GameMaster : MonoBehaviour {
 		Instantiate (powerup, spawnPosition, spawnRotation);
 	}
 
+	public void sCars()
+	{
+		CancelInvoke("randomCars");
+		InvokeRepeating ("randomCars", 0, carSpawnTime);
+	}
 
-	void randomCars()
+	public void randomCars()
 	{
 		//gets a random number from 1-100 including 100
 		int cancarSpawn = UnityEngine.Random.Range (1, 101);
@@ -362,6 +368,8 @@ public class GameMaster : MonoBehaviour {
 	void Update ()
 	{
 
+
+
 		if(!hasInsane)
 		{
 			insaneLevelButton.interactable = false;
@@ -413,6 +421,7 @@ public class GameMaster : MonoBehaviour {
 	IEnumerator SpawnWaves () 
 		{
 		yield return new WaitForSeconds (startWait);
+
 		InvokeRepeating ("randomNum", 0, 1);
 		InvokeRepeating ("randomCars", 0, carSpawnTime);
 		while (true)

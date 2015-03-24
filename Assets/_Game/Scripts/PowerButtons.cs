@@ -176,7 +176,9 @@ public class PowerButtons : TouchManager {
 			else if (buttonType == button.Gravity) {
 				if (gravityButtonBool == false) {
 					if (GameMaster.TotalSlows > 0) {
+
 						Invoke ("gravityDisable", deactivateTime);
+
 						GameMaster.TotalSlows -= 1;
 
 						van.GetComponent<Rigidbody2D> ().gravityScale = 1.0f;
@@ -188,6 +190,7 @@ public class PowerButtons : TouchManager {
 						suv.GetComponent<Rigidbody2D> ().gravityScale = 1.0f;
 						tax.GetComponent<Rigidbody2D> ().gravityScale = 1.0f;
 						gameMaster.carSpawnTime = 1.0f;
+						gameMaster.sCars();
 						gravityButtonBool = true;
 					} else {
 						AudioSource.PlayClipAtPoint (Meow, transform.position);
@@ -205,6 +208,7 @@ public class PowerButtons : TouchManager {
 
 	void gravityDisable () {
 			gameMaster.carSpawnTime = GravSpawnReset;
+			gameMaster.sCars ();
 			van.GetComponent<Rigidbody2D> ().gravityScale = 15.0f;
 			cap.GetComponent<Rigidbody2D> ().gravityScale = 15.0f;
 			dirt.GetComponent<Rigidbody2D> ().gravityScale = 15.0f;
