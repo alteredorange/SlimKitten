@@ -990,9 +990,9 @@ MonoBehaviour:
   suv: {fileID: 151306, guid: c7a19fdf335043b4687c3458ca2f0d3f, type: 2}
   tax: {fileID: 195994, guid: 7c9f8cd6fc7c48042aa2900a7084db99, type: 2}
   invincibilityVFX: {fileID: 0}
-  GravSpawnReset: 1
   counts: 10
   gameMaster: {fileID: 1680914615}
+  GravSpawnReset: 1
 --- !u!131 &370873294
 GUITexture:
   m_ObjectHideFlags: 0
@@ -1316,9 +1316,9 @@ MonoBehaviour:
   suv: {fileID: 151306, guid: c7a19fdf335043b4687c3458ca2f0d3f, type: 2}
   tax: {fileID: 195994, guid: 7c9f8cd6fc7c48042aa2900a7084db99, type: 2}
   invincibilityVFX: {fileID: 0}
-  GravSpawnReset: 1
   counts: 10
   gameMaster: {fileID: 1680914615}
+  GravSpawnReset: 1
 --- !u!131 &626892156
 GUITexture:
   m_ObjectHideFlags: 0
@@ -2321,9 +2321,9 @@ MonoBehaviour:
   suv: {fileID: 151306, guid: c7a19fdf335043b4687c3458ca2f0d3f, type: 2}
   tax: {fileID: 195994, guid: 7c9f8cd6fc7c48042aa2900a7084db99, type: 2}
   invincibilityVFX: {fileID: 0}
-  GravSpawnReset: 1
   counts: 10
   gameMaster: {fileID: 1680914615}
+  GravSpawnReset: 1
 --- !u!131 &938545883
 GUITexture:
   m_ObjectHideFlags: 0
@@ -3077,9 +3077,9 @@ MonoBehaviour:
   suv: {fileID: 151306, guid: c7a19fdf335043b4687c3458ca2f0d3f, type: 2}
   tax: {fileID: 195994, guid: 7c9f8cd6fc7c48042aa2900a7084db99, type: 2}
   invincibilityVFX: {fileID: 2058601181}
-  GravSpawnReset: 1
   counts: 10
   gameMaster: {fileID: 1680914615}
+  GravSpawnReset: 1
 --- !u!131 &1311752371
 GUITexture:
   m_ObjectHideFlags: 0
@@ -3377,9 +3377,9 @@ MonoBehaviour:
   suv: {fileID: 151306, guid: c7a19fdf335043b4687c3458ca2f0d3f, type: 2}
   tax: {fileID: 195994, guid: 7c9f8cd6fc7c48042aa2900a7084db99, type: 2}
   invincibilityVFX: {fileID: 0}
-  GravSpawnReset: 1
   counts: 10
   gameMaster: {fileID: 1680914615}
+  GravSpawnReset: 1
 --- !u!131 &1404260241
 GUITexture:
   m_ObjectHideFlags: 0
@@ -3489,9 +3489,9 @@ MonoBehaviour:
   suv: {fileID: 0}
   tax: {fileID: 0}
   invincibilityVFX: {fileID: 0}
-  GravSpawnReset: 0
   counts: 10
   gameMaster: {fileID: 1680914615}
+  GravSpawnReset: 0
 --- !u!131 &1439843726
 GUITexture:
   m_ObjectHideFlags: 0
@@ -4197,9 +4197,9 @@ MonoBehaviour:
   suv: {fileID: 151306, guid: c7a19fdf335043b4687c3458ca2f0d3f, type: 2}
   tax: {fileID: 195994, guid: 7c9f8cd6fc7c48042aa2900a7084db99, type: 2}
   invincibilityVFX: {fileID: 111952, guid: c3c7be1efa6f6cc42880bba020755ab7, type: 2}
-  GravSpawnReset: 0
   counts: 10
   gameMaster: {fileID: 1680914615}
+  GravSpawnReset: 1
 --- !u!131 &1798882476
 GUITexture:
   m_ObjectHideFlags: 0
@@ -4257,7 +4257,6 @@ GameObject:
   m_Component:
   - 224: {fileID: 1802072045}
   - 222: {fileID: 1802072048}
-  - 114: {fileID: 1802072047}
   - 114: {fileID: 1802072046}
   m_Layer: 5
   m_Name: Disabled Filler Button, Don't Enable
@@ -4290,7 +4289,7 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1802072044}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 1392445389, guid: f5f67c52d1564df4a8936ccd202a3bd8, type: 3}
   m_Name: 
@@ -4319,7 +4318,7 @@ MonoBehaviour:
     m_PressedTrigger: Pressed
     m_DisabledTrigger: Disabled
   m_Interactable: 0
-  m_TargetGraphic: {fileID: 1802072047}
+  m_TargetGraphic: {fileID: 0}
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
@@ -4337,27 +4336,6 @@ MonoBehaviour:
         m_CallState: 1
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
---- !u!114 &1802072047
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1802072044}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: -765806418, guid: f5f67c52d1564df4a8936ccd202a3bd8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
-  m_Type: 1
-  m_PreserveAspect: 0
-  m_FillCenter: 1
-  m_FillMethod: 4
-  m_FillAmount: 1
-  m_FillClockwise: 1
-  m_FillOrigin: 0
 --- !u!222 &1802072048
 CanvasRenderer:
   m_ObjectHideFlags: 0

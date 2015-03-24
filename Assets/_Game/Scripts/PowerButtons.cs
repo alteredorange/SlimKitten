@@ -189,7 +189,7 @@ public class PowerButtons : TouchManager {
 						pas.GetComponent<Rigidbody2D> ().gravityScale = 1.0f;
 						suv.GetComponent<Rigidbody2D> ().gravityScale = 1.0f;
 						tax.GetComponent<Rigidbody2D> ().gravityScale = 1.0f;
-						gameMaster.carSpawnTime = 1.0f;
+						gameMaster.carSpawnTime = 1.2f;
 						gameMaster.sCars();
 						gravityButtonBool = true;
 					} else {
