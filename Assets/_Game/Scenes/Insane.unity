@@ -1031,7 +1031,17 @@ MonoBehaviour:
   bombPrefab: {fileID: 196202, guid: a0617b29599db944391db09649f56ada, type: 2}
   gravityCar: {fileID: 0}
   bombQuat: {x: -90, y: 0, z: 0, w: 90}
+  van: {fileID: 0}
+  cap: {fileID: 0}
+  dirt: {fileID: 0}
+  hot: {fileID: 0}
+  lol: {fileID: 0}
+  pas: {fileID: 0}
+  suv: {fileID: 0}
+  tax: {fileID: 0}
   invincibilityVFX: {fileID: 0}
+  GravSpawnReset: 0
+  counts: 10
   gameMaster: {fileID: 1680914615}
 --- !u!131 &370873294
 GUITexture:
@@ -1147,6 +1157,69 @@ RectTransform:
   m_AnchoredPosition: {x: -4, y: 1}
   m_SizeDelta: {x: 160, y: 92}
   m_Pivot: {x: .5, y: .5}
+--- !u!1 &541479989
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 224: {fileID: 541479990}
+  - 222: {fileID: 541479992}
+  - 132: {fileID: 541479991}
+  m_Layer: 5
+  m_Name: SlowText
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &541479990
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 541479989}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 1}
+  m_LocalScale: {x: 0, y: 0, z: 0}
+  m_Children: []
+  m_Father: {fileID: 1622263652}
+  m_RootOrder: 0
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 4.76837158e-07, y: 0}
+  m_SizeDelta: {x: 100, y: 100}
+  m_Pivot: {x: .5, y: .5}
+--- !u!132 &541479991
+GUIText:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 541479989}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Text: 0
+  m_Anchor: 4
+  m_Alignment: 1
+  m_PixelOffset: {x: -7.3499999, y: -2.17000008}
+  m_LineSpacing: 1
+  m_TabSize: 4
+  m_Font: {fileID: 12800000, guid: 7dfc2e1472ac84e1bb749a8a9f934483, type: 3}
+  m_Material: {fileID: 0}
+  m_FontSize: 40
+  m_FontStyle: 0
+  m_Color:
+    serializedVersion: 2
+    rgba: 4294967295
+  m_PixelCorrect: 1
+  m_RichText: 1
+--- !u!222 &541479992
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 541479989}
 --- !u!1 &593702855
 GameObject:
   m_ObjectHideFlags: 0
@@ -1347,7 +1420,17 @@ MonoBehaviour:
   bombPrefab: {fileID: 0}
   gravityCar: {fileID: 0}
   bombQuat: {x: 0, y: 0, z: 0, w: 0}
+  van: {fileID: 0}
+  cap: {fileID: 0}
+  dirt: {fileID: 0}
+  hot: {fileID: 0}
+  lol: {fileID: 0}
+  pas: {fileID: 0}
+  suv: {fileID: 0}
+  tax: {fileID: 0}
   invincibilityVFX: {fileID: 0}
+  GravSpawnReset: 0
+  counts: 10
   gameMaster: {fileID: 1680914615}
 --- !u!131 &626892156
 GUITexture:
@@ -2180,7 +2263,17 @@ MonoBehaviour:
   bombPrefab: {fileID: 196202, guid: a0617b29599db944391db09649f56ada, type: 2}
   gravityCar: {fileID: 0}
   bombQuat: {x: -90, y: 0, z: 0, w: 90}
+  van: {fileID: 0}
+  cap: {fileID: 0}
+  dirt: {fileID: 0}
+  hot: {fileID: 0}
+  lol: {fileID: 0}
+  pas: {fileID: 0}
+  suv: {fileID: 0}
+  tax: {fileID: 0}
   invincibilityVFX: {fileID: 0}
+  GravSpawnReset: 0
+  counts: 10
   gameMaster: {fileID: 1680914615}
 --- !u!131 &938545883
 GUITexture:
@@ -2713,69 +2806,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 1
---- !u!1 &1167950488
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  serializedVersion: 4
-  m_Component:
-  - 224: {fileID: 1167950489}
-  - 222: {fileID: 1167950491}
-  - 132: {fileID: 1167950490}
-  m_Layer: 5
-  m_Name: SlowText
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!224 &1167950489
-RectTransform:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1167950488}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 1}
-  m_LocalScale: {x: 0, y: 0, z: 0}
-  m_Children: []
-  m_Father: {fileID: 1798882474}
-  m_RootOrder: 0
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 4.76837158e-07, y: 0}
-  m_SizeDelta: {x: 100, y: 100}
-  m_Pivot: {x: .5, y: .5}
---- !u!132 &1167950490
-GUIText:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1167950488}
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Text: 0
-  m_Anchor: 4
-  m_Alignment: 1
-  m_PixelOffset: {x: -7.3499999, y: -2.17000008}
-  m_LineSpacing: 1
-  m_TabSize: 4
-  m_Font: {fileID: 12800000, guid: 7dfc2e1472ac84e1bb749a8a9f934483, type: 3}
-  m_Material: {fileID: 0}
-  m_FontSize: 40
-  m_FontStyle: 0
-  m_Color:
-    serializedVersion: 2
-    rgba: 4294967295
-  m_PixelCorrect: 1
-  m_RichText: 1
---- !u!222 &1167950491
-CanvasRenderer:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1167950488}
 --- !u!1 &1210320602
 GameObject:
   m_ObjectHideFlags: 0
@@ -2853,7 +2883,7 @@ RectTransform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 19.7213707, y: 19.7213707, z: 19.7213707}
   m_Children:
-  - {fileID: 1798882474}
+  - {fileID: 1622263652}
   m_Father: {fileID: 1278048426}
   m_RootOrder: 10
   m_AnchorMin: {x: .5, y: .5}
@@ -3041,7 +3071,17 @@ MonoBehaviour:
   bombPrefab: {fileID: 0}
   gravityCar: {fileID: 0}
   bombQuat: {x: 0, y: 0, z: 0, w: 0}
+  van: {fileID: 0}
+  cap: {fileID: 0}
+  dirt: {fileID: 0}
+  hot: {fileID: 0}
+  lol: {fileID: 0}
+  pas: {fileID: 0}
+  suv: {fileID: 0}
+  tax: {fileID: 0}
   invincibilityVFX: {fileID: 2058601181}
+  GravSpawnReset: 0
+  counts: 10
   gameMaster: {fileID: 1680914615}
 --- !u!131 &1311752371
 GUITexture:
@@ -3331,7 +3371,17 @@ MonoBehaviour:
   bombPrefab: {fileID: 0}
   gravityCar: {fileID: 0}
   bombQuat: {x: 0, y: 0, z: 0, w: 0}
+  van: {fileID: 0}
+  cap: {fileID: 0}
+  dirt: {fileID: 0}
+  hot: {fileID: 0}
+  lol: {fileID: 0}
+  pas: {fileID: 0}
+  suv: {fileID: 0}
+  tax: {fileID: 0}
   invincibilityVFX: {fileID: 0}
+  GravSpawnReset: 0
+  counts: 10
   gameMaster: {fileID: 1680914615}
 --- !u!131 &1404260241
 GUITexture:
@@ -3499,7 +3549,17 @@ MonoBehaviour:
   bombPrefab: {fileID: 0}
   gravityCar: {fileID: 0}
   bombQuat: {x: 0, y: 0, z: 0, w: 0}
+  van: {fileID: 0}
+  cap: {fileID: 0}
+  dirt: {fileID: 0}
+  hot: {fileID: 0}
+  lol: {fileID: 0}
+  pas: {fileID: 0}
+  suv: {fileID: 0}
+  tax: {fileID: 0}
   invincibilityVFX: {fileID: 0}
+  GravSpawnReset: 0
+  counts: 10
   gameMaster: {fileID: 1680914615}
 --- !u!131 &1439843726
 GUITexture:
@@ -3745,6 +3805,126 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ab67620949e1e0b49913a6059c2195dc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &1622263651
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 224: {fileID: 1622263652}
+  - 114: {fileID: 1622263656}
+  - 114: {fileID: 1622263655}
+  - 131: {fileID: 1622263654}
+  - 223: {fileID: 1622263653}
+  m_Layer: 5
+  m_Name: Slow
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1622263652
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1622263651}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: .101412833, y: .202825665, z: 0}
+  m_Children:
+  - {fileID: 541479990}
+  m_Father: {fileID: 1211608954}
+  m_RootOrder: 0
+  m_AnchorMin: {x: .5, y: .5}
+  m_AnchorMax: {x: .5, y: .5}
+  m_AnchoredPosition: {x: .913375139, y: .253389031}
+  m_SizeDelta: {x: 1, y: 1}
+  m_Pivot: {x: .5, y: .5}
+--- !u!223 &1622263653
+Canvas:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1622263651}
+  m_Enabled: 1
+  serializedVersion: 2
+  m_RenderMode: 2
+  m_Camera: {fileID: 0}
+  m_PlaneDistance: 100
+  m_PixelPerfect: 1
+  m_ReceivesEvents: 1
+  m_OverrideSorting: 1
+  m_OverridePixelPerfect: 1
+  m_SortingLayerID: 0
+  m_SortingOrder: 0
+--- !u!131 &1622263654
+GUITexture:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1622263651}
+  m_Enabled: 1
+  m_Texture: {fileID: 2800000, guid: c5f77dada933eaf4db63da5f85a4f440, type: 3}
+  m_Color: {r: .5, g: .5, b: .5, a: .5}
+  m_PixelInset:
+    serializedVersion: 2
+    x: 0
+    y: 0
+    width: 0
+    height: 0
+  m_LeftBorder: 0
+  m_RightBorder: 0
+  m_TopBorder: 0
+  m_BottomBorder: 0
+--- !u!114 &1622263655
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1622263651}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0830e9e21f90b9f4db4a9ba7d7fbaaec, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  scaleOnRatio1: {x: .100000001, y: .100000001}
+--- !u!114 &1622263656
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1622263651}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e4ed507e9558eaa43829fa8ed9f9a417, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  weaponThing: {fileID: 0}
+  buttonType: 5
+  Explosion1: {fileID: 0}
+  Meow: {fileID: 8300000, guid: 5d714fafa5c1c1b40af9dbd8565fd911, type: 3}
+  barrierPrefab: {fileID: 0}
+  player: {fileID: 0}
+  rotationValues: {x: 0, y: 0, z: 0, w: 0}
+  Enemy: {fileID: 127878, guid: 2251aa3f6066b6547824e425f50665f6, type: 2}
+  deactivateTime: 7
+  bombPrefab: {fileID: 0}
+  gravityCar: {fileID: 431588, guid: 2251aa3f6066b6547824e425f50665f6, type: 2}
+  bombQuat: {x: 0, y: 0, z: 0, w: 0}
+  van: {fileID: 111952, guid: c3c7be1efa6f6cc42880bba020755ab7, type: 2}
+  cap: {fileID: 190788, guid: cef988dc88d119c48a5d9c3ccd715b07, type: 2}
+  dirt: {fileID: 179674, guid: 9da57fdd2a97bf9449dda1dd97829b8c, type: 2}
+  hot: {fileID: 107730, guid: e690ddc6940c60a469028cfecf25f880, type: 2}
+  lol: {fileID: 106916, guid: ae5a3747ecf539e44a7dfdda23105392, type: 2}
+  pas: {fileID: 188462, guid: 75ef5baf8fc8d3c42a92486a07490f17, type: 2}
+  suv: {fileID: 151306, guid: c7a19fdf335043b4687c3458ca2f0d3f, type: 2}
+  tax: {fileID: 195994, guid: 7c9f8cd6fc7c48042aa2900a7084db99, type: 2}
+  invincibilityVFX: {fileID: 111952, guid: c3c7be1efa6f6cc42880bba020755ab7, type: 2}
+  GravSpawnReset: .180000007
+  counts: 10
+  gameMaster: {fileID: 0}
 --- !u!1 &1659363566
 GameObject:
   m_ObjectHideFlags: 0
@@ -3848,7 +4028,7 @@ MonoBehaviour:
   InvincCountText: {fileID: 2140029036}
   GunCountText: {fileID: 593702857}
   BombCountText: {fileID: 1042687372}
-  SlowCountText: {fileID: 1167950490}
+  SlowCountText: {fileID: 541479991}
   LivesCountText: {fileID: 1327578889}
   BarrierCountText: {fileID: 1738590119}
   CoinCountText: {fileID: 662020224}
@@ -4071,116 +4251,6 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1780833305}
---- !u!1 &1798882473
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  serializedVersion: 4
-  m_Component:
-  - 224: {fileID: 1798882474}
-  - 114: {fileID: 1798882475}
-  - 114: {fileID: 1798882477}
-  - 131: {fileID: 1798882476}
-  - 223: {fileID: 1798882478}
-  m_Layer: 5
-  m_Name: Slow
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!224 &1798882474
-RectTransform:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1798882473}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: .101412833, y: .202825665, z: 0}
-  m_Children:
-  - {fileID: 1167950489}
-  m_Father: {fileID: 1211608954}
-  m_RootOrder: 0
-  m_AnchorMin: {x: .5, y: .5}
-  m_AnchorMax: {x: .5, y: .5}
-  m_AnchoredPosition: {x: .913375199, y: .253389031}
-  m_SizeDelta: {x: 1, y: 1}
-  m_Pivot: {x: .5, y: .5}
---- !u!114 &1798882475
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1798882473}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e4ed507e9558eaa43829fa8ed9f9a417, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  weaponThing: {fileID: 0}
-  buttonType: 5
-  Explosion1: {fileID: 0}
-  Meow: {fileID: 8300000, guid: 5d714fafa5c1c1b40af9dbd8565fd911, type: 3}
-  barrierPrefab: {fileID: 0}
-  player: {fileID: 1535715638}
-  rotationValues: {x: 0, y: 0, z: 0, w: 0}
-  Enemy: {fileID: 127878, guid: 2251aa3f6066b6547824e425f50665f6, type: 2}
-  deactivateTime: 7
-  bombPrefab: {fileID: 0}
-  gravityCar: {fileID: 431588, guid: 2251aa3f6066b6547824e425f50665f6, type: 2}
-  bombQuat: {x: 0, y: 0, z: 0, w: 0}
-  invincibilityVFX: {fileID: 0}
-  gameMaster: {fileID: 1680914615}
---- !u!131 &1798882476
-GUITexture:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1798882473}
-  m_Enabled: 1
-  m_Texture: {fileID: 2800000, guid: c5f77dada933eaf4db63da5f85a4f440, type: 3}
-  m_Color: {r: .5, g: .5, b: .5, a: .5}
-  m_PixelInset:
-    serializedVersion: 2
-    x: 0
-    y: 0
-    width: 0
-    height: 0
-  m_LeftBorder: 0
-  m_RightBorder: 0
-  m_TopBorder: 0
-  m_BottomBorder: 0
---- !u!114 &1798882477
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1798882473}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0830e9e21f90b9f4db4a9ba7d7fbaaec, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  scaleOnRatio1: {x: .100000001, y: .100000001}
---- !u!223 &1798882478
-Canvas:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1798882473}
-  m_Enabled: 1
-  serializedVersion: 2
-  m_RenderMode: 2
-  m_Camera: {fileID: 0}
-  m_PlaneDistance: 100
-  m_PixelPerfect: 1
-  m_ReceivesEvents: 1
-  m_OverrideSorting: 1
-  m_OverridePixelPerfect: 1
-  m_SortingLayerID: 0
-  m_SortingOrder: 0
 --- !u!1 &2054137717
 GameObject:
   m_ObjectHideFlags: 0

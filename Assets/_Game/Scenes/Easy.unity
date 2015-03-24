@@ -981,7 +981,16 @@ MonoBehaviour:
   bombPrefab: {fileID: 196202, guid: a0617b29599db944391db09649f56ada, type: 2}
   gravityCar: {fileID: 0}
   bombQuat: {x: -90, y: 0, z: 0, w: 90}
+  van: {fileID: 0}
+  cap: {fileID: 0}
+  dirt: {fileID: 0}
+  hot: {fileID: 0}
+  lol: {fileID: 0}
+  pas: {fileID: 0}
+  suv: {fileID: 0}
+  tax: {fileID: 0}
   invincibilityVFX: {fileID: 0}
+  counts: 10
   gameMaster: {fileID: 1680914615}
 --- !u!131 &370873294
 GUITexture:
@@ -1297,7 +1306,16 @@ MonoBehaviour:
   bombPrefab: {fileID: 0}
   gravityCar: {fileID: 0}
   bombQuat: {x: 0, y: 0, z: 0, w: 0}
+  van: {fileID: 0}
+  cap: {fileID: 0}
+  dirt: {fileID: 0}
+  hot: {fileID: 0}
+  lol: {fileID: 0}
+  pas: {fileID: 0}
+  suv: {fileID: 0}
+  tax: {fileID: 0}
   invincibilityVFX: {fileID: 0}
+  counts: 10
   gameMaster: {fileID: 1680914615}
 --- !u!131 &626892156
 GUITexture:
@@ -2292,7 +2310,16 @@ MonoBehaviour:
   bombPrefab: {fileID: 196202, guid: a0617b29599db944391db09649f56ada, type: 2}
   gravityCar: {fileID: 0}
   bombQuat: {x: -90, y: 0, z: 0, w: 90}
+  van: {fileID: 0}
+  cap: {fileID: 0}
+  dirt: {fileID: 0}
+  hot: {fileID: 0}
+  lol: {fileID: 0}
+  pas: {fileID: 0}
+  suv: {fileID: 0}
+  tax: {fileID: 0}
   invincibilityVFX: {fileID: 0}
+  counts: 10
   gameMaster: {fileID: 1680914615}
 --- !u!131 &938545883
 GUITexture:
@@ -3038,7 +3065,16 @@ MonoBehaviour:
   bombPrefab: {fileID: 0}
   gravityCar: {fileID: 0}
   bombQuat: {x: 0, y: 0, z: 0, w: 0}
+  van: {fileID: 0}
+  cap: {fileID: 0}
+  dirt: {fileID: 0}
+  hot: {fileID: 0}
+  lol: {fileID: 0}
+  pas: {fileID: 0}
+  suv: {fileID: 0}
+  tax: {fileID: 0}
   invincibilityVFX: {fileID: 2058601181}
+  counts: 10
   gameMaster: {fileID: 1680914615}
 --- !u!131 &1311752371
 GUITexture:
@@ -3328,7 +3364,16 @@ MonoBehaviour:
   bombPrefab: {fileID: 0}
   gravityCar: {fileID: 0}
   bombQuat: {x: 0, y: 0, z: 0, w: 0}
+  van: {fileID: 0}
+  cap: {fileID: 0}
+  dirt: {fileID: 0}
+  hot: {fileID: 0}
+  lol: {fileID: 0}
+  pas: {fileID: 0}
+  suv: {fileID: 0}
+  tax: {fileID: 0}
   invincibilityVFX: {fileID: 0}
+  counts: 10
   gameMaster: {fileID: 1680914615}
 --- !u!131 &1404260241
 GUITexture:
@@ -3430,7 +3475,16 @@ MonoBehaviour:
   bombPrefab: {fileID: 0}
   gravityCar: {fileID: 0}
   bombQuat: {x: 0, y: 0, z: 0, w: 0}
+  van: {fileID: 0}
+  cap: {fileID: 0}
+  dirt: {fileID: 0}
+  hot: {fileID: 0}
+  lol: {fileID: 0}
+  pas: {fileID: 0}
+  suv: {fileID: 0}
+  tax: {fileID: 0}
   invincibilityVFX: {fileID: 0}
+  counts: 10
   gameMaster: {fileID: 1680914615}
 --- !u!131 &1439843726
 GUITexture:
@@ -4128,7 +4182,16 @@ MonoBehaviour:
   bombPrefab: {fileID: 0}
   gravityCar: {fileID: 431588, guid: 2251aa3f6066b6547824e425f50665f6, type: 2}
   bombQuat: {x: 0, y: 0, z: 0, w: 0}
-  invincibilityVFX: {fileID: 0}
+  van: {fileID: 111952, guid: c3c7be1efa6f6cc42880bba020755ab7, type: 2}
+  cap: {fileID: 190788, guid: cef988dc88d119c48a5d9c3ccd715b07, type: 2}
+  dirt: {fileID: 179674, guid: 9da57fdd2a97bf9449dda1dd97829b8c, type: 2}
+  hot: {fileID: 107730, guid: e690ddc6940c60a469028cfecf25f880, type: 2}
+  lol: {fileID: 106916, guid: ae5a3747ecf539e44a7dfdda23105392, type: 2}
+  pas: {fileID: 188462, guid: 75ef5baf8fc8d3c42a92486a07490f17, type: 2}
+  suv: {fileID: 151306, guid: c7a19fdf335043b4687c3458ca2f0d3f, type: 2}
+  tax: {fileID: 195994, guid: 7c9f8cd6fc7c48042aa2900a7084db99, type: 2}
+  invincibilityVFX: {fileID: 111952, guid: c3c7be1efa6f6cc42880bba020755ab7, type: 2}
+  counts: 10
   gameMaster: {fileID: 1680914615}
 --- !u!131 &1798882476
 GUITexture:
