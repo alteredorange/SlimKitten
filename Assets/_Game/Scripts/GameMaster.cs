@@ -333,7 +333,7 @@ public class GameMaster : MonoBehaviour {
 
 	
 	void Start () {
-		//To see if powerups are updating correctly in editor, can remove at launch
+		//Setting High Scores
 		if(PlayerPrefs.HasKey("easyHighScore"))
 		{
 			highScoreEasy = PlayerPrefs.GetInt("easyHighScore");
@@ -749,12 +749,12 @@ public class GameMaster : MonoBehaviour {
 			Advertisement.Show (null, new ShowOptions {
 				resultCallback = result => {
 					if (result.ToString() == "Finished") {
-						coins += 100;
+						coins += 200;
 						PlayerPrefs.SetInt ("Coins", coins);
 						PlayerPrefs.Save();
 						Debug.Log(result.ToString());
 					} else if (result.ToString () == "Skipped") {
-						coins += 10;
+						coins += 20;
 						PlayerPrefs.SetInt ("Coins", coins);
 						PlayerPrefs.Save();
 						Debug.Log(result.ToString());
